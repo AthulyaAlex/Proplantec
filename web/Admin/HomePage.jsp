@@ -14,6 +14,5 @@
     <body>
         <h1>Hello World!<%=session.getAttribute("aname")%></h1>
         <a href="ChangePassword.jsp">Change Password</a>
-        Hai
     </body>
 </html>
