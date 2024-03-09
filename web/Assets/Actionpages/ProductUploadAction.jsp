@@ -101,10 +101,11 @@
 
                 }
                 
-                String str1 = "insert into tbl_product(product_name,product_image,product_rate,product_details,subcategory_id,planttype_id,product_stock,nursery_id)"
+                String str1 = "insert into tbl_product(product_name,product_image,product_rate,product_details,category_id,subcategory_id,product_stock,nursery_id)"
                         + "values('" + value[0] + "','" + ph + "','" + value[1] + "','" + value[2] + "','" + value[3] + "','" + value[4] + "','" + value[5] + "','" +session.getAttribute("nid")+"')";
 
-                System.out.println(str1);       
+               // out.println(str1);       
+                
 
                 boolean status = con.executeCommand(str1);
                 if (status == true) {

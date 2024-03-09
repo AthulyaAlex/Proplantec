@@ -37,7 +37,7 @@
                 <tr>                                                            
                     <td>Category</td>
                     <td>
-                        <select name="ddlcat" onchange="getPlace(this.value)">
+                        <select name="ddlcat" onchange="getsubcategory(this.value)">
                             <option>--select Category--</option>
                             <%
                                 String seelqry = "select * from tbl_category";
@@ -54,7 +54,7 @@
                 <tr>
                     <td>Subcategory</td>
                     <td>
-                        <select name="ddlsub" id="ddlcat" onchange="getPlant(this.value)">
+                        <select name="ddlsub" id="ddlsub" >
                             <option>--select subcategory--</option>
                             <%
                                 String selqry = "select * from tbl_subcategory";
@@ -68,15 +68,7 @@
                         </select>
                     </td>
                 </tr>
-                <tr>
-                    <td>PlantType</td>
-                    <td>
-                        <select name="ddlpla" id="ddlsub" required>
-                            <option>--select PlantType--</option>
-                                
-                        </select>
-                    </td>
-                </tr>
+              
                 
                 <tr>
                     <td>Stock</td>
@@ -96,26 +88,17 @@
     </body>
     <script src="../Assets/jQuery/jQuery.js"></script>         
     <script>
-                              function getPlace(did)
+                            function getsubcategory(subid)
                             {
-                              
-                           //  alert(did);  
-                                $.ajax({url:"../Assets/AjaxPages/Ajaxcategory.jsp?did=" + did,
-                                success: function(result){
-                                    $("#ddlcat").html(result);
-                                }
-                            })
+
+                                //  alert(did);  
+                                $.ajax({url: "../Assets/AjaxPages/Ajaxcategory.jsp?subid=" + subid,
+                                    success: function(result) {
+                                        $("#ddlsub").html(result);
+                                    }
+                                })
                             }
-                            function getPlant(did)
-                            {
-                              
-                           //  alert(did);  
-                                $.ajax({url:"../Assets/AjaxPages/Ajaxsubcategory.jsp?did=" + did,
-                                success: function(result){
-                                    $("#ddlsub").html(result);
-                                }
-                            })
-                            }
+
                            
     </script>
   

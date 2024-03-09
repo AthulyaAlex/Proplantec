@@ -79,7 +79,7 @@
                     <td><%=i%></td>
                     <td><%=rs.getString("category_name")%></td>
                     <td><a href="Category.jsp?did=<%=rs.getString("category_id")%>">Delete</a>
-                        |<a href="Category.jsp?eid=<%=rs.getString("category_id")%>">Edit</td>
+                        |<a href="Category.jsp?eid=<%=rs.getString("category_id")%>">Edit</a></td>
                 </tr>
                 <%
             }    

@@ -15,7 +15,9 @@
         <h1>Hello<%=session.getAttribute("uname")%></h1>
         <a href="MyProfile.jsp">PROFILE</a><br>
         <a href="EditProfile.jsp">EDIT PROFILE</a><br>
-        <a href="ChangePassword.jsp">CHANGE PASSWORD</a>
-
-    </body>
+        <a href="ChangePassword.jsp">CHANGE PASSWORD</a><br>
+        <a href="Search.jsp">SEARCH</a><br>
+        <a href="">MY ORDERS</a><br>
+        <a href="">MY CART</a><br>
+        </body>
 </html>

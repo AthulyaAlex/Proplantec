@@ -18,7 +18,7 @@
                 <tr>                                                            
                     <td>Category</td>
                     <td>
-                        <select name="ddlcat" onchange="getPlace(this.value)">
+                        <select name="ddlcat" onchange="getsubcategory(this.value)">
                             <option>--select Category--</option>
                             <%
                                 String seelqry = "select * from tbl_category";
@@ -35,7 +35,7 @@
                 <tr>
                     <td>Subcategory</td>
                     <td>
-                        <select name="ddlsub" id="ddlsub">
+                        <select name="ddlsub" id="ddlsub" >
                             <option>--select subcategory--</option>
                             <%
                                 String selqry = "select * from tbl_subcategory";
@@ -50,22 +50,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>PlantType</td>
-                    <td>
-                        <select name="ddlpla">
-                            <option>--select PlantType--</option><%
-                                String sellqry = " select * from tbl_planttype";
-                                ResultSet rs1 = con.selectCommand(sellqry);
-                                while (rs1.next()) {
-                            %>
-                            <option value="<%=rs1.getString("planttype_id")%>"><%=rs1.getString("planttype_name")%></option>
-                            <%
-                                }
-                            %>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
                     <td colspan="2" align="center">
                         <input type="submit" name="txtsave" value="Search">
                     </td>
@@ -73,14 +57,17 @@
             <table border="1" align="center">
                 <tr>
                     <th>Sl.no</th>
-                    <th>Category</th>
-                    <th>Subcategory</th>
-                    <th>Planttype</th>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Product Rate</th>
+                    <th>Product Details</th>
+                    <th>Product Stock</th>
+                    <th>Product Gallery</th>
                     <th>Action</th>
                 </tr>
                 <%
                     if (request.getParameter("txtsave") != null) {
-                        String selectqry = "select * from tbl_product where subcategory_id='" + request.getParameter("ddlsub") + "' and planttype_id='" + request.getParameter("ddlpla") + "'";
+                        String selectqry = "select * from tbl_product where category_id='" + request.getParameter("ddlcat") + "' and subcategory_id='" + request.getParameter("ddlsub") + "'";
                         ResultSet r = con.selectCommand(selectqry);
 
                         int i = 0;
@@ -88,11 +75,14 @@
                             i++;
                 %>
                 <tr>
-                    <td><%=i%></td>
-                    <td><%=r.getString("category_name")%></td> 
-                    <td><%=r.getString("subcategory_name")%></td> 
-                    <td><%=r.getString("planttype_name")%></td> 
-
+                         <td><%=i%></td>
+                         <td><img src="../Assets/Files/Productphoto/<%=r.getString("product_image")%>" height="70" width="70"</td></td>
+                         <td><%=r.getString("product_name")%></td>
+                         <td><%=r.getString("product_rate")%></td>
+                         <td><%=r.getString("product_details")%></td>
+                         <td><%=r.getString("product_stock")%></td>
+                         <td><a href="ViewGallery.jsp?sid=<%=r.getString("product_id")%> "> View Gallery</a>
+                         <td><button type="submit" onclick="booking(<%=r.getString("product_id")%>)">Add to cart</button></td>
                 </tr>
                 <%
                         }
@@ -103,16 +93,26 @@
     </body>
     <script src="../Assets/jQuery/jQuery.js"></script>         
     <script>
-                            function getPlace(subid)
+                            function getsubcategory(subid)
                             {
 
                                 //  alert(did);  
-                                $.ajax({url: "../Assets/AjaxPages/Ajaxsubcategory.jsp?subid=" + subid,
+                                $.ajax({url: "../Assets/AjaxPages/Ajaxcategory.jsp?subid=" + subid,
                                     success: function(result) {
                                         $("#ddlsub").html(result);
                                     }
                                 })
                             }
+                            function booking(id)
+                            {
+                               //  alert(did);  
+                                $.ajax({url: "../Assets/AjaxPages/AjaxAddCart.jsp?id=" + id,
+                                    success: function(result) {
+                                        $("#").html(result);
+                                    }
+                                }) 
+                            }
+                            
 
     </script>
 </html>
