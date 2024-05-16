@@ -82,11 +82,12 @@
                          <td><%=r.getString("product_details")%></td>
                          <td><%=r.getString("product_stock")%></td>
                          <td><a href="ViewGallery.jsp?sid=<%=r.getString("product_id")%> "> View Gallery</a>
-                         <td><button type="submit" onclick="booking(<%=r.getString("product_id")%>)">Add to cart</button></td>
+                         <td><button type="button" onclick="booking(<%=r.getString("product_id")%>)">Add to cart</button></td>
                 </tr>
                 <%
                         }
                     }
+                            
                 %>
             </table>     
         </form>   
@@ -104,10 +105,10 @@
                                 })
                             }
                             function booking(id)
-                            {
-                               //  alert(did);  
+                            {  
                                 $.ajax({url: "../Assets/AjaxPages/AjaxAddCart.jsp?id=" + id,
                                     success: function(result) {
+                                        alert(result)
                                         $("#").html(result);
                                     }
                                 }) 

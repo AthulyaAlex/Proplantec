@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
     </head>
-    <%@include file="Head.jsp"%>
+    
     <body>
         <%
             if (request.getParameter("btnlogin") != null) {
@@ -88,5 +88,5 @@
             </table>
         </form>  
     </body>
-    <%@include file="Foot.jsp"%>
+   
 </html>
