@@ -34,6 +34,7 @@
             editaddress = rs.getString("user_address");
                         
         %>
+        
         <form method="post">
             <table border="3" align="center">
                 <tr>

@@ -42,9 +42,10 @@
                 
         <%
         
-        String selQry="select * from tbl_booking where user_id='" + session.getAttribute("uid") + "' and booking_status='0'";
+        String selQry="select * from tbl_booking where user_id='" + session.getAttribute("uid") + "'";
         ResultSet rs = con.selectCommand(selQry);
         rs.next();
+        System.out.print(selQry);
         String bid=rs.getString("booking_id");
         %>
         <table border="1" align="center">
@@ -70,14 +71,14 @@
                          <td><%=rsc.getString("product_name")%></td>
                          <td><img src="../Assets/Files/Productphoto/<%=rsc.getString("product_image")%>" height="70" width="70"</td></td>
                          <td><%=rsc.getString("product_rate")%></td>
-                         <td><%=rsc.getString("cart_quantity")%></td>
+                         <td><input type="number" name="txtquantity" value="<%=rsc.getString("cart_quantity")%>" onchange="getCart(this.value,'<%=rsc.getString("cart_id")%>')"></td>
                          <td>
                              <%
                                 int Total = Integer.parseInt(rsc.getString("product_rate")) * Integer.parseInt(rsc.getString("cart_quantity"));
                                 out.println(Total);
                                 CartTotal+=Total;
                               %></td>
-                         </td>
+                         
                 </tr> 
                 
                 <%
@@ -90,9 +91,24 @@
         
         </table>
                 <form method="post">
-                    <input type="text" name="txtid" value="<% out.print(bid); %>">
-                    <input type="text" name="txtrate" value="<% out.print(CartTotal); %>">
+                    <input type="hidden" name="txtid" value="<% out.print(bid); %>">
+                    <input type="hidden" name="txtrate" value="<% out.print(CartTotal); %>" id="seltotal">
+                    
                     <input type="submit" name="btn" value="Submit">    
                 </form>     
     </body>
+    <script src="../Assets/jQuery/jQuery.js"></script>         
+    <script>
+                            function getCart(qty,cid)
+                            {  
+                                $.ajax({url: "../Assets/AjaxPages/AjaxMyCart.jsp?qty=" + qty +"&cid="+cid,
+                                    success: function(result) {
+                                        console.log(result);
+                                        window.location="Cart.jsp"
+                                    }
+                                })
+                            }
+
+    </script>
 </html>
+
