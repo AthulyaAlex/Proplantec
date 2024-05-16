@@ -41,12 +41,19 @@
         %>
                 
         <%
-        
-        String selQry="select * from tbl_booking where user_id='" + session.getAttribute("uid") + "'";
+        String bid =""; 
+        String selQry="select * from tbl_booking where user_id='" + session.getAttribute("uid") + "'& booking_status=0";
         ResultSet rs = con.selectCommand(selQry);
-        rs.next();
-        System.out.print(selQry);
-        String bid=rs.getString("booking_id");
+        if(rs.next())
+        {
+           System.out.print(selQry);
+           bid=rs.getString("booking_id"); 
+        }
+        else
+        {
+            out.println("Cart empty");
+        }
+        
         %>
         <table border="1" align="center">
                 <tr>
@@ -69,7 +76,7 @@
                 <tr>
                          <td><%=i%></td>
                          <td><%=rsc.getString("product_name")%></td>
-                         <td><img src="../Assets/Files/Productphoto/<%=rsc.getString("product_image")%>" height="70" width="70"</td></td>
+                         <td><img src="../Assets/Files/Productphoto/<%=rsc.getString("product_image")%>" height="70" width="70"></td>
                          <td><%=rsc.getString("product_rate")%></td>
                          <td><input type="number" name="txtquantity" value="<%=rsc.getString("cart_quantity")%>" onchange="getCart(this.value,'<%=rsc.getString("cart_id")%>')"></td>
                          <td>

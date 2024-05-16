@@ -5,11 +5,19 @@ JSP
 *F
 + 0 AdminRegistration.jsp
 Admin/AdminRegistration.jsp
++ 1 Head.jsp
+Admin/Head.jsp
++ 2 Foot.jsp
+Admin/Foot.jsp
 *L
-5:45
-6:46,9
-6:52
-6,11:55
-17,10:67
-26,38:77
+5:51
+6:52,9
+6:58
+6,2:61
+5#1,90:63
+8#0,30:153
+38,10:184
+47,39:194
+1#2,93:232
+85#0:325
 *E

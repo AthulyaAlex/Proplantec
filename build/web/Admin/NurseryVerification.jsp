@@ -5,12 +5,20 @@
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
+<%@include file="Head.jsp"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br><br><br><br><br>
         <title>Nursery Verification</title>
+        <style>
+            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
     </head>
     <body>
         <%
@@ -29,9 +37,10 @@
             }
 
         %>
-        <div align="center">
-            <h2>New Nursery</h2>
-            <table border="2" align="center">
+        <div align="center" class="bg-img">
+            <div style="background-color: #000000b8 !important;">
+                <h3 style="color: white;">New Nursery</h3>
+            <table border="2" align="center" cellpadding="10" style="color: white">
                 <tr>
                     <th>Sl.no</th>
                     <th>Name</th>
@@ -63,8 +72,8 @@
 
             </table>
 
-            <h2>Accepted Nursery</h2>
-            <table border="2" align="center">
+            <h3 style="color: white;">Accepted Nursery</h3>
+            <table border="2" align="center" cellpadding="10" style="color: white">
                 <tr>
                     <th>Sl.no</th>
                     <th>Name</th>
@@ -95,8 +104,8 @@
 
             </table>
 
-            <h2>Rejected Nursery</h2>
-            <table border="2" align="center">
+            <h3 style="color: white;">Rejected Nursery</h3>
+            <table border="2" align="center"cellpadding="10" style="color: white">
                 <tr>
                     <th>Sl.no</th>
                     <th>Name</th>
@@ -126,5 +135,7 @@
                     %>
             </table>
         </div>
+            </div>
     </body>
 </html>
+ <%@include file="Foot.jsp"%>

@@ -4,13 +4,26 @@
     Author     : HP
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
-<%@page import="java.sql.ResultSet"%>    
+<%@page import="java.sql.ResultSet"%>  
+<%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br><br>
         <title>Category</title>
+        <style>
+            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/2.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .text-box {
+                background-color: transparent;
+                width: 215px;
+                color:gray;
+            }
+        </style>
     </head>
     <body>
         <% 
@@ -47,20 +60,25 @@
                       
         %>   
         
-        <form name="frmcat" method="post">
-            <table border="2" align="center">
+       <div class="bg-img">
+                <div style="background-color: #000000b8 !important;">
+            <form method="POST" enctype="multipart/form-data" action="../Assets/Actionpages/UserUploadAction.jsp">
+            <br><br><br><br><br><br><br>
+            <div style="color:white;font-size: 15px;">
+                 <table align="center" cellpadding="10">
                 <tr>
                     <td>Name</td>
-                    <td><input type="text" value="<%=editname%>" required pattern="[A-Z]||[a-z]{a,}" name="txtentercat">
-                        <input type="hidden" value="<%=editid%>" name="txt_id"></td>
+                    <td><input type="text" class="text-box" value="<%=editname%>" required pattern="[A-Z]||[a-z]{a,}" name="txtentercat">
+                        <input type="hidden" class="text-box" value="<%=editid%>" name="txt_id"></td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="center">
+                    <td colspan="2" align="right">
                         <input type="submit" name="btncat1" value="save" >     
                         <input type="submit" name="btncat2" value="cancel" >
                     </td>
                 </tr>
             </table>
+                <br>
             <table border="2" align="center">
                 <tr>
                     <th>Sl.no</th>
@@ -90,3 +108,6 @@
          
     </body>
 </html>
+<br><br><br><br><br><br>
+<%@include file="Foot.jsp" %>
+

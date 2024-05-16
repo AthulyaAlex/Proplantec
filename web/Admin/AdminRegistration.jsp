@@ -5,14 +5,35 @@
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
+<%@include file="Head.jsp"%>
+ <br><br><br><br><br>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Registration</title>
+        <style>
+            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/aa.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .text-box {
+                background-color: transparent;
+                width: 215px;
+                color:gray;
+            }
+        </style>
     </head>
     <body>
+        <div class="bg-img">
+            <div style="background-color: #000000b8 !important;">
+                <br><br><br><br><br><br>
+                <div style="color:white;font-size: 15px;">
+                <table align="center" cellpadding="10"></table>
+             
+            
         <%
             if(request.getParameter("txtsave")!=null)
             {
@@ -25,29 +46,29 @@
             
         %>
        <form method="post">
-            <table border="3" align="center">
+            <table border="0" align="center">
                 <tr>
                     <td>Name</td>
                     <td>
-                        <input required type="text" name="txtname" placeholder="Enter Name" title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$">
+                        <input required type="text" name="txtname" class="text-box" placeholder="Enter Name" title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$">
                     </td>
                 </tr> 
                 <tr>
                     <td>Email</td>
                     <td>
-                        <input required type="email" name="txtemail" placeholder="Enter Email-Id">
+                        <input required type="email" name="txtemail" class="text-box"placeholder="Enter Email-Id">
                     </td>
                 </tr>
                 <tr>
                     <td>Password</td>
                     <td>
-                        <input required type="password" name="txtpsswd" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
+                        <input required type="password" name="txtpsswd" class="text-box" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
                     </td>
                 </tr>
                 <tr>
                     <td>Confirm Password</td>
                     <td>
-                        <input required type="password" name="txtcpsswd" placeholder="ReEnter Password">
+                        <input required type="password" name="txtcpsswd" class="text-box" placeholder="ReEnter Password">
                     </td>
                 </tr>         
                 <tr>
@@ -60,3 +81,5 @@
         </form>
     </body>
 </html>
+<br><br><br><br>
+<%@include file="Foot.jsp"%>

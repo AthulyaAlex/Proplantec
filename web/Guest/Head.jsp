@@ -35,6 +35,13 @@
 	<link rel="stylesheet" href="../Assets/Templates/Main/assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="../Assets/Templates/Main/assets/css/responsive.css">
+        <link rel="stylesheet" href="../Assets/Templates/form.css">
+        
+        <style>
+            .top-header-area {
+                background-color: black;
+            }
+        </style>
 
 </head>
 <body>
@@ -55,7 +62,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
+							<a href="../index.html">
                                                             <img src="../Assets/Templates/Main/assets/img/logo.png" width="800" alt="">
 							</a>
 						</div>
@@ -65,9 +72,14 @@
 						<nav class="main-menu">
 							<ul>
                                                             <li class="current-list-item"><a href="#">Home</a></li>
-                                                            <li><a href="User.jsp">Customer</a></li>
-                                                            <li><a href="NurseryRegistration.jsp">Seller</a></li>
-                                                            <li><a href="AgentRegistration.jsp">Agent</a></li>
+                                                            <li><a href="about.html">About</a></li> 
+                                                            <li><a href="shop.html">Sign Up</a>
+									<ul class="sub-menu">
+										<li><a href="Guest/User.jsp">Customer</a></li>
+                                                                                <li><a href="Guest/NurseryRegistration.jsp">Seller</a></li>
+                                                                                <li><a href="Guest/AgentRegistration.jsp">Agent</a></li>
+									</ul>
+								</li>
                                                             <li><a href="Login.jsp">Login</a></li>
 							</ul>
 						</nav>
