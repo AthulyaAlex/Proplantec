@@ -18,6 +18,7 @@
                     <th>Sl.no</th>
                     <th>Amount</th>
                     <th>Booking Status</th>
+                    <th>Products</th>
                     <th>Action</th>
                 </tr>
                 <%
@@ -25,17 +26,16 @@
                     ResultSet rs = con.selectCommand(selbook);
                     int i = 0;
                     while (rs.next()) {
-                    
-                            i++;
+                         i++;
+                           
                 %>
                 <tr>
                          <td><%=i%></td>
                          <td><%=rs.getString("booking_total")%></td>
                          <td><%=rs.getString("booking_status")%></td>
-                         
-                         
+                        
                 </tr>
-                     
+                  
                 <%
                     } 
                     %> 

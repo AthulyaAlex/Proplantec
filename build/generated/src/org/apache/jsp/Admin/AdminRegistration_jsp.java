@@ -160,9 +160,10 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        <title>Admin Registration</title>\n");
       out.write("        <style>\n");
       out.write("            .bg-img {\n");
-      out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/aa.jpg\");\n");
+      out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/hero-bg.jpg\");\n");
       out.write("                background-repeat: no-repeat;\n");
       out.write("                background-size: cover;\n");
+      out.write("                background-position:top;\n");
       out.write("            }\n");
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");
@@ -222,6 +223,7 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                    <td colspan=\"2\" align=\"center\">\n");
       out.write("                        <input type=\"submit\" name=\"txtsave\" value=\"Save\">\n");
       out.write("                        <input type=\"reset\" name=\"txtcancel\" value=\"Cancel\">\n");
+      out.write("                        <br><br><br><br><br><br><br><br><br><br><br>\n");
       out.write("                    </td>\n");
       out.write("                </tr>\n");
       out.write("            </table>\n");
@@ -256,7 +258,7 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\t\t\t\t\t\t\t<li><a href=\"index.html\">Home</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"about.html\">About</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
-      out.write("                                                        <li><a href=\"AgencyList.jsp\">Available Delivery Agents</a></li>\n");
+      out.write("                                                \n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"contact.html\">Contact</a></li>\n");
       out.write("\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t</div>\n");

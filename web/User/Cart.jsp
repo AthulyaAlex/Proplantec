@@ -18,8 +18,10 @@
                 {
                     String id=request.getParameter("txtid");
                     String rate=request.getParameter("txtrate");
-                    String upQry="update tbl_booking set booking_total='"+rate+"',booking_status='1' where booking_id='"+id+"'";
-                    out.println(upQry);
+                    String radio =request.getParameter("rdo");
+                    String upQry="update tbl_booking set booking_total='"+rate+"',booking_status='1', planter_status='"+radio+"' where booking_id='"+id+"'";
+                    String upQ="update tbl_cart set cart_status='1' where booking_id='"+id+"'";
+                    con.executeCommand(upQ);
                     if(con.executeCommand(upQry))
                     {
                         %>
@@ -35,7 +37,7 @@
                             </script>
                             <%   
                 }
-                    //response.sendRedirect("HomePage.jsp");
+                    response.sendRedirect("Payment.jsp?bid="+id+"");
                 }
                 
         %>
@@ -55,6 +57,8 @@
         }
         
         %>
+        
+                <form method="post">
         <table border="1" align="center">
                 <tr>
                     <th>Sl.no</th>
@@ -62,6 +66,7 @@
                     <th>Product Photo</th>
                     <th>Product Rate</th>
                     <th>Product Quantity</th>
+                    <th>Action</th>
                     <th>Total</th>
                 </tr>
                 <%
@@ -79,6 +84,7 @@
                          <td><img src="../Assets/Files/Productphoto/<%=rsc.getString("product_image")%>" height="70" width="70"></td>
                          <td><%=rsc.getString("product_rate")%></td>
                          <td><input type="number" name="txtquantity" value="<%=rsc.getString("cart_quantity")%>" onchange="getCart(this.value,'<%=rsc.getString("cart_id")%>')"></td>
+                         <td><button onclick="getDel('<%=rsc.getString("cart_id")%>')">Delete</button></td>
                          <td>
                              <%
                                 int Total = Integer.parseInt(rsc.getString("product_rate")) * Integer.parseInt(rsc.getString("cart_quantity"));
@@ -93,15 +99,28 @@
                 %>
                 <tr>
                     <th>Total</th>
-                    <td colspan="5" align="right"><% out.print(CartTotal); %></td>
-                </tr>
+                    <td colspan="6" align="right"><% out.print(CartTotal); %></td>
+                </tr>    
+                    <tr>
+                        <th>Labour Required</th>
+                        <td colspan="6" >Yes<input type="radio" name="rdo" value="1">
+                             No<input type="radio" name="rdo" value="0"></td>
+                    </tr>
+                    
+                       
+                  
+                    
+                    <tr>
+                       
+                        <td colspan="7" align="center"><input type="submit" name="btn" value="Payment"></td>
+                    </tr>    
+               
         
         </table>
-                <form method="post">
                     <input type="hidden" name="txtid" value="<% out.print(bid); %>">
                     <input type="hidden" name="txtrate" value="<% out.print(CartTotal); %>" id="seltotal">
                     
-                    <input type="submit" name="btn" value="Submit">    
+                    
                 </form>     
     </body>
     <script src="../Assets/jQuery/jQuery.js"></script>         
@@ -115,6 +134,16 @@
                                     }
                                 })
                             }
+                            function getDel(cid)
+                            {  
+                                $.ajax({url: "../Assets/AjaxPages/AjaxMyCart.jsp?Action='Delete'&cid="+cid,
+                                    success: function(result) {
+                                        console.log(result);
+                                        window.location="Cart.jsp"
+                                    }
+                                })
+                            }
+                            
 
     </script>
 </html>

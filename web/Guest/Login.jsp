@@ -5,15 +5,33 @@
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
+<%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br><br><br>
         <title>Login</title>
+            <style>
+            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/aa.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .text-box {
+                background-color: transparent;
+                width: 215px;
+                color:gray;
+            }
+            </style>
     </head>
-    
     <body>
+        <div class="bg-img">
+                <div style="background-color: #000000b8 !important;">
+         
+            <br><br><br><br><br><br><br>
+            <div style="color:white;font-size: 15px;">
+                 <table align="center" cellpadding="10">
         <%
             if (request.getParameter("btnlogin") != null) {
                 String email=request.getParameter("txtemail");
@@ -66,23 +84,23 @@
             }
         %>
         <form method="POST">
-            <table border="2" align="center">
+            <table border="0" align="center">
                 <tr>
                     <td>Email</td>
                     <td>
-                        <input  required type="email" name="txtemail" placeholder="Enter Email-Id">
+                        <input  required type="email" name="txtemail" class="text-box" placeholder="Enter Email-Id">
                     </td>
                 </tr>
                 <tr>
                     <td>Password</td>
                     <td>
-                        <input  required type="password" name="txtpsswd" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
+                        <input  required type="password" name="txtpsswd" class="text-box" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
                     </td>
                 </tr>
                 <tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" name="btnlogin" value="Login">
+                        <input type="submit" name="btnlogin"  value="Login">
                     </td>
                 </tr>
             </table>
@@ -90,3 +108,5 @@
     </body>
    
 </html>
+<br><br><br><br><br><br><br><br><br><br><br>
+<%@include file="Foot.jsp" %>

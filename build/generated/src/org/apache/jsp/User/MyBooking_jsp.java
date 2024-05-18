@@ -67,6 +67,7 @@ public final class MyBooking_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <th>Sl.no</th>\n");
       out.write("                    <th>Amount</th>\n");
       out.write("                    <th>Booking Status</th>\n");
+      out.write("                    <th>labour Required</th>\n");
       out.write("                    <th>Action</th>\n");
       out.write("                </tr>\n");
       out.write("                ");
@@ -75,8 +76,8 @@ public final class MyBooking_jsp extends org.apache.jasper.runtime.HttpJspBase
                     ResultSet rs = con.selectCommand(selbook);
                     int i = 0;
                     while (rs.next()) {
-                    
-                            i++;
+                         i++;
+                           
                 
       out.write("\n");
       out.write("                <tr>\n");
@@ -89,10 +90,14 @@ public final class MyBooking_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                         <td>");
       out.print(rs.getString("booking_status"));
       out.write("</td>\n");
-      out.write("                         \n");
-      out.write("                         \n");
+      out.write("                         <td>Yes<input type=\"radio\" name=\"rdo\">\n");
+      out.write("                             No<input type=\"radio\" name=\"rdo\"></td>\n");
       out.write("                </tr>\n");
-      out.write("                     \n");
+      out.write("                ");
+
+                    String upQ="update tbl_booking set planter_status='1'    "; 
+                 
+      out.write("    \n");
       out.write("                ");
 
                     } 

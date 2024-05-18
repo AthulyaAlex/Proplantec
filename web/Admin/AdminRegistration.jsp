@@ -15,9 +15,10 @@
         <title>Admin Registration</title>
         <style>
             .bg-img {
-                background-image: url("../Assets/Templates/Main/assets/img/aa.jpg");
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-position:top;
             }
             .text-box {
                 background-color: transparent;
@@ -75,6 +76,7 @@
                     <td colspan="2" align="center">
                         <input type="submit" name="txtsave" value="Save">
                         <input type="reset" name="txtcancel" value="Cancel">
+                        <br><br><br><br><br><br><br><br><br><br><br>
                     </td>
                 </tr>
             </table>

@@ -4,52 +4,85 @@
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
+<%@include file="Head.jsp"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>NurseryRegistration</title>
+         <style>
+            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position:center;
+            }
+            .text-box {
+                background-color: transparent;
+                width: 215px;
+                color:gray;
+            }
+            
+            input[type="submit"],input[type="reset"] {
+            background-color: 1e7f1e;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+        background-color: darkgreen;
+    }
+        </style>
     </head>
         <body>
+            <div class="bg-img">
+                <div style="background-color: #000000b8 !important;">
             <form method="post" enctype="multipart/form-data" action="../Assets/Actionpages/NurseryUploadAction.jsp">
-            <table border="3" align="center">
+             <br><br><br><br><br><br><br>
+            <div style="color:white;font-size: 15px;">
+                 <table align="center" cellpadding="10">
                 <tr>
                     <td>Name</td>
                     <td>
-                        <input required type="text" name="txtname" placeholder="Enter Name" title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$">
+                        <input required type="text" name="txtname" class="text-box" placeholder="Enter Name" title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$">
                     </td>
                 </tr>
                 <tr>
                     <td>Contact</td>
                     <td>
-                        <input required type="text" name="txtcontact" placeholder="Enter Contact No"  pattern="[7-9]{1}[0-9]{9}" 
+                        <input required type="text" name="txtcontact" class="text-box" placeholder="Enter Contact No"  pattern="[7-9]{1}[0-9]{9}" 
                 title="Phone number with 7-9 and remaining 9 digit with 0-9">
                     </td>
                 </tr>
                 <tr>
                     <td>Email</td>
                     <td>
-                        <input required type="email" name="txtemail" placeholder="Enter Email-Id">
+                        <input required type="email" name="txtemail" class="text-box" placeholder="Enter Email-Id">
                     </td>
                 </tr>
                 
                 <tr>
                     <td>Logo</td>
                     <td align="center">
-                        <input required type="file" name="txtlogo">
+                        <input required type="file" class="text-box" name="txtlogo">
                     </td>
                 </tr>
                 <tr>
                     <td>Address</td>
                     <td>
-                        <textarea required name="txtadd" placeholder="Enter Address" ></textarea>
+                        <textarea required name="txtadd"  class="text-box" placeholder="Enter Address" ></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td>Location</td>
                     <td>
-                        <select required=""  name="selloc">
+                        <select required=""  name="selloc" class="text-box">
                             <option>--select location--</option>
                             <%
                                 String selqry = "select * from tbl_location";
@@ -65,19 +98,19 @@
                 <tr>
                     <td>Proof</td>
                     <td align="center">
-                        <input required type="file" name="txtpro">
+                        <input required type="file" name="txtpro" class="text-box">
                     </td>
                 </tr>
                 <tr>
                     <td>Password</td>
                     <td>
-                        <input required type="password" name="txtpsswd" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
+                        <input required type="password" name="txtpsswd" class="text-box" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
                     </td>
                 </tr>
                 <tr>
                     <td>Confirm Password</td>
                     <td>
-                        <input required type="password" name="txtcpsswd" placeholder="ReEnter Password">
+                        <input required type="password" class="text-box" name="txtcpsswd" placeholder="ReEnter Password">
                     </td>
                 </tr>         
                 <tr>
@@ -105,3 +138,5 @@
 
     </script>
 </html>
+<br><br>
+<%@include file="Foot.jsp"%>

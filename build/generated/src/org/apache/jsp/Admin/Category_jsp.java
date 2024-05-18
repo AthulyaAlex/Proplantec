@@ -159,7 +159,7 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>Category</title>\n");
       out.write("        <style>\n");
       out.write("            .bg-img {\n");
-      out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/2.jpg\");\n");
+      out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/aa.jpg\");\n");
       out.write("                background-repeat: no-repeat;\n");
       out.write("                background-size: cover;\n");
       out.write("            }\n");
@@ -230,7 +230,7 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </tr>\n");
       out.write("            </table>\n");
       out.write("                <br>\n");
-      out.write("            <table border=\"2\" align=\"center\">\n");
+      out.write("            <table border=\"1\" align=\"center\">\n");
       out.write("                <tr>\n");
       out.write("                    <th>Sl.no</th>\n");
       out.write("                    <th>Category</th>\n");
@@ -299,7 +299,7 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t<li><a href=\"index.html\">Home</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"about.html\">About</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
-      out.write("                                                        <li><a href=\"AgencyList.jsp\">Available Delivery Agents</a></li>\n");
+      out.write("                                                \n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"contact.html\">Contact</a></li>\n");
       out.write("\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t</div>\n");

@@ -3,189 +3,285 @@
     Created on : 16 May, 2024, 12:55:41 PM
     Author     : HP
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-       <!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="styles.css">
-  <script type="text/javascript" src="scripts.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Montserrat:wght@600&display=swap');
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+<%@page import="java.sql.ResultSet"%>
+<jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
+<%
+    String bid = request.getParameter("bid");
+String selQry="select * from tbl_booking where booking_id='"+bid+"'";
+ResultSet rs = con.selectCommand(selQry);
+String amount ="0";
+if(rs.next())
+{
+    amount=rs.getString("booking_total");
 }
 
+%>
 
-body {
-  background-color: #686868;
-  display: flex;
-justify-content: center;
-}
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <style>
+                *{
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+                body{
+                    background-color: #f5f5f5;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                .wrapper{
+                    background-color: #fff;
+                    width: 500px;
+                    padding: 25px;
+                    margin: 25px auto 0;
+                    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+                }
+                .wrapper h2{
+                    background-color: #fcfcfc;
+                    color: #7ed321;
+                    font-size: 24px;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    border: 1px dotted #333;
+                }
+                h4{
+                    padding-bottom: 5px;
+                    color: #7ed321;
+                }
+                .input-group{
+                    margin-bottom: 8px;
+                    width: 100%;
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    padding: 5px 0;
+                }
+                .input-box{
+                    width: 100%;
+                    margin-right: 12px;
+                    position: relative; 
+                }
+                .input-box:last-child{
+                    margin-right: 0;
+                }
+                .name{
+                    padding: 14px 10px 14px 50px;
+                    width: 100%;
+                    background-color: #fcfcfc;
+                    border: 1px solid #00000033;
+                    outline: none;
+                    letter-spacing: 1px;
+                    transition: 0.3s;
+                    border-radius: 3px;
+                    color: #333;
+                }
+                .name:focus, .dob:focus{
+                    -webkit-box-shadow:0 0 2px 1px #7ed32180;
+                    -moz-box-shadow:0 0 2px 1px #7ed32180;
+                    box-shadow: 0 0 2px 1px #7ed32180;
+                    border: 1px solid #7ed321;
+                }
+                .input-box .icon{
+                    width: 48px;
+                    display: flex;
+                    justify-content: center;
+                    position: absolute;
+                    padding: 15px;
+                    top: 0px;
+                    left: 0px;
+                    bottom: 0px;
+                    color: #333;
+                    background-color: #f1f1f1;	
+                    border-radius: 2px 0 0 2px;
+                    transition: 0.3s;
+                    font-size: 20px;
+                    pointer-events: none;
+                    border: 1px solid #000000033;
+                    border-right: none;
+                }
 
-.credit-card-form {
-  margin-top: 4%;
-  max-width: 400px;
-  padding: 1em;
-  border-radius: 10px;
-  box-shadow: 0px 6px 10px rgba(255, 255, 255, 0.1);
-  font-family: 'Montserrat', sans-serif;
-  background-color: #dbdbdb;
-  text-align: center;
-  color: #424242;
-  align-content: center;
-}
 
-.credit-card-form h2 {
-  margin-bottom: 10%;
-  font-size: 24px;
-}
+                .name:focus + .icon{
+                    background-color: #7ed321;
+                    color: #fff;
+                    border-right: 1px solid #7ed321;
+                    border-right: none;
+                    transition: 1s;
+                }
+                .radio:checked + label {
+                    background-color: #7ed321;
+                    color: #fcfcfc	;
+                    border-right: 1px solid #7ed321;
+                    border-right: none;
+                    transition: 1s;
+                }
+                .dob{
+                    width: 30%;
+                    padding: 14px;
+                    text-align: center;
+                    background-color: #fcfcfc;
+                    transition: 0.3s;
+                    outline: none;
+                    border: 1px solid #c0bfbf;
+                    border-radius: 3px;
+                }
+                .radio{
+                    display: none;
+                }
+                .input-box label{
+                    width: 50%;
+                    padding: 13px;
+                    background-color: #fcfcfc;
+                    display: inline-block;
+                    float: left;
+                    text-align: center;
+                    border: 1px solid #c0bfbf; 
+                }
+                .input-box label:first-of-type{
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                    border-right: none;
+                }
+                .input-box label:last-of-type{
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                }
 
-.credit-card-form .form-group {
-  margin-bottom: 15px;
+                .radio:checked{
+                    background-color:green;
+                    color: #fff;
+                }
 
-}
+                input[type=submit]{
+                    width: 100%;
+                    background: transparent;
+                    border: none;
+                    background: #7ed321;
+                    color: #fff;
+                    padding: 15px;
+                    border-radius: 4px;
+                    font-size: 16px;
+                    transition: all 0.35s ease;
+                }
+                input[type=submit]:hover{
+                    cursor: pointer;
+                    background: #5eb105;
+                }
 
-.credit-card-form label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
-  color: #777;
-}
+            </style>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1.0">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+            <title>Payement Gateway</title>
+        </head>
+        <body>
+            <div class="wrapper">
+                <h2>Payment Gateway</h2>
+                <form method="POST">
+                    <h4>Account</h4>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input class="name" type="text" name="txtname" id="txtname" placeholder="Full Name" required="required">
+                            <i class="fa fa-user icon" aria-hidden="true"></i>
+                        </div>
+                        <div class="input-box">
+                            <input class="name" type="text" name="txtnname" id="txtnname" placeholder="Nick Name" required="required">
+                            <i class="fa fa-user icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input class="name" type="email" name="txtemail" id="txtemail" placeholder="Email Address" required="required">
+                            <i class="fa fa-envelope icon" aria-hidden="true"></i>
+                        </div>
+                    </div>	
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input class="name" type="text"  placeholder="Amount" readonly="" value="<%=amount%>">
+                            <i class="fa fa-envelope icon" aria-hidden="true"></i>
+                        </div>
+                    </div>	
+                    <div class="input-group">
+                        <div class="input-box">
+                            <h4>Date of Birth</h4>
+                            <input class="dob" type="text" data-mask="00" name="txtdate" id="txtdate" placeholder="DD">
+                            <input class="dob" type="text" data-mask="00" name="txtmonth" id="txtmonth" placeholder="MM">
+                            <input class="dob" type="text" data-mask="0000" name="txtyear" id="txtyear" placeholder="YYYY">
+                        </div>
+                        <div class="input-box">
+                            <h4>Gender</h4>
+                            <input type="radio" name="rdbgender" id="male" checked  class="radio">
+                            <label for="male">Male</label>
+                            <input type="radio" name="rdbgender" id="female" class="radio">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <h4>Payment Details</h4>
+                            <input type="radio" name="rdbpay" id="cc" checked class="radio">
+                            <label for="cc">
+                                <span><i class="fa fa-cc-visa" aria-hidden="true"></i>Credit Card</span>
+                            </label>
+                            <input type="radio" name="rdbpay" id="dc" class="radio">
+                            <label for="dc">
+                                <span><i class="fa fa-cc-visa" aria-hidden="true"></i>Debit Card</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input class="name" type="tel" id="txtcardno" name="txtcardno" required="required" data-mask="0000 0000 0000 0000" placeholder="Card Number">
+                            <i class="fa fa-credit-card icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input class="name" type="text" name="txtcvc" id="txtcvc" data-mask="000" placeholder="CVC" required="required">
+                            <i class="fa fa-user icon" aria-hidden="true"></i>
+                        </div>
+                        <div class="input-box">
+                            <input class="name" type="text" name="txtdate" id="txtdate" data-mask="00 / 00" placeholder="EXP DATE" required="required">
+                            <i class="fa fa-calendar icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
 
-.credit-card-form input[type="text"],
-.credit-card-form select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 1rem;
-  font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-}
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input type="submit" name="btn_pay"  value="PAY NOW">
+                        </div>
+                    </div>
+                </form>
+            </div>
 
-.credit-card-form .form-row {
-  display: flex;
-}
+        <%
 
+            if (request.getParameter("btn_pay") != null) {
+                String upQ="update tbl_booking set payment_status='1' where booking_id='"+bid+"'";
+                 
+                    if(con.executeCommand(upQ)){
+                        %>
+                    <script>
+                            alert('Payment Successfull thank for shopping');
+                            window.location="HomePage.jsp";
+                    </script>
+                    <%}
+                    
+                else{
+                      %>
+                        <script>
+                            alert('Payment Failed');
+                            </script>       
+                <%}
+                
+            }
 
-.credit-card-form button[type="submit"] {
-  width: 100%;
-  padding: 14px;
-  background-color: #585858;
-  color: #fff;
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.credit-card-form button[type="submit"]:hover {
-  background-color: #808080;
-  color: #424242;
-  font-family: 'Montserrat', sans-serif;
-  box-shadow: 0px 6px 10px rgba(255, 255, 255, 0.1);
-}
-
-.credit-card-form button[type="submit"]:focus {
-  outline: none;
-  font-family: 'Montserrat', sans-serif;
-}
-
-p {
-  color: white;
-  margin-top: 6%;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  margin-bottom: 45px;
-  font-size: 70%;
-  text-shadow: 0 0 5px #cacaca; 
-}
-
-.Image1 {
-  margin-top: 0;
-  width: 220px;
-}
-.h2 {
-  margin: 0px;
-}
-  </style>
-</head>
-<body>
-    <div class="credit-card-form" x-data="{
-        fields: {
-          cardnumber: '',
-          cardholder: '',
-          exp: '',
-          cvc: ''
-        },
-        valid: false,
-        formatCardNumber(number) {
-          return number.replace(/[^0-9]/gi, '').slice(0, 16).replace(/(.{4})/g, '$1 ').trim();
-        },
-        formatExp(number) {
-          return number.replace(/[^0-9]/gi, '').slice(0, 4).replace(/(.{2})/, '$1\/').trim();
-        },
-        validate() {
-          const validCardNumber = this.fields.cardnumber.length === 16;
-          const validCardholder = this.fields.cardholder.trim() !== '';
-          const validExp = this.fields.exp.length === 4;
-          const validCVC = this.fields.cvc.length === 3; // Assuming CVV is 3 characters long
-    
-          this.valid = validCardNumber && validCardholder && validExp && validCVC;
-        }
-      }">
-
-      <h2>PAYMENT PORTAL</h2>
-      <img class="Image1" src="https://i.ibb.co/hgJ7z3J/6375aad33dbabc9c424b5713-card-mockup-01.png" alt="6375aad33dbabc9c424b5713-card-mockup-01" border="0"></a>
-      <form @submit.prevent="showLoading($event, this)">
-        <div class="form-group">
-          <label for="card-number">Card Number</label>
-          <input type="text" id="card-number" placeholder="Card number" x-model="fields.cardnumber" @keydown="if (fields.cardnumber.length > 18 && $event.keyCode != 8 && $event.keyCode != 9 && $event.keyCode != 46) { $event.preventDefault(); }" @input="fields.cardnumber = formatCardNumber(fields.cardnumber)">
-        </div>
-        <div class="form-group">
-          <label for="card-holder">Card Holder</label>
-          <input type="text" id="card-holder" placeholder="Card holder's name" x-model="fields.cardholder">
-        </div>
-        <div class="form-row">
-          <div class="form-group form-column">
-            <label for="expiry-date">Expiry Date</label>
-            <input type="text" id="expiry-date" placeholder="MM/YY" x-model="fields.exp" @keydown="if (fields.exp.length > 4 && $event.keyCode != 8 && $event.keyCode != 9 && $event.keyCode != 46) { $event.preventDefault(); }" @input="fields.exp = formatExp(fields.exp)">
-          </div>
-          <div class="form-group form-column">
-            <label for="cvv">CVV</label>
-            <input type="text" id="cvv" placeholder="CVV" maxlength="3" pattern="[0-9]*" title="Please enter only numeric digits" x-model="fields.cvc" @keydown="if (!/^\d$/.test(event.key) && event.keyCode !== 8 && event.keyCode !== 9) { event.preventDefault(); }">
-        </div>
-        </div>
-        <button type="submit" class="click-button" x-bind:disabled="!valid">PAY NOW - $(TOTAL)</button>
-      </form>
-    </div>
-  </body>
-<script>
-    function showLoading(event, button) {
-  event.preventDefault(); // Prevent form submission
-
-  button.innerHTML = "Processing Payment...";
-
-  setTimeout(function() {
-    button.innerHTML = "Payment completed.";
-  }, 3000); // Change to the desired duration in milliseconds
-}
-</script>
-</html>
+        %>
     </body>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js'></script>
 </html>

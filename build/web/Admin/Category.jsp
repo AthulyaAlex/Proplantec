@@ -14,7 +14,7 @@
         <title>Category</title>
         <style>
             .bg-img {
-                background-image: url("../Assets/Templates/Main/assets/img/2.jpg");
+                background-image: url("../Assets/Templates/Main/assets/img/aa.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -79,7 +79,7 @@
                 </tr>
             </table>
                 <br>
-            <table border="2" align="center">
+            <table border="0" align="center">
                 <tr>
                     <th>Sl.no</th>
                     <th>Category</th>

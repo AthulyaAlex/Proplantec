@@ -168,6 +168,15 @@ public final class User_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                width: 215px;\n");
       out.write("                color:gray;\n");
       out.write("            }\n");
+      out.write("            input[type=\"submit\"],\n");
+      out.write("            input[type=\"reset\"] {\n");
+      out.write("        \n");
+      out.write("    }\n");
+      out.write("\n");
+      out.write("    input[type=\"submit\"]:hover,\n");
+      out.write("    input[type=\"reset\"]:hover {\n");
+      out.write("        background-color: darkgreen;\n");
+      out.write("    }\n");
       out.write("        </style>\n");
       out.write("    </head>                                                                 \n");
       out.write("    <body>\n");
@@ -324,8 +333,7 @@ public final class User_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t<li><a href=\"index.html\">Home</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"about.html\">About</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
-      out.write("                                                         <li><a href=\"AgencyList.jsp\">Available Delivery Agents</a></li>\n");
-      out.write("\t\t\t\t\t\t\t<li><a href=\"contact.html\">Contact</a></li>\n");
+      out.write("                                                        <li><a href=\"contact.html\">Contact</a></li>\n");
       out.write("\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t</div>\n");

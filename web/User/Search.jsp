@@ -5,20 +5,37 @@
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
+<%@include file="Head.jsp" %><br><br>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Search</title>
+        <style>
+            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/aa.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .text-box {
+                background-color: transparent;
+                width: 215px;
+                color:gray;
+            }
+        </style>
     </head>
     <body>
-        <form method="post" >
-            <table border="3" align="center">
+        <div class="bg-img">
+                <div style="background-color: #000000b8 !important;">
+                       <form method="POST">
+                    <br><br><br><br><br><br><br>
+            <div style="color:white;font-size: 15px;">
+                 <table align="center" cellpadding="10">
                 <tr>                                                            
                     <td>Category</td>
                     <td>
-                        <select name="ddlcat" onchange="getsubcategory(this.value)">
+                        <select name="ddlcat" class="text-box" onchange="getsubcategory(this.value)">
                             <option>--select Category--</option>
                             <%
                                 String seelqry = "select * from tbl_category";
@@ -35,7 +52,7 @@
                 <tr>
                     <td>Subcategory</td>
                     <td>
-                        <select name="ddlsub" id="ddlsub" >
+                        <select name="ddlsub" class="text-box"  id="ddlsub" >
                             <option>--select subcategory--</option>
                             <%
                                 String selqry = "select * from tbl_subcategory";
@@ -117,3 +134,5 @@
 
     </script>
 </html>
+<br><br><br><br><br><br>
+<%@include file="Foot.jsp" %>
