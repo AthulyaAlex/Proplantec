@@ -14,7 +14,7 @@
         <title>Category</title>
         <style>
             .bg-img {
-                background-image: url("../Assets/Templates/Main/assets/img/aa.jpg");
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -73,7 +73,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="right">
-                        <input type="submit" name="btncat1" value="save" >     
+                        <input type="submit" name="btncat1" value="save">     
                         <input type="submit" name="btncat2" value="cancel" >
                     </td>
                 </tr>

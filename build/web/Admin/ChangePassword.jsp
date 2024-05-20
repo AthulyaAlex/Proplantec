@@ -14,7 +14,7 @@
         <title>Password</title>
          <style>
             .bg-img {
-                background-image: url("../Assets/Templates/Main/assets/img/2.jpg");
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
             }

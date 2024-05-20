@@ -5,13 +5,26 @@
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
-
+<%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br><br><br><br><br>
         <title>LocalPlace</title>
+    <style>
+            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position:center;
+            }
+            .text-box {
+                background-color: transparent;
+                width: 215px;
+                color:gray;
+            }
+    </style>           
     </head>
     <body>
         <% 
@@ -48,14 +61,19 @@
                    editlid=rs2.getString("location_id");
                 }
         %>
+        <div class="bg-img">
+                <div style="background-color: #000000b8 !important;">
         <form method="post">
-            <table border="3" align="center">
+             <br><br><br><br><br><br><br>
+            <div style="color:white;font-size: 15px;">
+                 <table align="center" cellpadding="10">
+            
                 <tr>
                     <td>Location</td>
                         </select>
                     </td>
                     <td>
-                        <select name="ddlloc">
+                        <select name="ddlloc" class="text-box">
                             <option>--select location--</option>
                             
                             <%
@@ -77,7 +95,7 @@
                 <tr>
                     <td>LocalPlace</td>
                     <td>
-                        <input type="text" name="txtname" placeholder="Enter localplace name"value="<%=editname%>">
+                        <input type="text" name="txtname" class="text-box" placeholder="Enter localplace name"value="<%=editname%>">
                         <input type="hidden" name="txtid" value="<%=editid%>">
                     </td>
                 </tr>
@@ -87,7 +105,7 @@
                         <input type="reset" name="txtcancel" value="Cancel">
                     </td>
                 </tr>
-            </table>
+            </table><br>
              <table border="2" align="center">
                 <tr>
                     <th>Sl.no</th>
@@ -107,7 +125,7 @@
                 <tr>
                     <td><%=i%></td>
                     <td><%=rs1.getString("location_name")%></td>
-                     <td><%=rs1.getString("localplace_name")%></td>
+                    <td><%=rs1.getString("localplace_name")%></td>
                      <td><a href="LocalPlace.jsp?did=<%=rs1.getString("localplace_id")%>">Delete</a>
                          | <a href="LocalPlace.jsp?eid=<%=rs1.getString("localplace_id")%>">Edit</a></td>
                 </tr>
@@ -115,9 +133,9 @@
                 <%
                 }
                 %>
-             </table>
+             </table><br><br>
             
         </form>
     </body>
 </html>
-  
+<%@include file="Foot.jsp" %>  

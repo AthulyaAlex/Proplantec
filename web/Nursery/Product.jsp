@@ -1,43 +1,63 @@
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
+<%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Product</title>
+        <style>
+            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: center;
+            }
+            .text-box {
+                background-color: transparent;
+                width: 215px;
+                color:gray;
+            }
+            </style>
     </head>
     <body>
-        <form method="post" enctype="multipart/form-data" action="../Assets/Actionpages/ProductUploadAction.jsp">
-            <table border="3" align="center">
+        <div class="bg-img">
+                <div style="background-color: #000000b8 !important;">
+         <form method="post" enctype="multipart/form-data" action="../Assets/Actionpages/ProductUploadAction.jsp">
+            <br><br><br><br><br><br><br>
+            <div style="color:white;font-size: 15px;">
+                 <table align="center" cellpadding="10">
+        
+           
                 <tr>
                     <td>Product Name</td>
                     <td>
-                        <input type="text" name="txtname" placeholder="Enter Product Name">
+                        <input type="text" class="text-box" name="txtname" placeholder="Enter Product Name">
                                             </td>
                 </tr>
                 <tr>
                     <td>Image</td>
                     <td align="center">
-                        <input type="file" name="txtimg">
+                        <input type="file" class="text-box" name="txtimg">
                     </td>
                 </tr>
                 <tr>
                     <td>Rate</td>
                     <td>
-                        <input type="text" name="txtname" placeholder="Enter Rate">
+                        <input type="text" class="text-box" name="txtname" placeholder="Enter Rate">
                     </td>
                 </tr>
                 <tr>
                     <td>Details</td>
                     <td>
-                        <input type="text" name="txtdet" placeholder="Enter Details">
+                        <input type="text" class="text-box" name="txtdet" placeholder="Enter Details">
                     </td>
                 </tr>
                 <tr>                                                            
                     <td>Category</td>
                     <td>
-                        <select name="ddlcat" onchange="getsubcategory(this.value)">
+                        <select name="ddlcat" class="text-box" onchange="getsubcategory(this.value)">
                             <option>--select Category--</option>
                             <%
                                 String seelqry = "select * from tbl_category";
@@ -54,7 +74,7 @@
                 <tr>
                     <td>Subcategory</td>
                     <td>
-                        <select name="ddlsub" id="ddlsub" >
+                        <select name="ddlsub" class="text-box" id="ddlsub" >
                             <option>--select subcategory--</option>
                             <%
                                 String selqry = "select * from tbl_subcategory";
@@ -73,7 +93,7 @@
                 <tr>
                     <td>Stock</td>
                     <td>
-                        <input type="text" name="txtname" placeholder="Enter Stock">
+                        <input type="text" class="text-box" name="txtname" placeholder="Enter Stock">
                     </td>
                 </tr>
                 <tr>
@@ -83,7 +103,7 @@
                     </td>
                 </tr>
        
-            </table>
+                 </table><br>
         </form>   
     </body>
     <script src="../Assets/jQuery/jQuery.js"></script>         
@@ -103,4 +123,5 @@
     </script>
   
 </html>
+<%@include file="Foot.jsp" %>
          

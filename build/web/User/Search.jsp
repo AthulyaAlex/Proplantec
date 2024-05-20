@@ -14,7 +14,7 @@
         <title>Search</title>
         <style>
             .bg-img {
-                background-image: url("../Assets/Templates/Main/assets/img/aa.jpg");
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
             }
@@ -71,7 +71,7 @@
                         <input type="submit" name="txtsave" value="Search">
                     </td>
             </table><br>
-            <table border="1" align="center">
+            <table border="0" align="center">
                 <tr>
                     <th>Sl.no</th>
                     <th>Product Image</th>

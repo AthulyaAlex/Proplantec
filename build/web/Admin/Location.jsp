@@ -5,12 +5,26 @@
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
+<%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br><br><br><br><br>
         <title>Location</title>
+        <style>
+            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position:center;
+            }
+            .text-box {
+                background-color: transparent;
+                width: 215px;
+                color:gray;
+            }
+    </style>      
     </head>
     <body>
             <% 
@@ -27,12 +41,16 @@
                    
                 } 
             %>   
-        
+        <div class="bg-img">
+                <div style="background-color: #000000b8 !important;">
         <form name="frmloc" method="post">
-            <table border="2" align="center">
+         <br><br><br><br><br><br><br>
+            <div style="color:white;font-size: 15px;">
+                 <table align="center" cellpadding="10">
+            
                 <tr>    
                     <td>Name</td>
-                    <td><input type="text"  required pattern="[A-Z]||[a-z]{a,}" name="txtenterlocation">
+                    <td><input type="text" class="text-box" required pattern="[A-Z]||[a-z]{a,}" name="txtenterlocation">
                     <input type="hidden" name="txtlid">  
                     </td>
                 </tr>
@@ -42,8 +60,8 @@
                         <input type="submit" name="btnloc2" value="cancel" >
                     </td>
                 </tr>
-            </table>
-            <table border="2" align="center">
+            </table><br>
+            <table border="0" align="center">
                 <tr>
                     <th>Sl.no</th>
                     <th>Location</th>
@@ -66,7 +84,8 @@
                 <%
             }    
                 %>
-            </table>
+            </table><br>
         </form>        
     </body>
 </html>
+<%@include file="Foot.jsp" %>

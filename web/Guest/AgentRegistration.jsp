@@ -17,6 +17,7 @@
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-position:center;
             }
             .text-box {
                 background-color: transparent;

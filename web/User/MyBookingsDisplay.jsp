@@ -1,6 +1,6 @@
 <%-- 
-    Document   : productgallerydisplay
-    Created on : 1 Feb, 2024, 11:27:42 AM
+    Document   : MyBookingsDisplay
+    Created on : 19 May, 2024, 11:01:34 PM
     Author     : HP
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
@@ -11,8 +11,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Productgallerydisplay</title>
-        <style>
+        <title>Bookings Display</title>
+           <style>
             .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
@@ -25,35 +25,29 @@
                 color:gray;
             }
             </style>
-        
     </head>
     <body>
-        <%
-        if(request.getParameter("did")!=null)
-          {
-              String delqry="delete from tbl_productgallery where productgallery_id='"+request.getParameter("did")+"'";
-              con.executeCommand(delqry);
-              response.sendRedirect("Productgallerydisplay.jsp?gid="+request.getParameter("gid"));
-          }
-        %>
-         <div class="bg-img">
+       <div class="bg-img">
                 <div style="background-color: #000000b8 !important;">
-                    <form method="post">
-            <br><br><br><br><br><br><br>
+                 <form method="post">
+                     <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">       
         <div align="center">
-            <h2 style="color: white">Image Gallery</h2><br>
+            <h2 style="color: white">Bookings</h2><br>
          
         
                 <tr>
                     <th>Sl.no</th>
-                    <th>Photo</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
                     <th>Action</th>
                     
                 </tr>
         <%
-                 String selqry = "select*from tbl_productgallery where product_id='"+request.getParameter("gid")+"'";  
+                 String selqry ="select * from tbl_cart c inner join tbl_product p on p.product_id=c.product_id";  
                  ResultSet rs = con.selectCommand(selqry);
                  int i=0;
                  while(rs.next())
@@ -61,16 +55,22 @@
                      i++;
                      %>
                      <tr>
-                         <td><%=i%></td>
-                         <td><img src="../Assets/Files/Productgalleryphoto/<%=rs.getString("productgallery_image")%>" height="90" width="90"</td>
-                         <td><a href="Productgallerydisplay.jsp?did=<%=rs.getString("productgallery_id")%>&gid=<%=request.getParameter("gid")%>">Delete</a></td>
+                       
+                        <td><%=i%></td>
+                         <td><%=rs.getString("product_name")%></td>
+                         <td><%=rs.getString("product_rate")%></td>
+                         <td><%=rs.getString("cart_quantity")%></td>
+                         <td>
+                             <%
+                                int Total = Integer.parseInt(rs.getString("product_rate")) * Integer.parseInt(rs.getString("cart_quantity"));
+                                out.println(Total);
+                              
+                              %></td>
                      </tr>
                      <%
                  }
                      %>      
                  </table><br>
-        </form>
-             </div> 
     </body>
 </html>
 <%@include file="Foot.jsp" %>

@@ -81,10 +81,14 @@
 									</ul>
 								</li>
                                                             <li><a href="Login.jsp">Login</a></li>
+                                                            <li>
+						<a class="shopping-cart" href="Cart.jsp"><i class="fas fa-shopping-cart"></i></a>
+                                                <a class="mobile-hide search-bar-icon" href="Search.jsp"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+                                                </li>
 							</ul>
 						</nav>
-						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-						<div class="mobile-menu"></div>
+                                                
 						<!-- menu end -->
 					</div>
 				</div>

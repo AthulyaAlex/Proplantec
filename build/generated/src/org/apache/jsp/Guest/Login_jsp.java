@@ -162,6 +162,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/aa.jpg\");\n");
       out.write("                background-repeat: no-repeat;\n");
       out.write("                background-size: cover;\n");
+      out.write("                background-image: center;\n");
       out.write("            }\n");
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");

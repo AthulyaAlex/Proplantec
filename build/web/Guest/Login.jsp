@@ -17,6 +17,7 @@
                 background-image: url("../Assets/Templates/Main/assets/img/aa.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-image: center;
             }
             .text-box {
                 background-color: transparent;

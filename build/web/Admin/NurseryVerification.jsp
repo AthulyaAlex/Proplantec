@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br><br><br><br><br>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br><br><br><br>
         <title>Nursery Verification</title>
         <style>
             .bg-img {
@@ -38,7 +38,7 @@
 
         %>
         <div align="center" class="bg-img">
-            <div style="background-color: #000000b8 !important;">
+            <div style="background-color: #000000b8 !important;"><br><br>
                 <h3 style="color: white;">New Nursery</h3>
             <table border="2" align="center" cellpadding="10" style="color: white">
                 <tr>
@@ -71,7 +71,7 @@
                 %>
 
             </table>
-
+                <br>
             <h3 style="color: white;">Accepted Nursery</h3>
             <table border="2" align="center" cellpadding="10" style="color: white">
                 <tr>
@@ -103,7 +103,7 @@
                 %>
 
             </table>
-
+                <br>
             <h3 style="color: white;">Rejected Nursery</h3>
             <table border="2" align="center"cellpadding="10" style="color: white">
                 <tr>
@@ -133,7 +133,7 @@
                     <%
                         }
                     %>
-            </table>
+            </table><br><br>
         </div>
             </div>
     </body>
