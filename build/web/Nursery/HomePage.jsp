@@ -33,7 +33,7 @@
         <a href="ChangePassword.jsp">CHANGE PASSWORD</a><br>
         <a href="Product.jsp">ADD IMAGES</a><br>
         <a href="Productdisplay.jsp">UPLOADED IMAGES</a><br>
-        <a href="Bookings.jsp">ORDERS</a>
+        <a href="BookingsDisplay.jsp">ORDERS</a>
         <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>
            
     </body>

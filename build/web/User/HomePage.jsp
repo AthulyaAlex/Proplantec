@@ -36,7 +36,7 @@
         <a href="EditProfile.jsp">EDIT PROFILE</a><br>
         <a href="ChangePassword.jsp">CHANGE PASSWORD</a><br>
         <a href="Search.jsp">SEARCH</a><br>
-        <a href="MyBooking.jsp">MY ORDERS</a><br>
+        <a href="MyBookingsDisplay.jsp">MY ORDERS</a><br>
         <a href="Cart.jsp">MY CART</a><br>
         <a href="Feedback.jsp">FEEDBACK</a><br>
         <a href="Complaint.jsp">COMPLAINT</a><br>

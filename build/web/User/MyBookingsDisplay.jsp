@@ -1,8 +1,3 @@
-<%-- 
-    Document   : MyBookingsDisplay
-    Created on : 19 May, 2024, 11:01:34 PM
-    Author     : HP
---%>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%@page  import="java.sql.ResultSet" %>
 <%@include file="Head.jsp" %>
@@ -43,18 +38,18 @@
                     <th>Product Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
-                    <th>Action</th>
-                    
+                    <th>Status</th>
+                   
                 </tr>
-        <%
-                 String selqry ="select * from tbl_cart c inner join tbl_product p on p.product_id=c.product_id";  
-                 ResultSet rs = con.selectCommand(selqry);
-                 int i=0;
-                 while(rs.next())
-                 {
-                     i++;
-                     %>
-                     <tr>
+                <%
+                    String selbook="select * from tbl_booking b inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_user u on u.user_id=b.user_id inner join tbl_product p on p.product_id=c.product_id where u.user_id='" + session.getAttribute("uid") + "' and booking_status>0 and payment_status='1'";
+                    ResultSet rs = con.selectCommand(selbook);
+                    int i = 0;
+                    while (rs.next()) {
+                         i++;
+                           
+                %>
+                <tr>
                        
                         <td><%=i%></td>
                          <td><%=rs.getString("product_name")%></td>
@@ -66,7 +61,21 @@
                                 out.println(Total);
                               
                               %></td>
-                     </tr>
+                         <td> <%
+                    if (rs.getString("booking_status").equals("1") && rs.getString("cart_status").equals("1")) {
+                        out.println("Payment Completed ,Package on Waiting List");
+                    } else if (rs.getString("cart_status").equals("2") && rs.getString("booking_status").equals("1")) {
+                        out.println("Product Packed");
+                    } else if (rs.getString("cart_status").equals("3") && rs.getString("booking_status").equals("1")) {
+                     out.println("Product Shipped");
+                    } else if (rs.getString("cart_status").equals("4") && rs.getString("booking_status").equals("1")) {
+                        %>
+                        Product Delivered <a href="Review.jsp?id=<%=rs.getString("product_id")%>">Review</a>
+                        <%
+                        }
+
+                    %></td>
+                </tr>
                      <%
                  }
                      %>      

@@ -5,7 +5,7 @@
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
-<%@include file="Head.jsp" %><br><br>
+<%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

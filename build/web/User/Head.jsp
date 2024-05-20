@@ -39,7 +39,7 @@
         
         <style>
             .top-header-area {
-                background-color: black;
+                background-color: transparent;
             }
         </style>
 

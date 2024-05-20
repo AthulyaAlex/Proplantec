@@ -1,6 +1,6 @@
 
-<jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
-<%@page  import="java.sql.ResultSet" %>
+<jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
+<%@page import="java.sql.ResultSet"%>
 <%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,13 +33,13 @@
                 <h2 style="color: white">Orders</h2><br>
                 <tr>
                     <th>Sl.no</th>
-                    <th>Product Name</th>
-                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Products</th>
                     <th>Action</th>
                 </tr>
                 <%
-                 String selqry ="select * from tbl_cart c inner join tbl_product p on p.product_id=c.product_id";  
-                 ResultSet rs = con.selectCommand(selqry);
+                 String selbook="select * from tbl_booking where _id= '" + session.getAttribute("uid") +"' ";
+                 ResultSet rs = con.selectCommand(selbook);
                  int i=0;
                  while(rs.next())
                  {
@@ -48,9 +48,12 @@
                      <tr>
                        
                         <td><%=i%></td>
-                         <td><%=rs.getString("product_name")%></td>
-                         <td><%=rs.getString("cart_quantity")%></td>
-                     </tr>     
+                         <td><%=rs.getString("booking_total")%></td>
+                         <td><a href="BookingsDisplay.jsp">View Product</a></td>
+                     </tr>  
+                   <%
+                    } 
+                    %>   
                  </table>
     </body>
 </html>
