@@ -10,20 +10,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Complaint</title>
     
             <style>
-            .bg-img {
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: center;
+            }*/
+             body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
             }
             .text-box {
                 background-color: transparent;
                 width: 215px;
                 color:gray;
+            }
+            
+            input::reset {
+                    width: 40%;
+                    background-color: #096;
+                    color: white;
+                    padding: 15px;
+                    margin: 4px 0;
+                    border: none;
+                    border-radius: 4px !important;
+                    cursor: pointer;
             }
             </style>
     </head>
@@ -74,7 +91,7 @@
     %>
         
         <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
+                <div style="background-color:#26404387;">
         <form method="post">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
@@ -108,10 +125,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset"</td>
+                    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset" class="btn" ></td>
                 </tr>
             </table>
-        </form>
+       
                         <table border="1" align="center">
             <tr>
                 <td>Sl.No</td>
@@ -147,3 +164,6 @@
     </body>
 </html>
 <%@include file="Foot.jsp" %>
+        </div>
+                </div>
+        </div>

@@ -39,7 +39,7 @@
         
         <style>
             .top-header-area {
-                background-color: black;
+                background-color: transparent;
             }
         </style>
 
@@ -71,16 +71,36 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-                                                            <li class="current-list-item"><a href="#">Home</a></li>
-                                                            <li><a href="about.html">About</a></li> 
-                                                            <li><a href="shop.html">Sign Up</a>
+                                                            <li class="current-list-item"><a href="../index.html">Home</a></li>
+                                                            <li><a href="">Verifications</a>
 									<ul class="sub-menu">
-										<li><a href="Guest/User.jsp">Customer</a></li>
-                                                                                <li><a href="Guest/NurseryRegistration.jsp">Seller</a></li>
-                                                                                <li><a href="Guest/AgentRegistration.jsp">Agent</a></li>
-									</ul>
+										<li><a href="AgentVerification.jsp">Agent</a></li>
+                                                                                <li><a href="NurseryVerification.jsp">Nursery</a></li>
+                                                                        </ul>
 								</li>
-                                                            <li><a href="Login.jsp">Login</a></li>
+                                                            <li><a href="">Administrations</a>
+									<ul class="sub-menu">
+										<li><a href="Location.jsp">Location</a></li>
+                                                                                <li><a href="LocalPlace.jsp">Local Place</a></li>
+                                                                                <li><a href="Category.jsp">Category</a></li>
+                                                                                <li><a href="subcategory.jsp">Sub Category</a></li>
+                                                                                <li><a href="Assign.jsp">Assigning Agency</a></li>
+                                                                                <li><a href="ChangePassword.jsp">Change Password</a></li>
+                                                                        </ul>
+								</li>   
+                                                                <li><a href="">Availables</a>
+									<ul class="sub-menu">
+										<li><a href="AgencyList.jsp">Available Agency</a></li>
+                                                                                <li><a href="NurseryList.jsp">Available Nursery</a></li>
+                                                                        </ul>
+								</li>
+                                                                <li><a href="">Complaints</a>
+									<ul class="sub-menu">
+                                                                                <li><a href="ViewComplaint.jsp">View Complaint</a></li>
+										<li><a href="ComplaintReply.jsp">Complaint Reply</a></li>
+                                                                        </ul>
+								</li>
+                                                           
 							</ul>
 						</nav>
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>

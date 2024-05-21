@@ -61,13 +61,13 @@ public final class ComplaintStatus_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h1 align=\"center\">User Status </h1>\n");
+      out.write("        <h1 align=\"center\">User Complaint Status </h1>\n");
       out.write("        <table border=\"1\" align=\"center\">\n");
       out.write("            <tr>\n");
       out.write("                <td>Sl.No</td>\n");
       out.write("                <td>Date</td>\n");
       out.write("                <td>Complaint content</td>\n");
-      out.write("                <td>Reply</td>\n");
+      out.write("                <td>Status</td>\n");
       out.write("            </tr>\n");
       out.write("            ");
  int i = 0;
@@ -90,11 +90,11 @@ public final class ComplaintStatus_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                <td>\n");
       out.write("               ");
 
-                    if(res.getString("complaint_status").equals("0"))
+                    if(res.getInt("complaint_status")=='0')
                     {
                         out.print("Pending");
                     }
-                    if(res.getString("complaint_status").equals("1"))
+                    if(res.getInt("complaint_status")=='1')
                     {
                         out.print(res.getString("complaint_reply"));
                     }
@@ -106,6 +106,10 @@ public final class ComplaintStatus_jsp extends org.apache.jasper.runtime.HttpJsp
 
                 }
             
+      out.write("\n");
+      out.write("        </table>\n");
+      out.write("    </body>\n");
+      out.write("</html>   ");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

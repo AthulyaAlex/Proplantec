@@ -97,7 +97,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        \n");
       out.write("        <style>\n");
       out.write("            .top-header-area {\n");
-      out.write("                background-color: black;\n");
+      out.write("                background-color: transparent;\n");
       out.write("            }\n");
       out.write("        </style>\n");
       out.write("\n");
@@ -155,11 +155,11 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><br><br><br><br>\n");
+      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Login</title>\n");
       out.write("            <style>\n");
       out.write("            .bg-img {\n");
-      out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/aa.jpg\");\n");
+      out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/hero-bg.jpg\");\n");
       out.write("                background-repeat: no-repeat;\n");
       out.write("                background-size: cover;\n");
       out.write("                background-image: center;\n");
@@ -258,7 +258,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </body>\n");
       out.write("   \n");
       out.write("</html>\n");
-      out.write("<br><br><br><br><br><br><br><br><br><br><br>\n");
+      out.write("<br><br><br><br><br><br><br><br><br><br><br><br><br>\n");
       out.write("<!-- footer -->\n");
       out.write("\t<div class=\"footer-area\">\n");
       out.write("\t\t<div class=\"container\">\n");

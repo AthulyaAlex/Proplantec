@@ -6,17 +6,26 @@
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
 <%@include file="Head.jsp"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%><br><br>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Home Page</title>
         <style>
-            .bg-img {
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
+            }
+            .font{
+                color: white;
             }
             
         </style>
@@ -24,11 +33,12 @@
     
     <body>
          <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
+                <div style="background-color: #26404387;">
                  <br><br><br><br><br><br><br>
-            
-        <h1 class="banner">Hello<%=session.getAttribute("aname")%></h1>
-        <a href="ChangePassword.jsp" style="color: white;">CHANGE PASSWORD</a>
+          <div>  
+        <h1  class="font" >Hello<%=session.getAttribute("aname")%></h1>
+          </div>
+                
         <%
          
           String s="select sum(booking_total) as amount from tbl_booking";
@@ -39,10 +49,10 @@
          %>
          <br>
          <h3 style="color:white;">COMMISSION : <%out.println(perc);%></h3>
-         <a href="ViewComplaint.jsp" style="color: white;">COMPLAINTS</a><br>
-         <a href="Assign.jsp" style="color: white;">ASSIGN BOOKING</a>
+         
          
     </body>
 </html>
 <br><br><br><br><br><br><br><br>
+                </div>
 <%@include file="Foot.jsp"%>

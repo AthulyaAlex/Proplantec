@@ -61,7 +61,7 @@
 							<ul>
 								<li class="current-list-item"><a href="#">Home</a></li>
                                                                 <li><a href="about.html">About</a></li> 
-                                                                <li><a href="shop.html">Sign Up</a>
+                                                                <li><a href="">Sign Up</a>
 									<ul class="sub-menu">
 										<li><a href="Guest/User.jsp">Customer</a></li>
                                                                                 <li><a href="Guest/NurseryRegistration.jsp">Seller</a></li>
@@ -72,8 +72,8 @@
                                                                 <li><a href="Guest/Login.jsp">Login</a></li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="User/Search.jsp"><i class="fas fa-search"></i></a>
+										
+										<a class="mobile-hide search-bar-icon" href="Guest/GuestSearch.jsp"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
 							</ul>
@@ -117,8 +117,9 @@
 							<p class="subtitle">Greener homes</p>
 							<h1>Where Nature Meets Nuture</h1>
 							<div class="hero-btns">
-								<a href="shop.html" class="boxed-btn">Plant Collection</a>
-								<a href="contact.html" class="bordered-btn">Contact Us</a>
+								
+								<a href="#cont" class="boxed-btn">Contact Us</a>
+                                                                
 							</div>
 						</div>
 					</div>
@@ -192,7 +193,7 @@
 						</div>
 						<h3>Jasmine</h3>
 						<p class="product-price"><span>Per plant</span> Rs 40</p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 text-center">
@@ -202,7 +203,7 @@
 						</div>
 						<h3>Lychee</h3>
 						<p class="product-price"><span>Per Plant</span> Rs 100 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
@@ -212,7 +213,7 @@
 						</div>
 						<h3>Violet Orchid</h3>
 						<p class="product-price"><span>Per Plant</span> Rs 200</p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						
 					</div>
 				</div>
 			</div>
@@ -220,36 +221,7 @@
 	</div>
 	<!-- end product section -->
 
-	<!-- cart banner section -->
-	<section class="cart-banner pt-100 pb-100">
-    	<div class="container">
-        	<div class="row clearfix">
-            	<!--Image Column-->
-            	<div class="image-column col-lg-6">
-                	<div class="image">
-                    	<div class="price-box">
-                        	<div class="inner-price">
-                                <span class="price">
-                                    <strong>30%</strong> <br> off per plant
-                                </span>
-                            </div>
-                        </div>
-                            <img src="Assets/Templates/Main/assets/img/a.jpg" width="600" height="300 " alt="">
-                    </div>
-                </div>
-                <!--Content Column-->
-                <div class="content-column col-lg-6">
-					<h3><span class="orange-text">Deal</span> of the month</h3>
-                    <h4> Home DEcor Cactus</h4>
-                    <div class="text">A cactus is a kind of a plant adapted to hot, dry climates Plants which live this kind of life-style are called xerophytes. Most are succulents, which store water.</div>
-                    <!--Countdown Timer-->
-                    <div class="time-counter"><div class="time-countdown clearfix" data-countdown="2024/3S/01"><div class="counter-column"><div class="inner"><span class="count">00</span>Days</div></div> <div class="counter-column"><div class="inner"><span class="count">00</span>Hours</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Mins</div></div>  <div class="counter-column"><div class="inner"><span class="count">00</span>Secs</div></div></div></div>
-                	<a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- end cart banner section -->
+	
 
 	<!-- testimonail-section -->
 	<div class="testimonail-section mt-150 mb-150">
@@ -334,7 +306,7 @@
     	<div class="container">
             <h3>December sale is on! <br> with big <span class="orange-text">Discount...</span></h3>
             <div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
-            <a href="shop.html" class="cart-btn btn-lg">Shop Now</a>
+            
           
         </div>
     </section>
@@ -352,8 +324,8 @@
                                                 <p>we're passionate about bringing nature's beauty to your doorstep. With our convenient online platform, we provide easy access to a wide selection of premium nursery plants and plant supplies."</p>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box get-in-touch">
+				<div class="col-lg-3 col-md-6" id="cont">
+                                    <div class="footer-box get-in-touch"><a href=""></a>
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
 							<li>Vazhakulam,Kerala</li>
@@ -369,7 +341,7 @@
 							<li><a href="index.html">Home</a></li>
 							<li><a href="about.html">About</a></li>
                                                         <li><a href="Guest/NurseryList.jsp">Available Nursery</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							
 						</ul>
 					</div>
 				</div>
@@ -410,7 +382,43 @@
 		</div>
 	</div>
 	<!-- end copyright -->
-	
+        
+        <script>
+        window.onload = function() {
+            function updateTime() {
+                const now = new Date();
+                const days = String(now.getDate()).padStart(2, '0');
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+
+                console.log("Updating time:", days, hours, minutes, seconds);
+
+                const daysElement = document.getElementById('days');
+                const hoursElement = document.getElementById('hours');
+                const minutesElement = document.getElementById('minutes');
+                const secondsElement = document.getElementById('seconds');
+
+                console.log("Elements:", daysElement, hoursElement, minutesElement, secondsElement);
+
+                if (daysElement && hoursElement && minutesElement && secondsElement) {
+                    daysElement.textContent = days;
+                    hoursElement.textContent = hours;
+                    minutesElement.textContent = minutes;
+                    secondsElement.textContent = seconds;
+                } else {
+                    console.error("One or more elements not found!");
+                }
+            }
+
+            // Initial call with a small delay
+            setTimeout(() => {
+                updateTime();
+                // Update the time every second
+                setInterval(updateTime, 1000);
+            }, 1000); // 500 milliseconds delay
+        };
+    </script>
 	<!-- jquery -->
 	<script src="Assets/Templates/Main/assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
@@ -431,6 +439,9 @@
 	<script src="Assets/Templates/Main/assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="Assets/Templates/Main/assets/js/main.js"></script>
+        
+        
+         
 
 </body>
 </html>

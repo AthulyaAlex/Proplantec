@@ -19,10 +19,10 @@
             <tr>
                 <td>Sl.No</td>
                 <td>User Name</td> 
-              
                 <td>Date</td>
                 <td>Complaint content</td>
                 <td>Action</td>
+                <td>Status</td>
             </tr>
             <% int i = 0;
                 String seleQry = "select * from tbl_complaint f inner join tbl_user u on f.user_id=u.user_id";
@@ -33,16 +33,28 @@
             <tr>
                 <td align="center"><%=i%></td>
                 <td><%=res.getString("user_name")%></td>
-               
                 <td><%=res.getString("complaint_date")%></td>
                 <td><%=res.getString("complaint_content")%></td>
-                <td><a href="ComplaintReply.jsp?cid=<%=res.getString("Complaint_id")%>">Reply</a><br></td>
+                <td><a href="ComplaintReply.jsp?cid=<%=res.getString("complaint_id")%>">Reply</a><br></td>
+                <td>
+                    <%
+                    if(res.getString("complaint_status").equals("0"))
+                    {
+                        out.print("Reply Pending");
+                    }
+                    if(res.getString("complaint_status").equals("1"))
+                    {
+                        out.print("Replied");
+                    }
+                    
+                    %>
+                </td>
             </tr>
             <%
                 }
             %>
         </table>
-                <h1 align="center">Agent Complaint </h1>
+                <h1 align="center">Agency Complaint </h1>
         <table border="1" align="center">
             <tr>
                 <td>Sl.No</td>
@@ -50,9 +62,10 @@
                 <td>Date</td>
                 <td>Complaint content</td>
                 <td>Action</td>
+                <td>Status</td>
             </tr>
             <% int j = 0;
-                String selQry = "select * from tbl_complaint f inner join tbl_agenct u on f.agenct_id=u.agent_id";
+                String selQry = "select * from tbl_complaint f inner join tbl_agent u on f.agent_id=u.agent_id";
                 ResultSet rs = con.selectCommand(selQry);
                 while (rs.next()) {
                     j++;
@@ -62,7 +75,20 @@
                 <td><%=rs.getString("agent_name")%></td>
                 <td><%=rs.getString("complaint_date")%></td>
                 <td><%=rs.getString("complaint_content")%></td>
-                <td><a href="ComplaintReply.jsp?cid=<%=rs.getString("Complaint_id")%>">Reply</a><br></td>
+                <td><a href="ComplaintReply.jsp?cid=<%=rs.getString("complaint_id")%>">Reply</a><br></td>
+                <td>
+                    <%
+                    if(rs.getString("complaint_status").equals("0"))
+                    {
+                        out.print("Reply Pending");
+                    }
+                    if(rs.getString("complaint_status").equals("1"))
+                    {
+                        out.print("Replied");
+                    }
+                    
+                    %>
+                </td>
             </tr>
             <%
                 }

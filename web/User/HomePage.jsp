@@ -40,6 +40,7 @@
         <a href="Cart.jsp">MY CART</a><br>
         <a href="Feedback.jsp">FEEDBACK</a><br>
         <a href="Complaint.jsp">COMPLAINT</a><br>
+        <a href="ComplaintStatus.jsp">VIEW COMPLAINT</a><br>
         </body>
 </html>
 <%@include file="Foot.jsp" %>

@@ -90,10 +90,20 @@ public final class AgencyList_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"main\">\n");
       out.write("         ");
  
-                if(request.getParameter("bid")!=null)
+                if(request.getParameter("aid")!=null)
                 {
-                    String insqry="insert into tbl_agent(agent_id,booking_id)values('"+request.getParameter("agent_id")+"')";
-                    con.executeCommand(insqry);
+                    String insqry="insert into tbl_assignbooking(agent_id,booking_id)values('"+request.getParameter("aid")+"','"+request.getParameter("bid")+"')";
+                    if(con.executeCommand(insqry))
+                    {
+                        
+      out.write("\n");
+      out.write("                        <script>\n");
+      out.write("                            alert(\"Assigned..\")\n");
+      out.write("                            window.location = \"Assign.jsp\"\n");
+      out.write("                        </script>\n");
+      out.write("            ");
+
+                    }
                 }
             String selnur="select * from tbl_agent a inner join tbl_location l on l.location_id=a.location_id where agent_status='1'";
             ResultSet rs = con.selectCommand(selnur);
@@ -114,7 +124,11 @@ public final class AgencyList_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"cont\"><div>Contact</div><div>");
       out.print(rs.getString("agent_contact"));
       out.write("</div></div>\n");
-      out.write("                    <div><a href=\"AgencyList.jsp?bid\">ASSIGN</a></div>\n");
+      out.write("                    <div><a href=\"AgencyList.jsp?aid=");
+      out.print(rs.getString("agent_id"));
+      out.write("&bid=");
+      out.print(request.getParameter("bid"));
+      out.write("\">ASSIGN</a></div>\n");
       out.write("                </div>\n");
       out.write("                ");
 

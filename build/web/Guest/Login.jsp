@@ -10,14 +10,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br><br><br>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
             <style>
-            .bg-img {
-                background-image: url("../Assets/Templates/Main/assets/img/aa.jpg");
+/*            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: center;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
             }
             .text-box {
                 background-color: transparent;
@@ -28,7 +34,7 @@
     </head>
     <body>
         <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
+                <div style="background-color:#26404387;">
          
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
@@ -109,5 +115,5 @@
     </body>
    
 </html>
-<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 <%@include file="Foot.jsp" %>

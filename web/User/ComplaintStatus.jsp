@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1 align="center">User Status </h1>
+        <h1 align="center">User Complaint Status </h1>
         <table border="1" align="center">
             <tr>
                 <td>Sl.No</td>
@@ -32,18 +32,21 @@
                 <td><%=res.getString("complaint_date")%></td>
                 <td><%=res.getString("complaint_content")%></td>
                 <td>
-               <%
+              <%
                     if(res.getString("complaint_status").equals("0"))
                     {
-                        out.print("Pending");
+                        out.print("Reply Pending");
                     }
                     if(res.getString("complaint_status").equals("1"))
                     {
                         out.print(res.getString("complaint_reply"));
                     }
                     
-                %>
+                    %>
             </tr>
             <%
                 }
             %>
+        </table>
+    </body>
+</html>   

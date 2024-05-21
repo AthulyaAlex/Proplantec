@@ -30,6 +30,8 @@
        <h1 style="color: white;">Hello<%=session.getAttribute("gname")%></h1>
        <a href="MyProfile.jsp">PROFILE</a><br>
        <a href="EditProfile.jsp">EDIT PROFILE</a><br>
+       <a href="AgencyComplaint.jsp">COMPLAINTS</a><br>
+       <a href="AgencyComplaintStatus.jsp">COMPLAINT STATUS</a><br>
        <a href="ChangePassword.jsp">CHANGE PASSWORD</a>
        <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>
           
