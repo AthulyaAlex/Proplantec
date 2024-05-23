@@ -10,13 +10,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>User Home Page</title>
-        <title>Login</title>
+        
             <style>
-            .bg-img {
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: center;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
             }
             .text-box {
                 background-color: transparent;
@@ -27,20 +33,20 @@
     </head>
     <body>
         <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
+                <div style="background-color:  #26404387;">
                     <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
+                     <div>
                      <h1 style="color: white";>Hello<%=session.getAttribute("uname")%></h1>
+                     </div>
         <a href="MyProfile.jsp">PROFILE</a><br>
-        <a href="EditProfile.jsp">EDIT PROFILE</a><br>
-        <a href="ChangePassword.jsp">CHANGE PASSWORD</a><br>
-        <a href="Search.jsp">SEARCH</a><br>
-        <a href="MyBookingsDisplay.jsp">MY ORDERS</a><br>
-        <a href="Cart.jsp">MY CART</a><br>
-        <a href="Feedback.jsp">FEEDBACK</a><br>
-        <a href="Complaint.jsp">COMPLAINT</a><br>
-        <a href="ComplaintStatus.jsp">VIEW COMPLAINT</a><br>
-        </body>
+        <a href="Complaint.jsp">COMPLAINT NURSERY</a><br>
+        <a href="ComplaintStatus.jsp">NURSERY COMPLAINT STATUS</a><br>
+        <a href="ComplaintAgency.jsp">COMPLAINT AGENT</a><br>
+        <a href="ComplaintAgencyStatus.jsp">AGENT COMPLAINT STATUS</a><br>
+        </body> <br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br>
 </html>
+</div>
+                </div>
 <%@include file="Foot.jsp" %>

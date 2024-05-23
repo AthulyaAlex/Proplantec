@@ -10,13 +10,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br><br><br><br>
-        <title>Nursery Verification</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
-            .bg-img {
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') repeat center center/cover;
+                min-height: 800px
             }
         </style>
     </head>
@@ -38,8 +43,8 @@
 
         %>
         <div align="center" class="bg-img">
-            <div style="background-color: #000000b8 !important;"><br><br>
-                <h3 style="color: white;">New Nursery</h3>
+            <div style="background-color:#26404387;"><br><br>
+                <br><br>   <h3 style="color: white;">New Nursery</h3>
             <table border="2" align="center" cellpadding="10" style="color: white">
                 <tr>
                     <th>Sl.no</th>

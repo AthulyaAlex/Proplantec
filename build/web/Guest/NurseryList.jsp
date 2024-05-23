@@ -5,6 +5,7 @@
 --%>
 <jsp:useBean class="DB.ConnectionClass" id="con"> </jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
+<%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,7 +26,7 @@
                     align-items: center;
                     gap: 7px;
                     padding: 22px;
-                    background-color: #E1F5FE;
+                    background-color:  #e1f5fe54;
                     border-radius: 17px;
             }
             .main {
@@ -35,9 +36,24 @@
                     align-items: center;
                     gap: 2rem;
             }
+/*             .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
+            }
+            .font{
+                color: white;
+            }
         </style>
     </head>
-    <body>
+     
+    <body><br><br><br><br><br><br><br>
         <div class="main">
         <%
             String selnur="select * from tbl_nursery n inner join tbl_location l on l.location_id=n.location_id where nursery_status='1'";
@@ -48,9 +64,11 @@
                 i++;
                 %>
                 <div class="sub">
-                    <div><img src="../Assets/Files/Nurseryphoto/<%=rs.getString("nursery_logo")%>" height="70" width="70"></div>
+                    <div class="font">
+                    <div align="center"><img src="../Assets/Files/Nurseryphoto/<%=rs.getString("nursery_logo")%>" height="70" width="70"></div>
                     <div class="cont"><div>Name</div><div><%=rs.getString("nursery_name")%></div></div>
                     <div class="cont"><div>Contact</div><div><%=rs.getString("nursery_contact")%></div></div>
+                </div>
                 </div>
                 <%
             }    
@@ -58,5 +76,6 @@
        
         </div><br>
         
-    </body>
+    </body><br><br><br><br><br><br><br>
 </html>
+<%@include file="Foot.jsp" %>

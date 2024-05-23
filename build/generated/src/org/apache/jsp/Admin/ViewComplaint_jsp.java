@@ -12,6 +12,12 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
 
   private static java.util.List<String> _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants.add("/Admin/Head.jsp");
+    _jspx_dependants.add("/Admin/Foot.jsp");
+  }
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
@@ -52,7 +58,124 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
           _jspx_page_context.setAttribute("con", con, PageContext.PAGE_SCOPE);
         }
       }
+      out.write('\n');
+      out.write('\n');
       out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html lang=\"en\">\n");
+      out.write("<head>\n");
+      out.write("\t<meta charset=\"UTF-8\">\n");
+      out.write("\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
+      out.write("\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
+      out.write("\t<meta name=\"description\" content=\"Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/\">\n");
+      out.write("\n");
+      out.write("\t<!-- title -->\n");
+      out.write("\t<title>ProPlantec</title>\n");
+      out.write("\n");
+      out.write("\t<!-- favicon -->\n");
+      out.write("\t<link rel=\"shortcut icon\" type=\"image/png\" href=\"../Assets/Templates/Main/assets/img/favicon.png\">\n");
+      out.write("\t<!-- google font -->\n");
+      out.write("\t<link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,400,700\" rel=\"stylesheet\">\n");
+      out.write("\t<link href=\"https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap\" rel=\"stylesheet\">\n");
+      out.write("\t<!-- fontawesome -->\n");
+      out.write("        <link rel=\"stylesheet\" href=\"../Assets/Templates/Main/assets/css/all.min.css\">\n");
+      out.write("\t<!-- bootstrap -->\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"../Assets/Templates/Main/assets/bootstrap/css/bootstrap.min.css\">\n");
+      out.write("\t<!-- owl carousel -->\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"../Assets/Templates/Main/assets/css/owl.carousel.css\">\n");
+      out.write("\t<!-- magnific popup -->\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"../Assets/Templates/Main/assets/css/magnific-popup.css\">\n");
+      out.write("\t<!-- animate css -->\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"../Assets/Templates/Main/assets/css/animate.css\">\n");
+      out.write("\t<!-- mean menu css -->\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"../Assets/Templates/Main/assets/css/meanmenu.min.css\">\n");
+      out.write("\t<!-- main style -->\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"../Assets/Templates/Main/assets/css/main.css\">\n");
+      out.write("\t<!-- responsive -->\n");
+      out.write("\t<link rel=\"stylesheet\" href=\"../Assets/Templates/Main/assets/css/responsive.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"../Assets/Templates/form.css\">\n");
+      out.write("        \n");
+      out.write("        <style>\n");
+      out.write("            .top-header-area {\n");
+      out.write("                background-color: transparent;\n");
+      out.write("            }\n");
+      out.write("        </style>\n");
+      out.write("\n");
+      out.write("</head>\n");
+      out.write("<body>\n");
+      out.write("\t\n");
+      out.write("\t<!--PreLoader-->\n");
+      out.write("    <div class=\"loader\">\n");
+      out.write("        <div class=\"loader-inner\">\n");
+      out.write("            <div class=\"circle\"></div>\n");
+      out.write("        </div>\n");
+      out.write("    </div>\n");
+      out.write("    <!--PreLoader Ends-->\n");
+      out.write("\t\n");
+      out.write("\t<!-- header -->\n");
+      out.write("\t<div class=\"top-header-area\" id=\"sticker\">\n");
+      out.write("\t\t<div class=\"container\">\n");
+      out.write("\t\t\t<div class=\"row\">\n");
+      out.write("\t\t\t\t<div class=\"col-lg-12 col-sm-12 text-center\">\n");
+      out.write("\t\t\t\t\t<div class=\"main-menu-wrap\">\n");
+      out.write("\t\t\t\t\t\t<!-- logo -->\n");
+      out.write("\t\t\t\t\t\t<div class=\"site-logo\">\n");
+      out.write("\t\t\t\t\t\t\t<a href=\"../index.html\">\n");
+      out.write("                                                            <img src=\"../Assets/Templates/Main/assets/img/logo.png\" width=\"800\" alt=\"\">\n");
+      out.write("\t\t\t\t\t\t\t</a>\n");
+      out.write("\t\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t\t\t<!-- logo -->\n");
+      out.write("\n");
+      out.write("\t\t\t\t\t\t<!-- menu start -->\n");
+      out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
+      out.write("\t\t\t\t\t\t\t<ul>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li><a href=\"\">View Profile</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"../DeliveryAgency/MyProfile.jsp\">Agency</a></li>\n");
+      out.write("                                                                                <li><a href=\"../Nursery/MyProfile.jsp\">Nursery</a></li>\n");
+      out.write("                                                                        </ul>\n");
+      out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                            <li><a href=\"\">Verifications</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgentVerification.jsp\">Agent</a></li>\n");
+      out.write("                                                                                <li><a href=\"NurseryVerification.jsp\">Nursery</a></li>\n");
+      out.write("                                                                        </ul>\n");
+      out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                            <li><a href=\"\">Administrations</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"Location.jsp\">Location</a></li>\n");
+      out.write("                                                                                <li><a href=\"LocalPlace.jsp\">Local Place</a></li>\n");
+      out.write("                                                                                <li><a href=\"Category.jsp\">Category</a></li>\n");
+      out.write("                                                                                <li><a href=\"Subcategory.jsp\">Sub Category</a></li>\n");
+      out.write("                                                                                <li><a href=\"Assign.jsp\">Assigning Agency</a></li>\n");
+      out.write("                                                                                <li><a href=\"ChangePassword.jsp\">Change Password</a></li>\n");
+      out.write("                                                                        </ul>\n");
+      out.write("\t\t\t\t\t\t\t\t</li>   \n");
+      out.write("                                                                <li><a href=\"\">Availables</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgencyList.jsp\">Available Agency</a></li>\n");
+      out.write("                                                                                <li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
+      out.write("                                                                        </ul>\n");
+      out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                                <li><a href=\"\">Complaints</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
+      out.write("                                                                                <li><a href=\"ViewComplaint.jsp\">View Complaint</a></li>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"ComplaintReply.jsp\">Complaint Reply</a></li>\n");
+      out.write("                                                                        </ul>\n");
+      out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                           \n");
+      out.write("\t\t\t\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t\t\t</nav>\n");
+      out.write("\t\t\t\t\t\t<a class=\"mobile-show search-bar-icon\" href=\"#\"><i class=\"fas fa-search\"></i></a>\n");
+      out.write("\t\t\t\t\t\t<div class=\"mobile-menu\"></div>\n");
+      out.write("\t\t\t\t\t\t<!-- menu end -->\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t</div>\n");
+      out.write("\t\t</div>\n");
+      out.write("\t</div>\n");
+      out.write("\t<!-- end header -->");
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
@@ -60,17 +183,37 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>JSP Page</title>\n");
+      out.write("         <style>\n");
+      out.write("/*            .bg-img {\n");
+      out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/hero-bg.jpg\");\n");
+      out.write("                background-repeat: no-repeat;\n");
+      out.write("                background-size: cover;\n");
+      out.write("                background-position:center;\n");
+      out.write("            }*/\n");
+      out.write("        body {\n");
+      out.write("                margin: 0;\n");
+      out.write("                padding: 0;\n");
+      out.write("                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;\n");
+      out.write("                min-height: 800px\n");
+      out.write("            }\n");
+      out.write("            </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h1 align=\"center\">User Complaint </h1>\n");
+      out.write("        <div class=\"bg-img\">\n");
+      out.write("                <div style=\"background-color: #26404387;\">\n");
+      out.write("        <form method=\"post\">\n");
+      out.write("            <br><br><br><br><br><br><br>\n");
+      out.write("            <div style=\"color:white;font-size: 15px;\">\n");
+      out.write("                 <table align=\"center\" cellpadding=\"10\">\n");
+      out.write("                     <h3 style=\"color: white\"; align=\"center\">User Complaint </h3>\n");
       out.write("        <table border=\"1\" align=\"center\">\n");
       out.write("            <tr>\n");
       out.write("                <td>Sl.No</td>\n");
       out.write("                <td>User Name</td> \n");
-      out.write("              \n");
       out.write("                <td>Date</td>\n");
       out.write("                <td>Complaint content</td>\n");
       out.write("                <td>Action</td>\n");
+      out.write("                <td>Status</td>\n");
       out.write("            </tr>\n");
       out.write("            ");
  int i = 0;
@@ -87,7 +230,6 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                <td>");
       out.print(res.getString("user_name"));
       out.write("</td>\n");
-      out.write("               \n");
       out.write("                <td>");
       out.print(res.getString("complaint_date"));
       out.write("</td>\n");
@@ -95,8 +237,23 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.print(res.getString("complaint_content"));
       out.write("</td>\n");
       out.write("                <td><a href=\"ComplaintReply.jsp?cid=");
-      out.print(res.getString("Complaint_id"));
+      out.print(res.getString("complaint_id"));
       out.write("\">Reply</a><br></td>\n");
+      out.write("                <td>\n");
+      out.write("                    ");
+
+                    if(res.getString("complaint_status").equals("0"))
+                    {
+                        out.print("Reply Pending");
+                    }
+                    if(res.getString("complaint_status").equals("1"))
+                    {
+                        out.print("Replied");
+                    }
+                    
+                    
+      out.write("\n");
+      out.write("                </td>\n");
       out.write("            </tr>\n");
       out.write("            ");
 
@@ -104,7 +261,7 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
             
       out.write("\n");
       out.write("        </table>\n");
-      out.write("                <h1 align=\"center\">Agent Complaint </h1>\n");
+      out.write("                <h3 style=\"color: white\"; align=\"center\">Agency Complaint </h3>\n");
       out.write("        <table border=\"1\" align=\"center\">\n");
       out.write("            <tr>\n");
       out.write("                <td>Sl.No</td>\n");
@@ -112,10 +269,11 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                <td>Date</td>\n");
       out.write("                <td>Complaint content</td>\n");
       out.write("                <td>Action</td>\n");
+      out.write("                <td>Status</td>\n");
       out.write("            </tr>\n");
       out.write("            ");
  int j = 0;
-                String selQry = "select * from tbl_complaint f inner join tbl_agenct u on f.agenct_id=u.agent_id";
+                String selQry = "select * from tbl_complaint f inner join tbl_user u on f.user_id=u.user_id";
                 ResultSet rs = con.selectCommand(selQry);
                 while (rs.next()) {
                     j++;
@@ -135,8 +293,23 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.print(rs.getString("complaint_content"));
       out.write("</td>\n");
       out.write("                <td><a href=\"ComplaintReply.jsp?cid=");
-      out.print(rs.getString("Complaint_id"));
+      out.print(rs.getString("complaint_id"));
       out.write("\">Reply</a><br></td>\n");
+      out.write("                <td>\n");
+      out.write("                    ");
+
+                    if(rs.getString("complaint_status").equals("0"))
+                    {
+                        out.print("Reply Pending");
+                    }
+                    if(rs.getString("complaint_status").equals("1"))
+                    {
+                        out.print("Replied");
+                    }
+                    
+                    
+      out.write("\n");
+      out.write("                </td>\n");
       out.write("            </tr>\n");
       out.write("            ");
 
@@ -145,6 +318,98 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("        </table>\n");
       out.write("    </body>\n");
+      out.write("</html>\n");
+      out.write("<!-- footer -->\n");
+      out.write("\t<div class=\"footer-area\">\n");
+      out.write("\t\t<div class=\"container\">\n");
+      out.write("\t\t\t<div class=\"row\">\n");
+      out.write("\t\t\t\t<div class=\"col-lg-3 col-md-6\">\n");
+      out.write("\t\t\t\t\t<div class=\"footer-box about-widget\">\n");
+      out.write("\t\t\t\t\t\t<h2 class=\"widget-title\">About us</h2>\n");
+      out.write("                                                <p>This platform fosters direct engagement with users through a user-friendly interface.Customers can explore the plant catalog, place orders, and receive timely updates on their purchases.</p>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t\t<div class=\"col-lg-3 col-md-6\">\n");
+      out.write("\t\t\t\t\t<div class=\"footer-box get-in-touch\">\n");
+      out.write("\t\t\t\t\t\t<h2 class=\"widget-title\">Get in Touch</h2>\n");
+      out.write("\t\t\t\t\t\t<ul>\n");
+      out.write("\t\t\t\t\t\t\t<li>Vazhakulam,Kerala</li>\n");
+      out.write("\t\t\t\t\t\t\t<li>proplantec@gmail.com</li>\n");
+      out.write("\t\t\t\t\t\t\t<li>9872315562</li>\n");
+      out.write("\t\t\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t\t<div class=\"col-lg-3 col-md-6\">\n");
+      out.write("\t\t\t\t\t<div class=\"footer-box pages\">\n");
+      out.write("\t\t\t\t\t\t<h2 class=\"widget-title\">Pages</h2>\n");
+      out.write("\t\t\t\t\t\t<ul>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"../index.html\">Home</a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"../about.html\">About</a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
+      out.write("                                                        <li><a href=\"AgencyList.jsp\">Available Agency</a></li>\n");
+      out.write("\t\t\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t\t<div class=\"col-lg-3 col-md-6\">\n");
+      out.write("\t\t\t\t\t<div class=\"footer-box subscribe\">\n");
+      out.write("\t\t\t\t\t\t<h2 class=\"widget-title\">Subscribe</h2>\n");
+      out.write("\t\t\t\t\t\t<p>Subscribe to our mailing list to get the latest updates.</p>\n");
+      out.write("\t\t\t\t\t\t<form action=\"index.html\">\n");
+      out.write("\t\t\t\t\t\t\t<input type=\"email\" placeholder=\"Email\">\n");
+      out.write("\t\t\t\t\t\t\t<button type=\"submit\"><i class=\"fas fa-paper-plane\"></i></button>\n");
+      out.write("\t\t\t\t\t\t</form>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t</div>\n");
+      out.write("\t\t</div>\n");
+      out.write("\t</div>\n");
+      out.write("\t<!-- end footer -->\n");
+      out.write("\t\n");
+      out.write("\t<!-- copyright -->\n");
+      out.write("\t<div class=\"copyright\">\n");
+      out.write("\t\t<div class=\"container\">\n");
+      out.write("\t\t\t<div class=\"row\">\n");
+      out.write("\t\t\t\t<div class=\"col-lg-6 col-md-12\">\n");
+      out.write("\t\t\t\t\t<p>Copyrights &copy; ProPlantec<a href=\"https://imransdesign.com/\"></a>  All Rights Reserved.</p>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t\t<div class=\"col-lg-6 text-right col-md-12\">\n");
+      out.write("\t\t\t\t\t<div class=\"social-icons\">\n");
+      out.write("\t\t\t\t\t\t<ul>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-facebook-f\"></i></a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-twitter\"></i></a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-instagram\"></i></a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-linkedin\"></i></a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-dribbble\"></i></a></li>\n");
+      out.write("\t\t\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t</div>\n");
+      out.write("\t\t</div>\n");
+      out.write("\t</div>\n");
+      out.write("\t<!-- end copyright -->\n");
+      out.write("\t\n");
+      out.write("\t<!-- jquery -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/jquery-1.11.3.min.js\"></script>\n");
+      out.write("\t<!-- bootstrap -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/bootstrap/js/bootstrap.min.js\"></script>\n");
+      out.write("\t<!-- count down -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/jquery.countdown.js\"></script>\n");
+      out.write("\t<!-- isotope -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/jquery.isotope-3.0.6.min.js\"></script>\n");
+      out.write("\t<!-- waypoints -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/waypoints.js\"></script>\n");
+      out.write("\t<!-- owl carousel -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/owl.carousel.min.js\"></script>\n");
+      out.write("\t<!-- magnific popup -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/jquery.magnific-popup.min.js\"></script>\n");
+      out.write("\t<!-- mean menu -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/jquery.meanmenu.min.js\"></script>\n");
+      out.write("\t<!-- sticker js -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/sticker.js\"></script>\n");
+      out.write("\t<!-- main js -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/main.js\"></script>\n");
+      out.write("\n");
+      out.write("</body>\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

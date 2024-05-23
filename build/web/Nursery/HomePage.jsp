@@ -5,17 +5,24 @@
 --%>
 <%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="Head.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <br>   <br>   <br>   <br>   <br>   <br>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <title>Nursery Home Page</title>
         <style>
-            .bg-img {
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: center;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
             }
             .text-box {
                 background-color: transparent;
@@ -26,16 +33,11 @@
     </head>
     <body>
         <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
-        <h1 style="color: white;">Hello<%=session.getAttribute("nname")%></h1>
-        <a href="MyProfile.jsp">PROFILE</a><br>
-        <a href="EditProfile.jsp">EDIT PROFILE</a><br>
-        <a href="ChangePassword.jsp">CHANGE PASSWORD</a><br>
-        <a href="Product.jsp">ADD IMAGES</a><br>
-        <a href="Productdisplay.jsp">UPLOADED IMAGES</a><br>
-        <a href="BookingsDisplay.jsp">ORDERS</a>
-        <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>
-           
-    </body>
-</html>
+                <div style="background-color: #26404387;"><br><br><br><br><br><br><br>
+                    <div>
+                        <h1 style="color: white;">Hello<%=session.getAttribute("nname")%></h1>
+                </div>
+    </body><br><br><br><br><br><br><br><br><br><br>
+</html>         
+</div></div>
 <%@include file="Foot.jsp" %>

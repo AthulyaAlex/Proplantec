@@ -22,8 +22,8 @@
           body {
                 margin: 0;
                 padding: 0;
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/agency.jpg') no-repeat center center/cover;
-                min-height: 800px
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') repeat center center/cover;
+                min-height: 1500px;
             }
         </style>
     </head>
@@ -69,8 +69,8 @@
                     <td><%=i%></td>
                     <td><%=rs.getString("agent_name")%></td>
                     <td><%=rs.getString("agent_contact")%></td>   
-                    <td><img src="../Assets/Files/Agentproof/<%=rs.getString("agent_proof")%>"></td>
-                    <td><img src="../Assets/Files/Agentphoto/<%=rs.getString("agent_photo")%>"></td>
+                    <td><%=rs.getString("agent_proof")%></td>
+                    <td><<%=rs.getString("agent_photo")%></td>
                     <td><%=rs.getString("location_name")%></td>
                     <td><a href="AgentVerification.jsp?aid=<%=rs.getString("agent_id")%>">Accept</a>|
                         <a href="AgentVerification.jsp?rid=<%=rs.getString("agent_id")%>">Reject</a></td>              
@@ -102,8 +102,8 @@
                     <td><%=i1%></td>
                     <td><%=rs1.getString("agent_name")%></td>
                     <td><%=rs1.getString("agent_contact")%></td>   
-                    <td><img src="../Assets/Files/Agentproof/<%=rs1.getString("agent_proof")%>"></td>
-                    <td><img src="../Assets/Files/Agentphoto/<%=rs1.getString("agent_photo")%>"></td>
+                    <td><%=rs1.getString("agent_proof")%></td>
+                    <td><%=rs1.getString("agent_photo")%></td>
                     <td><%=rs1.getString("location_name")%></td>
                     <td><a href="AgentVerification.jsp?rid=<%=rs1.getString("agent_id")%>">Reject</a></td>
                 </tr>
@@ -134,8 +134,8 @@
                     <td><%=i2%></td>
                     <td><%=rs2.getString("agent_name")%></td>
                     <td><%=rs2.getString("agent_contact")%></td>   
-                    <td><img src="../Assets/Files/Agentproof/<%=rs2.getString("agent_proof")%>"></td>
-                    <td><img src="../Assets/Files/Agentphoto/<%=rs2.getString("agent_photo")%>"></td>
+                    <td><%=rs2.getString("agent_proof")%></td>
+                    <td><%=rs2.getString("agent_photo")%></td>
                     <td><%=rs2.getString("location_name")%></td>
                     <td><a href="AgentVerification.jsp?aid=<%=rs2.getString("agent_id")%>">Accept</a>|
                     </td>                

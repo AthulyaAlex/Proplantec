@@ -168,7 +168,7 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <a href=\"MyProfile.jsp\">PROFILE</a><br>\n");
       out.write("        <a href=\"EditProfile.jsp\">EDIT PROFILE</a><br>\n");
       out.write("        <a href=\"ChangePassword.jsp\">CHANGE PASSWORD</a><br>\n");
-      out.write("        <a href=\"Product.jsp\">ADD IMAGES</a><br>\n");
+      out.write("        <a href=\"Product.jsp\">ADD PRODUCT</a><br>\n");
       out.write("        <a href=\"Productdisplay.jsp\">UPLOADED IMAGES</a><br>\n");
       out.write("        <a href=\"BookingsDisplay.jsp\">ORDERS</a>\n");
       out.write("        <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>\n");

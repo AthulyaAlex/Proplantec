@@ -96,7 +96,7 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        \n");
       out.write("        <style>\n");
       out.write("            .top-header-area {\n");
-      out.write("                background-color: black;\n");
+      out.write("                background-color: transparent;\n");
       out.write("            }\n");
       out.write("        </style>\n");
       out.write("\n");
@@ -128,16 +128,26 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"#\">Home</a></li>\n");
-      out.write("                                                            <li><a href=\"about.html\">About</a></li> \n");
-      out.write("                                                            <li><a href=\"shop.html\">Sign Up</a>\n");
-      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"Guest/User.jsp\">Customer</a></li>\n");
-      out.write("                                                                                <li><a href=\"Guest/NurseryRegistration.jsp\">Seller</a></li>\n");
-      out.write("                                                                                <li><a href=\"Guest/AgentRegistration.jsp\">Agent</a></li>\n");
-      out.write("\t\t\t\t\t\t\t\t\t</ul>\n");
-      out.write("\t\t\t\t\t\t\t\t</li>\n");
-      out.write("                                                            <li><a href=\"Login.jsp\">Login</a></li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li><a href=\"../about.html\">About</a></li> \n");
+      out.write("                                                            <li><a href=\"\">Complaint</a>\n");
+      out.write("                                                            <ul class=\"sub-menu\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgencyComplaint.jsp\">Register Complaint</a></li>\n");
+      out.write("                                                                                <li><a href=\"AgencyComplaintStatus.jsp\">Complaint Status</a></li>\n");
+      out.write("                                                                              \n");
+      out.write("                                                            </ul>\n");
+      out.write("                                                        </li>\n");
+      out.write("                                                            <li><a href=\"\">Settings</a>\n");
+      out.write("                                                            <ul class=\"sub-menu\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"ChangePassword.jsp\">Change Password</a></li>\n");
+      out.write("                                                                                <li><a href=\"EditProfile.jsp\">Edit Profile</a></li>\n");
+      out.write("                                                                              \n");
+      out.write("                                                            </ul>\n");
+      out.write("                                                            </li>\n");
+      out.write("                                                            <li><a href=\"MyProfile.jsp\">My Profile</a></li>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\n");
+      out.write("\t\t\t\t\t\t\t\t\n");
+      out.write("                                                            \n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t</nav>\n");
       out.write("\t\t\t\t\t\t<a class=\"mobile-show search-bar-icon\" href=\"#\"><i class=\"fas fa-search\"></i></a>\n");
@@ -154,28 +164,48 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Agent Complaint</title>\n");
-      out.write("        <style>\n");
-      out.write("            .bg-img {\n");
+      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Complaint</title>\n");
+      out.write("    \n");
+      out.write("            <style>\n");
+      out.write("/*            .bg-img {\n");
       out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/hero-bg.jpg\");\n");
       out.write("                background-repeat: no-repeat;\n");
       out.write("                background-size: cover;\n");
       out.write("                background-image: center;\n");
+      out.write("            }*/\n");
+      out.write("             body {\n");
+      out.write("                margin: 0;\n");
+      out.write("                padding: 0;\n");
+      out.write("                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;\n");
+      out.write("                min-height: 800px\n");
       out.write("            }\n");
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");
       out.write("                width: 215px;\n");
       out.write("                color:gray;\n");
       out.write("            }\n");
+      out.write("            \n");
+      out.write("            input::reset {\n");
+      out.write("                    width: 40%;\n");
+      out.write("                    background-color: #096;\n");
+      out.write("                    color: white;\n");
+      out.write("                    padding: 15px;\n");
+      out.write("                    margin: 4px 0;\n");
+      out.write("                    border: none;\n");
+      out.write("                    border-radius: 4px !important;\n");
+      out.write("                    cursor: pointer;\n");
+      out.write("            }\n");
       out.write("            </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        ");
 
-            if (request.getParameter("btn_submit") != null) {
-                String uq = "insert into tbl_complaint set complaint_content = '" + request.getParameter("complaint_content") + "'"
-                        + ",complaint_date =curdate() ,agent_id = '" + session.getAttribute("aid") + "'";
+            if(request.getParameter("btn_submit")!=null)
+            {
+                    String uq = "insert into tbl_complaint set complaint_title = '"+request.getParameter("complaint_title")+"'"
+                            + ",complaint_content = '"+request.getParameter("complaint_content")+"',complaint_date =curdate(),"
+                            + "agent_id = '"+session.getAttribute("gid")+"',user_id = '"+request.getParameter("uid")+"'";
                     if(con.executeCommand(uq)){
             
       out.write("\n");
@@ -223,12 +253,40 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
         }
     
       out.write("\n");
-      out.write("       <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #000000b8 !important;\">\n");
+      out.write("        \n");
+      out.write("        <div class=\"bg-img\">\n");
+      out.write("                <div style=\"background-color:#26404387;\">\n");
       out.write("        <form method=\"post\">\n");
       out.write("            <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");
       out.write("                 <table align=\"center\" cellpadding=\"10\">\n");
+      out.write("                \n");
+      out.write("            <table border=\"1\" align=\"center\">\n");
+      out.write("                <tr>\n");
+      out.write("                    <td>User</td>\n");
+      out.write("                    <td><select name=\"nid\" class=\"text-box\">\n");
+      out.write("                            <option value=\"\">----select----</option>\n");
+      out.write("                            ");
+ 
+                String selQry = "select * from tbl_user";
+                ResultSet rs = con.selectCommand(selQry);
+                while (rs.next()) {
+            
+      out.write("\n");
+      out.write("            <option value=\"");
+      out.print(rs.getString("user_id"));
+      out.write('"');
+      out.write('>');
+      out.print(rs.getString("user_name"));
+      out.write("</option>\n");
+      out.write("            ");
+
+                }
+            
+      out.write("\n");
+      out.write("                        </select>          \n");
+      out.write("                    </td>\n");
+      out.write("                </tr>\n");
       out.write("                <tr>\n");
       out.write("                    <td>Complaint Title</td>\n");
       out.write("                    <td><input type=\"text\" class=\"text-box\" name=\"complaint_title\"</td>\n");
@@ -240,16 +298,16 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                    </td>\n");
       out.write("                </tr>\n");
       out.write("                <tr>\n");
-      out.write("                    <td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"btn_submit\" value=\"Register\">&nbsp&nbsp<input type=\"reset\" name=\"btn_reset\" value=\"Reset\"</td>\n");
+      out.write("                    <td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"btn_submit\" value=\"Register\">&nbsp&nbsp<input type=\"reset\" name=\"btn_reset\" value=\"Reset\" class=\"btn\" ></td>\n");
       out.write("                </tr>\n");
       out.write("            </table>\n");
-      out.write("        </form>\n");
-      out.write("        <table border=\"1\" align=\"center\">\n");
-      out.write("            <tr>\n");
+      out.write("       \n");
+      out.write("                        <table border=\"1\" align=\"center\"><br><br><br>\n");
+      out.write("                 <br><tr>\n");
       out.write("                <td>Sl.No</td>\n");
       out.write("                <td>Date/time</td>\n");
       out.write("                <td>Complaint title</td>\n");
-      out.write("                <td>Agency Name</td>\n");
+      out.write("                <td>User Name</td>\n");
       out.write("                <td>complaint content </td>\n");
       out.write("                <td>Complaint status</td>\n");
       out.write("                <td>Complaint reply</td>\n");
@@ -296,7 +354,7 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("    \n");
       out.write("            </table>\n");
       out.write("        </form> \n");
-      out.write("    </body>\n");
+      out.write("    </body><br><br><br><br>\n");
       out.write("</html>\n");
       out.write("<!-- footer -->\n");
       out.write("\t<div class=\"footer-area\">\n");
@@ -324,9 +382,7 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t\t\t\t\t<ul>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"index.html\">Home</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"about.html\">About</a></li>\n");
-      out.write("\t\t\t\t\t\t\t<li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
-      out.write("                                                         <li><a href=\"AgencyList.jsp\">Available Delivery Agents</a></li>\n");
-      out.write("\t\t\t\t\t\t\t<li><a href=\"contact.html\">Contact</a></li>\n");
+      out.write("\t\t\t\t\t\t\t\n");
       out.write("\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t</div>\n");
@@ -392,7 +448,9 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("</body>\n");
       out.write("</html>");
       out.write("\n");
-      out.write("  ");
+      out.write("        </div>\n");
+      out.write("                </div>\n");
+      out.write("        </div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

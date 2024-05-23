@@ -158,11 +158,17 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Login</title>\n");
       out.write("            <style>\n");
-      out.write("            .bg-img {\n");
+      out.write("/*            .bg-img {\n");
       out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/hero-bg.jpg\");\n");
       out.write("                background-repeat: no-repeat;\n");
       out.write("                background-size: cover;\n");
       out.write("                background-image: center;\n");
+      out.write("            }*/\n");
+      out.write("            body {\n");
+      out.write("                margin: 0;\n");
+      out.write("                padding: 0;\n");
+      out.write("                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;\n");
+      out.write("                min-height: 800px\n");
       out.write("            }\n");
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");
@@ -173,7 +179,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #000000b8 !important;\">\n");
+      out.write("                <div style=\"background-color:#26404387;\">\n");
       out.write("         \n");
       out.write("            <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");

@@ -73,11 +73,11 @@
 							<ul>
                                                             <li class="current-list-item"><a href="#">Home</a></li>
                                                             <li><a href="about.html">About</a></li> 
-                                                            <li><a href="shop.html">Sign Up</a>
+                                                            <li><a href="">Sign Up</a>
 									<ul class="sub-menu">
-										<li><a href="Guest/User.jsp">Customer</a></li>
-                                                                                <li><a href="Guest/NurseryRegistration.jsp">Seller</a></li>
-                                                                                <li><a href="Guest/AgentRegistration.jsp">Agent</a></li>
+										<li><a href="User.jsp">Customer</a></li>
+                                                                                <li><a href="NurseryRegistration.jsp">Seller</a></li>
+                                                                                <li><a href="AgentRegistration.jsp">Agent</a></li>
 									</ul>
 								</li>
                                                             <li><a href="Login.jsp">Login</a></li>

@@ -14,10 +14,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edit Profile</title>
         <style>
-            .bg-img {
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/agency.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
             }
             .text-box {
                 background-color: transparent;
@@ -31,8 +37,15 @@
             if(request.getParameter("txtupdate")!=null)
             {
                     String uq = "update tbl_agent set agent_name = '"+request.getParameter("txtname")+"',agent_contact = '"+request.getParameter("txtcontact")+"',agent_email = '"+request.getParameter("txtemail")+"',agent_address = '"+request.getParameter("txtaddress")+"'where agent_id = '"+session.getAttribute("gid")+"'";
-                    con.executeCommand(uq);
-                    response.sendRedirect("EditProfile.jsp");    
+                    if(con.executeCommand(uq)){
+                         %>
+                    <script>
+                        alert("Updated");
+                        window.location="EditProfile.jsp";
+                    </script>
+                <%
+                    }
+                   
             } 
             String editname="";
             String editcontact="";
@@ -48,7 +61,7 @@
                         
         %>
          <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
+                <div style="background-color: #26404387;">
         <form method="post">
            <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">

@@ -15,11 +15,17 @@
         <title>Edit Profile</title>
         <title>Login</title>
             <style>
-            .bg-img {
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: center;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
             }
             .text-box {
                 background-color: transparent;
@@ -33,8 +39,14 @@
             if(request.getParameter("txtupdate")!=null)
             {
                     String uq = "update tbl_user set user_name = '"+request.getParameter("txtname")+"',user_contact = '"+request.getParameter("txtcontact")+"',user_email = '"+request.getParameter("txtemail")+"',user_address = '"+request.getParameter("txtaddress")+"'where user_id = '"+session.getAttribute("uid")+"'";
-                    con.executeCommand(uq);
-                    response.sendRedirect("EditProfile.jsp");    
+                    if(con.executeCommand(uq)){
+                         %>
+                    <script>
+                        alert("Updated");
+                        window.location="EditProfile.jsp";
+                    </script>
+                <%
+                    }  
             } 
             String editname="";
             String editcontact="";
@@ -50,7 +62,7 @@
                         
         %>
         <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
+                <div style="background-color: #26404387;">
         <form method="post">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
@@ -87,6 +99,8 @@
                 </tr>   
             </table>
         </form>   
-    </body>
-</html>
+    </body><br><br><br>
+</html></div>
+                </div>
+          </div>
 <%@include file="Foot.jsp" %>

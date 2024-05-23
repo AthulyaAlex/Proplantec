@@ -72,6 +72,12 @@
 						<nav class="main-menu">
 							<ul>
                                                             <li class="current-list-item"><a href="../index.html">Home</a></li>
+                                                            <li><a href="">View Profile</a>
+									<ul class="sub-menu">
+										<li><a href="../DeliveryAgency/MyProfile.jsp">Agency</a></li>
+                                                                                <li><a href="../Nursery/MyProfile.jsp">Nursery</a></li>
+                                                                        </ul>
+								</li>
                                                             <li><a href="">Verifications</a>
 									<ul class="sub-menu">
 										<li><a href="AgentVerification.jsp">Agent</a></li>
@@ -83,7 +89,7 @@
 										<li><a href="Location.jsp">Location</a></li>
                                                                                 <li><a href="LocalPlace.jsp">Local Place</a></li>
                                                                                 <li><a href="Category.jsp">Category</a></li>
-                                                                                <li><a href="subcategory.jsp">Sub Category</a></li>
+                                                                                <li><a href="Subcategory.jsp">Sub Category</a></li>
                                                                                 <li><a href="Assign.jsp">Assigning Agency</a></li>
                                                                                 <li><a href="ChangePassword.jsp">Change Password</a></li>
                                                                         </ul>

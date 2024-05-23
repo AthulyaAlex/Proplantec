@@ -14,11 +14,17 @@
         <title>My Profile</title>
         <title>Login</title>
             <style>
-            .bg-img {
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: center;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
             }
             .text-box {
                 background-color: transparent;
@@ -34,10 +40,11 @@
           if(rs.next())
           {
         %>
-        <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
         <form method="post">
-            <br><br><br><br><br><br><br>
+        <div class="bg-img">
+                <div style="background-color: #26404387;">
+        
+           
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
                 <tr>
@@ -66,6 +73,8 @@
         	       
             </table>
         </form>
-    </body>
-</html>
+                </body><br><br><br><br><br><br>
+</html></div>
+                </div>
+          </div>
 <%@include file="Foot.jsp" %>

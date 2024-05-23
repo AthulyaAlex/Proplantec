@@ -52,10 +52,12 @@
             .font{
                 color: white;
             }
+            
         </style>
     </head>
     <body><br><br><br><br><br><br><br>
         <div class="main">
+          
          <% 
                 if(request.getParameter("aid")!=null)
                 {
@@ -87,7 +89,7 @@
                     <div align="center"><img src="../Assets/Files/Agentphoto/<%=rs.getString("agent_photo")%>" height="70" width="70"></div>
                     <div class="cont"><div>Name</div><div><%=rs.getString("agent_name")%></div></div>
                     <div class="cont"><div>Contact</div><div><%=rs.getString("agent_contact")%></div></div>
-                    <div><a href="AgencyList.jsp?aid=<%=rs.getString("agent_id")%>&bid=<%=request.getParameter("bid")%>">ASSIGN</a></div>
+                    <div><a href="Assign.jsp?aid=<%=rs.getString("agent_id")%>&bid=<%=request.getParameter("bid")%>">ASSIGN</a></div>
                 </div>
                 </div>
                 <%
@@ -96,6 +98,6 @@
        
         </div><br>
         
-    </body>  <body><br><br><br><br><br><br><br>
+    </body>  <br><br><br><br><br><br><br>
 </html>
 <%@include file="Foot.jsp" %>

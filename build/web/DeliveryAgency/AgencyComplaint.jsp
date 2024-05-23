@@ -10,27 +10,47 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Agent Complaint</title>
-        <style>
-            .bg-img {
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Complaint</title>
+    
+            <style>
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: center;
+            }*/
+             body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
             }
             .text-box {
                 background-color: transparent;
                 width: 215px;
                 color:gray;
             }
+            
+            input::reset {
+                    width: 40%;
+                    background-color: #096;
+                    color: white;
+                    padding: 15px;
+                    margin: 4px 0;
+                    border: none;
+                    border-radius: 4px !important;
+                    cursor: pointer;
+            }
             </style>
     </head>
     <body>
         <%
-            if (request.getParameter("btn_submit") != null) {
-                String uq = "insert into tbl_complaint set complaint_content = '" + request.getParameter("complaint_content") + "'"
-                        + ",complaint_date =curdate() ,agent_id = '" + session.getAttribute("gid") + "'";
+            if(request.getParameter("btn_submit")!=null)
+            {
+                    String uq = "insert into tbl_complaint set complaint_title = '"+request.getParameter("complaint_title")+"'"
+                            + ",complaint_content = '"+request.getParameter("complaint_content")+"',complaint_date =curdate(),"
+                            + "agent_id = '"+session.getAttribute("gid")+"',user_id = '"+request.getParameter("uid")+"'";
                     if(con.executeCommand(uq)){
             %>
                 <script>
@@ -69,12 +89,31 @@
             }
         }
     %>
-       <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
+        
+        <div class="bg-img">
+                <div style="background-color:#26404387;">
         <form method="post">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
+                
+            <table border="1" align="center">
+                <tr>
+                    <td>User</td>
+                    <td><select name="nid" class="text-box">
+                            <option value="">----select----</option>
+                            <% 
+                String selQry = "select * from tbl_user";
+                ResultSet rs = con.selectCommand(selQry);
+                while (rs.next()) {
+            %>
+            <option value="<%=rs.getString("user_id")%>"><%=rs.getString("user_name")%></option>
+            <%
+                }
+            %>
+                        </select>          
+                    </td>
+                </tr>
                 <tr>
                     <td>Complaint Title</td>
                     <td><input type="text" class="text-box" name="complaint_title"</td>
@@ -86,16 +125,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset"</td>
+                    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset" class="btn" ></td>
                 </tr>
             </table>
-        </form>
-        <table border="1" align="center">
-            <tr>
+       
+                        <table border="1" align="center"><br><br><br>
+                 <br><tr>
                 <td>Sl.No</td>
                 <td>Date/time</td>
                 <td>Complaint title</td>
-                <td>Agency Name</td>
+                <td>User Name</td>
                 <td>complaint content </td>
                 <td>Complaint status</td>
                 <td>Complaint reply</td>
@@ -122,7 +161,9 @@
             %>    
             </table>
         </form> 
-    </body>
+    </body><br><br><br><br>
 </html>
 <%@include file="Foot.jsp" %>
-  
+        </div>
+                </div>
+        </div>

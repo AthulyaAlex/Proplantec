@@ -66,6 +66,7 @@
                     <%
                     String selbook="select * from tbl_booking b inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_nursery n on n.nursery_id=u.nursery_id  where n.nursery_id='" + session.getAttribute("nid") + "' and booking_status>0 and payment_status='1'";
                     ResultSet rs = con.selectCommand(selbook);
+                    String selins="insert into tbl_assignbooking values(agent_id,booking_id) ";
                     int i = 0;
                     while (rs.next()) {
                          i++;

@@ -8,10 +8,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Password</title>
         <style>
-            .bg-img {
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
             }
             .text-box {
                 background-color: transparent;
@@ -68,7 +74,7 @@
     %>
     <body>
           <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
+                <div style="background-color:#26404387;">
         <form method="post">    
         <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">

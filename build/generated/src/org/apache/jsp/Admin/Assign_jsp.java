@@ -96,7 +96,7 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        \n");
       out.write("        <style>\n");
       out.write("            .top-header-area {\n");
-      out.write("                background-color: black;\n");
+      out.write("                background-color: transparent;\n");
       out.write("            }\n");
       out.write("        </style>\n");
       out.write("\n");
@@ -128,16 +128,36 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"#\">Home</a></li>\n");
-      out.write("                                                            <li><a href=\"about.html\">About</a></li> \n");
-      out.write("                                                            <li><a href=\"shop.html\">Sign Up</a>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li><a href=\"\">Verifications</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"Guest/User.jsp\">Customer</a></li>\n");
-      out.write("                                                                                <li><a href=\"Guest/NurseryRegistration.jsp\">Seller</a></li>\n");
-      out.write("                                                                                <li><a href=\"Guest/AgentRegistration.jsp\">Agent</a></li>\n");
-      out.write("\t\t\t\t\t\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgentVerification.jsp\">Agent</a></li>\n");
+      out.write("                                                                                <li><a href=\"NurseryVerification.jsp\">Nursery</a></li>\n");
+      out.write("                                                                        </ul>\n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
-      out.write("                                                            <li><a href=\"Login.jsp\">Login</a></li>\n");
+      out.write("                                                            <li><a href=\"\">Administrations</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"Location.jsp\">Location</a></li>\n");
+      out.write("                                                                                <li><a href=\"LocalPlace.jsp\">Local Place</a></li>\n");
+      out.write("                                                                                <li><a href=\"Category.jsp\">Category</a></li>\n");
+      out.write("                                                                                <li><a href=\"subcategory.jsp\">Sub Category</a></li>\n");
+      out.write("                                                                                <li><a href=\"Assign.jsp\">Assigning Agency</a></li>\n");
+      out.write("                                                                                <li><a href=\"ChangePassword.jsp\">Change Password</a></li>\n");
+      out.write("                                                                        </ul>\n");
+      out.write("\t\t\t\t\t\t\t\t</li>   \n");
+      out.write("                                                                <li><a href=\"\">Availables</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgencyList.jsp\">Available Agency</a></li>\n");
+      out.write("                                                                                <li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
+      out.write("                                                                        </ul>\n");
+      out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                                <li><a href=\"\">Complaints</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
+      out.write("                                                                                <li><a href=\"ViewComplaint.jsp\">View Complaint</a></li>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"ComplaintReply.jsp\">Complaint Reply</a></li>\n");
+      out.write("                                                                        </ul>\n");
+      out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                           \n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t</nav>\n");
       out.write("\t\t\t\t\t\t<a class=\"mobile-show search-bar-icon\" href=\"#\"><i class=\"fas fa-search\"></i></a>\n");
@@ -157,11 +177,17 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Bookings Display</title>\n");
       out.write("           <style>\n");
-      out.write("            .bg-img {\n");
+      out.write("/*            .bg-img {\n");
       out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/hero-bg.jpg\");\n");
       out.write("                background-repeat: no-repeat;\n");
       out.write("                background-size: cover;\n");
       out.write("                background-image: center;\n");
+      out.write("            }*/\n");
+      out.write("             body {\n");
+      out.write("                margin: 0;\n");
+      out.write("                padding: 0;\n");
+      out.write("                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;\n");
+      out.write("                min-height: 800px\n");
       out.write("            }\n");
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");
@@ -185,7 +211,7 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("       <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #000000b8 !important;\">\n");
+      out.write("                <div style=\"background-color:  #26404387;\">\n");
       out.write("                 <form method=\"post\">\n");
       out.write("                     <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");
@@ -237,7 +263,7 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
                  }
                      
       out.write("      \n");
-      out.write("                 </table><br>\n");
+      out.write("                 </table><br><br><br>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
       out.write("<!-- footer -->\n");
@@ -264,11 +290,9 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t<div class=\"footer-box pages\">\n");
       out.write("\t\t\t\t\t\t<h2 class=\"widget-title\">Pages</h2>\n");
       out.write("\t\t\t\t\t\t<ul>\n");
-      out.write("\t\t\t\t\t\t\t<li><a href=\"index.html\">Home</a></li>\n");
-      out.write("\t\t\t\t\t\t\t<li><a href=\"about.html\">About</a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"../index.html\">Home</a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"../about.html\">About</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
-      out.write("                                                \n");
-      out.write("\t\t\t\t\t\t\t<li><a href=\"contact.html\">Contact</a></li>\n");
       out.write("\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t</div>\n");
@@ -333,6 +357,7 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>");
+      out.write('\n');
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

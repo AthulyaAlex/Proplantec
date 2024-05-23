@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br><br><br><br><br><br>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Password</title>
          <style>
 /*            .bg-img {
@@ -79,7 +79,7 @@
     %>
     <body>
         <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
+                <div style="background-color:#26404387;">
             <form method="POST" enctype="multipart/form-data" action="../Assets/Actionpages/UserUploadAction.jsp">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">

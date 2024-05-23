@@ -71,17 +71,20 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-                                                            <li class="current-list-item"><a href="#">Home</a></li>
-                                                            <li><a href="about.html">About</a></li> 
-                                                            <li><a href="shop.html">Sign Up</a>
+                                                            <li class="current-list-item"><a href="HomePage.jsp">Home</a></li>
+                                                            <li><a href="../about.html">About</a></li> 
+                                                            <li><a href="MyBookingsDisplay.jsp">My Bookings</a></li>
+                                                            <li><a href="">Settings</a>
 									<ul class="sub-menu">
-										<li><a href="Guest/User.jsp">Customer</a></li>
-                                                                                <li><a href="Guest/NurseryRegistration.jsp">Seller</a></li>
-                                                                                <li><a href="Guest/AgentRegistration.jsp">Agent</a></li>
+										<li><a href="EditProfile.jsp">Edit Profile</a></li>
+                                                                                <li><a href="ChangePassword.jsp">Change Password</a></li>
+                                                                                
 									</ul>
 								</li>
-                                                            <li><a href="Login.jsp">Login</a></li>
-                                                            <li>
+                                                            
+                                                            
+                                                            
+                                                             <li><a href="../index.html">Logout</a>
 						<a class="shopping-cart" href="Cart.jsp"><i class="fas fa-shopping-cart"></i></a>
                                                 <a class="mobile-hide search-bar-icon" href="Search.jsp"><i class="fas fa-search"></i></a>
 						<div class="mobile-menu"></div>

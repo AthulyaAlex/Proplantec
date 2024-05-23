@@ -10,14 +10,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>MyProfile</title>
         <style>
-            .bg-img {
+/*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/agency.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: center;
+            }*/
+            body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
             }
             </style>     
     </head>
@@ -30,7 +36,7 @@
           {
         %>
         <div class="bg-img">
-                <div style="background-color: #000000b8 !important;">
+                <div style="background-color: #26404387;">
          
             <br><br><br><br><br><br><br>
         <form method="post" >
@@ -75,5 +81,8 @@
             </table>
         </form>  
     </body>
-</html>
+            </html></div>
+                </div>
+        </div>
+            
 <%@include file="Foot.jsp" %>

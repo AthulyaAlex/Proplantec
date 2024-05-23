@@ -34,6 +34,12 @@
         
     </head>
     <body>  
+        <div class="bg-img">
+                <div style="background-color:#26404387;">
+                    <form method="post">
+                        <br><br><br><br><br><br><br>
+            <div style="color:white;font-size: 15px;">
+                 <table align="center" cellpadding="10">
         <%
             String seleQry = "select * from tbl_complaint f inner join tbl_user u on f.user_id=u.user_id where f.complaint_id ='" + request.getParameter("cid") + "'";
             ResultSet ress = con.selectCommand(seleQry);
@@ -110,7 +116,7 @@
         <tr>
             <td>Complaint Reply</td>
             <td>
-                <textarea name="complaint_reply" rows="6" cols="20"></textarea>
+                <textarea name="complaint_reply" rows="7" cols="20" class="text-box"></textarea>
             </td>
         </tr>
         <tr>
@@ -120,4 +126,8 @@
         </form>
     </body>
 </html>
+            </div>
+                </div>
+        </div>
+<%@include file="Foot.jsp" %>        
         

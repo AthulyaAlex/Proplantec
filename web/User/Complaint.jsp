@@ -129,8 +129,8 @@
                 </tr>
             </table>
        
-                        <table border="1" align="center">
-            <tr>
+                        <table border="1" align="center"><br><br><br>
+                 <br><tr>
                 <td>Sl.No</td>
                 <td>Date/time</td>
                 <td>Complaint title</td>
@@ -161,7 +161,7 @@
             %>    
             </table>
         </form> 
-    </body>
+    </body><br><br><br><br>
 </html>
 <%@include file="Foot.jsp" %>
         </div>

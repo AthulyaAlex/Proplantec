@@ -6,15 +6,36 @@
 
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%@page import="java.sql.ResultSet" %>
+<%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <style>
+/*            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position:center;
+            }*/
+        body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
+            }
+            </style>
     </head>
     <body>
-        <h1 align="center">User Complaint </h1>
+        <div class="bg-img">
+                <div style="background-color: #26404387;">
+        <form method="post">
+            <br><br><br><br><br><br><br>
+            <div style="color:white;font-size: 15px;">
+                 <table align="center" cellpadding="10">
+                     <h3 style="color: white"; align="center">User Complaint </h3>
         <table border="1" align="center">
             <tr>
                 <td>Sl.No</td>
@@ -54,7 +75,7 @@
                 }
             %>
         </table>
-                <h1 align="center">Agency Complaint </h1>
+                <h3 style="color: white"; align="center">Agency Complaint </h3>
         <table border="1" align="center">
             <tr>
                 <td>Sl.No</td>
@@ -96,3 +117,4 @@
         </table>
     </body>
 </html>
+<%@include file="Foot.jsp" %>

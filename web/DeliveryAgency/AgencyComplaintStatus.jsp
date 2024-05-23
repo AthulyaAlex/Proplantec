@@ -6,16 +6,35 @@
 
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%@page import="java.sql.ResultSet" %>
+<%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+         <style>
+/*            .bg-img {
+                background-image: url("../Assets/Templates/Main/assets/img/agency.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }*/
+        body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 800px
+            }
     </head>
+    </style>
     <body>
-        <h1 align="center">Agent Complaint Status </h1>
-        <table border="1" align="center">
+        <div class="bg-img">
+                <div style="background-color: #26404387;">
+        <form method="post">
+            <br><br><br><br><br><br><br>
+            <div style="color:white;font-size: 15px;">
+                <h1 style="color:white" align="center">Complaint Status </h1>
+            <table align="center" cellpadding="10">
             <tr>
                 <td>Sl.No</td>
                 <td>Date</td>
@@ -50,5 +69,8 @@
                 }
             %>
         </table>
-    </body>
-</html>   
+            </body><br><br><br><br><br>
+            </html>   </div>
+                </div>
+        </div>
+<%@include file="Foot.jsp" %>

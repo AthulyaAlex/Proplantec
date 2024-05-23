@@ -5,16 +5,24 @@ JSP
 *F
 + 0 AgencyComplaintStatus.jsp
 DeliveryAgency/AgencyComplaintStatus.jsp
++ 1 Head.jsp
+DeliveryAgency/Head.jsp
++ 2 Foot.jsp
+DeliveryAgency/Foot.jsp
 *L
-5,2:45
-7:47,9
-8,18:56
-25,6:74
-30,2:80
-32,3:82,3
-35,2:91
-37,10:94
-46,3:104
-49,2:108
-50,5:110
+5,2:51
+7:53,9
+8:62
+5#1,100:63
+9#0,36:163
+44,6:199
+49,2:205
+51,3:207,3
+54,2:216
+56,11:219
+66,3:230
+69,2:234
+70,7:236
+1#2,91:242
+76#0:333
 *E

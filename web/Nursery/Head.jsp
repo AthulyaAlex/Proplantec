@@ -39,7 +39,7 @@
         
         <style>
             .top-header-area {
-                background-color: black;
+                background-color: transparent;
             }
         </style>
 
@@ -71,16 +71,24 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-                                                            <li class="current-list-item"><a href="#">Home</a></li>
-                                                            <li><a href="about.html">About</a></li> 
-                                                            <li><a href="shop.html">Sign Up</a>
+                                                            <li class="current-list-item"><a href="../index.html">Home</a></li>
+                                                            <li><a href="../about.html">About</a></li> 
+                                                            <li><a href="">Products</a>
+                                                            <ul class="sub-menu">
+										<li><a href="Product.jsp">Add Products</a></li>
+                                                                                <li><a href="Productdisplay.jsp">Product Uploads</a></li>
+                                                                                
+							    </ul>
+                                                            </li> 
+                                                            <li><a href="">Settings</a>
 									<ul class="sub-menu">
-										<li><a href="Guest/User.jsp">Customer</a></li>
-                                                                                <li><a href="Guest/NurseryRegistration.jsp">Seller</a></li>
-                                                                                <li><a href="Guest/AgentRegistration.jsp">Agent</a></li>
+										<li><a href="ChangePassword.jsp">Change Password</a></li>
+                                                                                <li><a href="EditProfile.jsp">Edit Profile</a></li>
+                                                                                
 									</ul>
-								</li>
-                                                            <li><a href="Login.jsp">Login</a></li>
+                                                            </li>
+                                                            <li><a href="BookingsDisplay.jsp">Bookings</a></li>
+                                                           <li><a href="MyProfile.jsp">Profile</a></li>
 							</ul>
 						</nav>
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
