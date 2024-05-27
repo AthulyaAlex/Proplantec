@@ -29,7 +29,7 @@
             .text-box {
                 background-color: transparent;
                 width: 215px;
-                color:gray;
+                color:white;
             }
             </style>
     </head>
@@ -41,6 +41,7 @@
                     String rate=request.getParameter("txtrate");
                     String radio =request.getParameter("rdo");
                     String upQry="update tbl_booking set booking_total='"+rate+"',booking_status='1', planter_status='"+radio+"' where booking_id='"+id+"'";
+                    System.out.println(upQry);
                     String upQ="update tbl_cart set cart_status='1' where booking_id='"+id+"'";
                     con.executeCommand(upQ);
                     if(con.executeCommand(upQry))
@@ -58,19 +59,21 @@
                             </script>
                             <%   
                 }
-                    response.sendRedirect("Payment.jsp?bid="+id+"");
+                   response.sendRedirect("Payment.jsp?bid="+id+"");
                 }
                 
         %>
                 
         <%
         String bid =""; 
-        String selQry="select * from tbl_booking where user_id='" + session.getAttribute("uid") + "'& booking_status=0";
+        String selQry="select * from tbl_booking where user_id='" + session.getAttribute("uid") + "' and booking_status=0";
+       System.out.println(selQry);
         ResultSet rs = con.selectCommand(selQry);
         if(rs.next())
         {
-           System.out.print(selQry);
+//           System.out.print(selQry);
            bid=rs.getString("booking_id"); 
+//           System.out.println(bid);
         }
         else
         {
@@ -81,7 +84,7 @@
          <div class="bg-img">
                 <div style="background-color: #26404387;">
                       <form method="post">
-            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
               
@@ -96,8 +99,9 @@
                     <th>Total</th>
                 </tr>
                 <%
-                String selcart="select * from tbl_cart c inner join tbl_product p on p.product_id=c.product_id where booking_id='" + rs.getString("booking_id") + "'";
+                String selcart="select * from tbl_booking b inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product p on p.product_id=c.product_id where user_id='" + session.getAttribute("uid")+"' and booking_status='0'";
                 ResultSet rsc = con.selectCommand(selcart);
+                
                 int i = 0; 
                 int CartTotal=0;
                 while (rsc.next()) {

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : AgencyComplaintStatus
-    Created on : 21 May, 2024, 12:14:05 AM
+    Document   : ViewComplaint
+    Created on : 20 May, 2024, 2:00:59 PM
     Author     : HP
 --%>
 
@@ -15,9 +15,10 @@
         <title>JSP Page</title>
          <style>
 /*            .bg-img {
-                background-image: url("../Assets/Templates/Main/assets/img/agency.jpg");
+                background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-position:center;
             }*/
         body {
                 margin: 0;
@@ -25,52 +26,56 @@
                 background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
                 min-height: 800px
             }
+            </style>
     </head>
-    </style>
     <body>
         <div class="bg-img">
                 <div style="background-color: #26404387;">
         <form method="post">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
-                <h1 style="color:white" align="center">Complaint Status </h1>
-            <table align="center" cellpadding="10">
+                 <table align="center" cellpadding="10">
+     
+                <h3 style="color: white"; align="center">Complaints</h3>
+        <table border="1" align="center">
             <tr>
                 <td>Sl.No</td>
+                <td>User Name</td> 
                 <td>Date</td>
                 <td>Complaint content</td>
-                <td>Reply</td>
+                <td>Action</td>
+                <td>Status</td>
             </tr>
-            <% int i = 0;
-                String seleQry = "select * from tbl_complaint where agent_id='"+session.getAttribute("gid") +"'";
-                ResultSet res = con.selectCommand(seleQry);
-                while (res.next()) {
-                    i++;
+            <% int j = 0;
+                String selQry = "select * from tbl_complaint f inner join tbl_user u on f.user_id=u.user_id inner join tbl_nursery n on n.nursery_id=f.nursery_id";
+                ResultSet rs = con.selectCommand(selQry);
+                while (rs.next()) {
+                    j++;
             %>
             <tr>
-                <td align="center"><%=i%></td>
-                <td><%=res.getString("complaint_date")%></td>
-                <td><%=res.getString("complaint_content")%></td>
+                <td align="center"><%=j%></td>
+                <td><%=rs.getString("user_name")%></td>
+                <td><%=rs.getString("complaint_date")%></td>
+                <td><%=rs.getString("complaint_content")%></td>
+                <td><a href="ComplaintAction.jsp?cid=<%=rs.getString("complaint_id")%>">Reply</a><br></td>
                 <td>
-              <%
-                    if(res.getString("complaint_status").equals("0"))
+                    <%
+                    if(rs.getString("complaint_status").equals("0"))
                     {
                         out.print("Reply Pending");
                     }
-                    if(res.getString("complaint_status").equals("1"))
+                    if(rs.getString("complaint_status").equals("1"))
                     {
-                       out.print(res.getString("complaint_reply"));
-
+                        out.print("Replied");
                     }
                     
                     %>
+                </td>
             </tr>
             <%
                 }
             %>
         </table>
-            </body><br><br><br><br><br>
-            </html>   </div>
-                </div>
-        </div>
+    </body>
+</html>
 <%@include file="Foot.jsp" %>

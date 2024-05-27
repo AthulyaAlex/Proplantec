@@ -21,7 +21,7 @@
             .text-box {
                 background-color: transparent;
                 width: 215px;
-                color:gray;
+                color:white;
             }
             body {
                 margin: 0;
@@ -43,7 +43,7 @@
                 <tr>                                                            
                     <td>Category</td>
                     <td>
-                        <select name="ddlcat" class="text-box" onchange="getsubcategory(this.value)">
+                        <select name="ddlcat" onchange="getsubcategory(this.value)">
                             <option>--select Category--</option>
                             <%
                                 String seelqry = "select * from tbl_category";
@@ -60,7 +60,7 @@
                 <tr>
                     <td>Subcategory</td>
                     <td>
-                        <select name="ddlsub" class="text-box"  id="ddlsub" >
+                        <select name="ddlsub"  id="ddlsub" >
                             <option>--select subcategory--</option>
                             <%
                                 String selqry = "select * from tbl_subcategory";
@@ -88,6 +88,7 @@
                     <th>Product Details</th>
                     <th>Product Stock</th>
                     <th>Product Gallery</th>
+                    <th>Rating</th>
                     <th>Action</th>
                 </tr>
                 <%
@@ -107,6 +108,7 @@
                          <td><%=r.getString("product_details")%></td>
                          <td><%=r.getString("product_stock")%></td>
                          <td><a href="ViewGallery.jsp?sid=<%=r.getString("product_id")%> "> View Gallery</a>
+                         <td><a href="ViewReview.jsp?gid=<%=r.getString("product_id")%> ">View Rating</a>  
                          <td><button type="button" onclick="booking(<%=r.getString("product_id")%>)">Add to cart</button></td>
                 </tr>
                 <%

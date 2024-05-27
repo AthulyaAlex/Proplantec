@@ -37,6 +37,7 @@
           <div>  
               <h1 style="color: white;">Hello<%=session.getAttribute("gname")%></h1>
           </div>
+          <a href="AgencyComplaint.jsp">COMPLAINTS</a><br>
     </body><br><br><br><br><br><br><br><br><br><br>
 </html>
                 

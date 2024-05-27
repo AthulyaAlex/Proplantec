@@ -27,7 +27,7 @@
             .text-box {
                 background-color: transparent;
                 width: 215px;
-                color:gray;
+                color:white;
             }
             
             input[type="submit"],input[type="reset"] {

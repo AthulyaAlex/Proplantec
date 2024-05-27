@@ -28,7 +28,7 @@
             .text-box {
                 background-color: transparent;
                 width: 215px;
-                color:gray;
+                color:white;
             }
         </style>
         
@@ -40,29 +40,7 @@
                         <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
-        <%
-            String seleQry = "select * from tbl_complaint f inner join tbl_user u on f.user_id=u.user_id where f.complaint_id ='" + request.getParameter("cid") + "'";
-            ResultSet ress = con.selectCommand(seleQry);
-            if (ress.next()) 
-            {
-        %>
-        <table border="1" align="center">
-            <tr>
-                <td>User Name</td> 
-               
-                <td>Date</td>
-                <td>Complaint content</td>
-            </tr>
-            <tr>
-                <td><%=ress.getString("user_name")%></td>
-               
-                <td><%=ress.getString("complaint_date")%></td>
-                <td><%=ress.getString("complaint_content")%></td>
-            </tr>
-        </table>
-            <%
-                }
-            %>
+        
             
             <%
             String seQry = "select * from tbl_complaint f inner join tbl_agent u on f.agent_id=u.agent_id where f.complaint_id ='" + request.getParameter("cid") + "'";

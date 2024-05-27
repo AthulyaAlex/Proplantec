@@ -180,7 +180,7 @@ public final class ComplaintAgency_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");
       out.write("                width: 215px;\n");
-      out.write("                color:gray;\n");
+      out.write("                color:white;\n");
       out.write("            }\n");
       out.write("            \n");
       out.write("            input::reset {\n");

@@ -13,8 +13,9 @@ public final class ComplaintReply_jsp extends org.apache.jasper.runtime.HttpJspB
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants = new java.util.ArrayList<String>(2);
     _jspx_dependants.add("/Admin/Head.jsp");
+    _jspx_dependants.add("/Admin/Foot.jsp");
   }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
@@ -129,6 +130,12 @@ public final class ComplaintReply_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
       out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li><a href=\"\">View Profile</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"../DeliveryAgency/MyProfile.jsp\">Agency</a></li>\n");
+      out.write("                                                                                <li><a href=\"../Nursery/MyProfile.jsp\">Nursery</a></li>\n");
+      out.write("                                                                        </ul>\n");
+      out.write("\t\t\t\t\t\t\t\t</li>\n");
       out.write("                                                            <li><a href=\"\">Verifications</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgentVerification.jsp\">Agent</a></li>\n");
@@ -140,7 +147,7 @@ public final class ComplaintReply_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"Location.jsp\">Location</a></li>\n");
       out.write("                                                                                <li><a href=\"LocalPlace.jsp\">Local Place</a></li>\n");
       out.write("                                                                                <li><a href=\"Category.jsp\">Category</a></li>\n");
-      out.write("                                                                                <li><a href=\"subcategory.jsp\">Sub Category</a></li>\n");
+      out.write("                                                                                <li><a href=\"Subcategory.jsp\">Sub Category</a></li>\n");
       out.write("                                                                                <li><a href=\"Assign.jsp\">Assigning Agency</a></li>\n");
       out.write("                                                                                <li><a href=\"ChangePassword.jsp\">Change Password</a></li>\n");
       out.write("                                                                        </ul>\n");
@@ -191,45 +198,19 @@ public final class ComplaintReply_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");
       out.write("                width: 215px;\n");
-      out.write("                color:gray;\n");
+      out.write("                color:white;\n");
       out.write("            }\n");
       out.write("        </style>\n");
       out.write("        \n");
       out.write("    </head>\n");
       out.write("    <body>  \n");
-      out.write("        ");
-
-            String seleQry = "select * from tbl_complaint f inner join tbl_user u on f.user_id=u.user_id where f.complaint_id ='" + request.getParameter("cid") + "'";
-            ResultSet ress = con.selectCommand(seleQry);
-            if (ress.next()) 
-            {
-        
-      out.write("\n");
-      out.write("        <table border=\"1\" align=\"center\">\n");
-      out.write("            <tr>\n");
-      out.write("                <td>User Name</td> \n");
-      out.write("               \n");
-      out.write("                <td>Date</td>\n");
-      out.write("                <td>Complaint content</td>\n");
-      out.write("            </tr>\n");
-      out.write("            <tr>\n");
-      out.write("                <td>");
-      out.print(ress.getString("user_name"));
-      out.write("</td>\n");
-      out.write("               \n");
-      out.write("                <td>");
-      out.print(ress.getString("complaint_date"));
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print(ress.getString("complaint_content"));
-      out.write("</td>\n");
-      out.write("            </tr>\n");
-      out.write("        </table>\n");
-      out.write("            ");
-
-                }
-            
-      out.write("\n");
+      out.write("        <div class=\"bg-img\">\n");
+      out.write("                <div style=\"background-color:#26404387;\">\n");
+      out.write("                    <form method=\"post\">\n");
+      out.write("                        <br><br><br><br><br><br><br>\n");
+      out.write("            <div style=\"color:white;font-size: 15px;\">\n");
+      out.write("                 <table align=\"center\" cellpadding=\"10\">\n");
+      out.write("        \n");
       out.write("            \n");
       out.write("            ");
 
@@ -297,7 +278,7 @@ public final class ComplaintReply_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        <tr>\n");
       out.write("            <td>Complaint Reply</td>\n");
       out.write("            <td>\n");
-      out.write("                <textarea name=\"complaint_reply\" rows=\"6\" cols=\"20\"></textarea>\n");
+      out.write("                <textarea name=\"complaint_reply\" rows=\"7\" cols=\"20\" class=\"text-box\"></textarea>\n");
       out.write("            </td>\n");
       out.write("        </tr>\n");
       out.write("        <tr>\n");
@@ -307,6 +288,102 @@ public final class ComplaintReply_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        </form>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
+      out.write("            </div>\n");
+      out.write("                </div>\n");
+      out.write("        </div>\n");
+      out.write("<!-- footer -->\n");
+      out.write("\t<div class=\"footer-area\">\n");
+      out.write("\t\t<div class=\"container\">\n");
+      out.write("\t\t\t<div class=\"row\">\n");
+      out.write("\t\t\t\t<div class=\"col-lg-3 col-md-6\">\n");
+      out.write("\t\t\t\t\t<div class=\"footer-box about-widget\">\n");
+      out.write("\t\t\t\t\t\t<h2 class=\"widget-title\">About us</h2>\n");
+      out.write("                                                <p>This platform fosters direct engagement with users through a user-friendly interface.Customers can explore the plant catalog, place orders, and receive timely updates on their purchases.</p>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t\t<div class=\"col-lg-3 col-md-6\">\n");
+      out.write("\t\t\t\t\t<div class=\"footer-box get-in-touch\">\n");
+      out.write("\t\t\t\t\t\t<h2 class=\"widget-title\">Get in Touch</h2>\n");
+      out.write("\t\t\t\t\t\t<ul>\n");
+      out.write("\t\t\t\t\t\t\t<li>Vazhakulam,Kerala</li>\n");
+      out.write("\t\t\t\t\t\t\t<li>proplantec@gmail.com</li>\n");
+      out.write("\t\t\t\t\t\t\t<li>9872315562</li>\n");
+      out.write("\t\t\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t\t<div class=\"col-lg-3 col-md-6\">\n");
+      out.write("\t\t\t\t\t<div class=\"footer-box pages\">\n");
+      out.write("\t\t\t\t\t\t<h2 class=\"widget-title\">Pages</h2>\n");
+      out.write("\t\t\t\t\t\t<ul>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"../index.html\">Home</a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"../about.html\">About</a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
+      out.write("                                                        <li><a href=\"AgencyList.jsp\">Available Agency</a></li>\n");
+      out.write("\t\t\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t\t<div class=\"col-lg-3 col-md-6\">\n");
+      out.write("\t\t\t\t\t<div class=\"footer-box subscribe\">\n");
+      out.write("\t\t\t\t\t\t<h2 class=\"widget-title\">Subscribe</h2>\n");
+      out.write("\t\t\t\t\t\t<p>Subscribe to our mailing list to get the latest updates.</p>\n");
+      out.write("\t\t\t\t\t\t<form action=\"index.html\">\n");
+      out.write("\t\t\t\t\t\t\t<input type=\"email\" placeholder=\"Email\">\n");
+      out.write("\t\t\t\t\t\t\t<button type=\"submit\"><i class=\"fas fa-paper-plane\"></i></button>\n");
+      out.write("\t\t\t\t\t\t</form>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t</div>\n");
+      out.write("\t\t</div>\n");
+      out.write("\t</div>\n");
+      out.write("\t<!-- end footer -->\n");
+      out.write("\t\n");
+      out.write("\t<!-- copyright -->\n");
+      out.write("\t<div class=\"copyright\">\n");
+      out.write("\t\t<div class=\"container\">\n");
+      out.write("\t\t\t<div class=\"row\">\n");
+      out.write("\t\t\t\t<div class=\"col-lg-6 col-md-12\">\n");
+      out.write("\t\t\t\t\t<p>Copyrights &copy; ProPlantec<a href=\"https://imransdesign.com/\"></a>  All Rights Reserved.</p>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t\t<div class=\"col-lg-6 text-right col-md-12\">\n");
+      out.write("\t\t\t\t\t<div class=\"social-icons\">\n");
+      out.write("\t\t\t\t\t\t<ul>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-facebook-f\"></i></a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-twitter\"></i></a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-instagram\"></i></a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-linkedin\"></i></a></li>\n");
+      out.write("\t\t\t\t\t\t\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-dribbble\"></i></a></li>\n");
+      out.write("\t\t\t\t\t\t</ul>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t</div>\n");
+      out.write("\t\t</div>\n");
+      out.write("\t</div>\n");
+      out.write("\t<!-- end copyright -->\n");
+      out.write("\t\n");
+      out.write("\t<!-- jquery -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/jquery-1.11.3.min.js\"></script>\n");
+      out.write("\t<!-- bootstrap -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/bootstrap/js/bootstrap.min.js\"></script>\n");
+      out.write("\t<!-- count down -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/jquery.countdown.js\"></script>\n");
+      out.write("\t<!-- isotope -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/jquery.isotope-3.0.6.min.js\"></script>\n");
+      out.write("\t<!-- waypoints -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/waypoints.js\"></script>\n");
+      out.write("\t<!-- owl carousel -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/owl.carousel.min.js\"></script>\n");
+      out.write("\t<!-- magnific popup -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/jquery.magnific-popup.min.js\"></script>\n");
+      out.write("\t<!-- mean menu -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/jquery.meanmenu.min.js\"></script>\n");
+      out.write("\t<!-- sticker js -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/sticker.js\"></script>\n");
+      out.write("\t<!-- main js -->\n");
+      out.write("\t<script src=\"../Assets/Templates/Main/assets/js/main.js\"></script>\n");
+      out.write("\n");
+      out.write("</body>\n");
+      out.write("</html>");
+      out.write("        \n");
       out.write("        ");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

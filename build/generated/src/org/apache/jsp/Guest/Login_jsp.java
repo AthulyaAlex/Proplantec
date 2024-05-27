@@ -131,11 +131,11 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t<ul>\n");
       out.write("                                                            <li class=\"current-list-item\"><a href=\"#\">Home</a></li>\n");
       out.write("                                                            <li><a href=\"about.html\">About</a></li> \n");
-      out.write("                                                            <li><a href=\"shop.html\">Sign Up</a>\n");
+      out.write("                                                            <li><a href=\"\">Sign Up</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"Guest/User.jsp\">Customer</a></li>\n");
-      out.write("                                                                                <li><a href=\"Guest/NurseryRegistration.jsp\">Seller</a></li>\n");
-      out.write("                                                                                <li><a href=\"Guest/AgentRegistration.jsp\">Agent</a></li>\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"User.jsp\">Customer</a></li>\n");
+      out.write("                                                                                <li><a href=\"NurseryRegistration.jsp\">Seller</a></li>\n");
+      out.write("                                                                                <li><a href=\"AgentRegistration.jsp\">Agent</a></li>\n");
       out.write("\t\t\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
       out.write("                                                            <li><a href=\"Login.jsp\">Login</a></li>\n");
@@ -149,21 +149,22 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t</div>\n");
       out.write("\t\t</div>\n");
       out.write("\t</div>\n");
+      out.write("        \n");
       out.write("\t<!-- end header -->");
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Login</title>\n");
-      out.write("            <style>\n");
-      out.write("/*            .bg-img {\n");
-      out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/hero-bg.jpg\");\n");
-      out.write("                background-repeat: no-repeat;\n");
-      out.write("                background-size: cover;\n");
-      out.write("                background-image: center;\n");
-      out.write("            }*/\n");
+      out.write("        <style>\n");
+      out.write("            /*            .bg-img {\n");
+      out.write("                            background-image: url(\"../Assets/Templates/Main/assets/img/hero-bg.jpg\");\n");
+      out.write("                            background-repeat: no-repeat;\n");
+      out.write("                            background-size: cover;\n");
+      out.write("                            background-image: center;\n");
+      out.write("                        }*/\n");
       out.write("            body {\n");
       out.write("                margin: 0;\n");
       out.write("                padding: 0;\n");
@@ -173,98 +174,90 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");
       out.write("                width: 215px;\n");
-      out.write("                color:gray;\n");
+      out.write("                color:white;\n");
       out.write("            }\n");
-      out.write("            </style>\n");
+      out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color:#26404387;\">\n");
-      out.write("         \n");
-      out.write("            <br><br><br><br><br><br><br>\n");
-      out.write("            <div style=\"color:white;font-size: 15px;\">\n");
-      out.write("                 <table align=\"center\" cellpadding=\"10\">\n");
-      out.write("        ");
-
-            if (request.getParameter("btnlogin") != null) {
-                String email=request.getParameter("txtemail");
-                String password=request.getParameter("txtpsswd");
-                
-                String seluser="select * from tbl_user where user_email='"+email+"' and user_password='"+password+"' ";
-                ResultSet rs = con.selectCommand(seluser);
-                String selnursery="select * from tbl_nursery where nursery_email='"+email+"' and nursery_password='"+password+"' ";
-                ResultSet rs1 = con.selectCommand(selnursery);
-                String seladmin="select * from tbl_admin where admin_email='"+email+"' and admin_password='"+password+"' ";
-                ResultSet rs2 = con.selectCommand(seladmin);
-                String selagent="select * from tbl_agent where agent_email='"+email+"' and agent_password='"+password+"' ";
-                ResultSet rs3 = con.selectCommand(selagent);
-                if(rs.next())
-                {
-                    session.setAttribute("uid",rs.getString("user_id"));
-                    session.setAttribute("uname",rs.getString("user_name"));
-                    response.sendRedirect("../User/HomePage.jsp");
-                    
-                }
-                else if(rs1.next())
-                {
-                    session.setAttribute("nid",rs1.getString("nursery_id"));
-                    session.setAttribute("nname",rs1.getString("nursery_name"));
-                    response.sendRedirect("../Nursery/HomePage.jsp");
-                    
-                }  
-                else if(rs2.next())
-                {
-                    session.setAttribute("aid",rs2.getString("admin_id"));
-                    session.setAttribute("aname",rs2.getString("admin_name"));
-                    response.sendRedirect("../Admin/HomePage.jsp");
-                    
-                } 
-                else if(rs3.next())
-                {
-                   session.setAttribute("gid",rs3.getString("agent_id"));
-                   session.setAttribute("gname",rs3.getString("agent_name"));
-                   response.sendRedirect("../DeliveryAgency/HomePage.jsp"); 
-                }
-                else
-                {
-                   
+      out.write("            <div style=\"background-color:#26404387;\">\n");
       out.write("\n");
-      out.write("                   <script>\n");
-      out.write("                       alert(\"Invalid Credentilas\")\n");
-      out.write("                       window.Location=\"Login.jsp\"\n");
-      out.write("                   </script>\n");
-      out.write("                   ");
+      out.write("                <br><br><br><br><br><br><br>\n");
+      out.write("                <div style=\"color:white;font-size: 15px;\">\n");
+      out.write("                    <table align=\"center\" cellpadding=\"10\">\n");
+      out.write("                        ");
 
-                }
-            }
-        
+                            if (request.getParameter("btnlogin") != null) {
+                                String email = request.getParameter("txtemail");
+                                String password = request.getParameter("txtpsswd");
+
+                                String seluser = "select * from tbl_user where user_email='" + email + "' and user_password='" + password + "' ";
+                                ResultSet rs = con.selectCommand(seluser);
+                                String selnursery = "select * from tbl_nursery where nursery_email='" + email + "' and nursery_password='" + password + "' ";
+                                ResultSet rs1 = con.selectCommand(selnursery);
+                                String seladmin = "select * from tbl_admin where admin_email='" + email + "' and admin_password='" + password + "' ";
+                                ResultSet rs2 = con.selectCommand(seladmin);
+                                String selagent = "select * from tbl_agent where agent_email='" + email + "' and agent_password='" + password + "' ";
+                                ResultSet rs3 = con.selectCommand(selagent);
+                                if (rs.next()) {
+                                    session.setAttribute("uid", rs.getString("user_id"));
+                                    session.setAttribute("uname", rs.getString("user_name"));
+                                    response.sendRedirect("../User/HomePage.jsp");
+
+                                } else if (rs1.next()) {
+                                    session.setAttribute("nid", rs1.getString("nursery_id"));
+                                    session.setAttribute("nname", rs1.getString("nursery_name"));
+                                    response.sendRedirect("../Nursery/HomePage.jsp");
+
+                                } else if (rs2.next()) {
+                                    session.setAttribute("aid", rs2.getString("admin_id"));
+                                    session.setAttribute("aname", rs2.getString("admin_name"));
+                                    response.sendRedirect("../Admin/HomePage.jsp");
+
+                                } else if (rs3.next()) {
+                                    session.setAttribute("gid", rs3.getString("agent_id"));
+                                    session.setAttribute("gname", rs3.getString("agent_name"));
+                                    response.sendRedirect("../DeliveryAgency/HomePage.jsp");
+                                } else {
+                        
       out.write("\n");
-      out.write("        <form method=\"POST\">\n");
-      out.write("            <table border=\"0\" align=\"center\">\n");
-      out.write("                <tr>\n");
-      out.write("                    <td>Email</td>\n");
-      out.write("                    <td>\n");
-      out.write("                        <input  required type=\"email\" name=\"txtemail\" class=\"text-box\" placeholder=\"Enter Email-Id\">\n");
-      out.write("                    </td>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td>Password</td>\n");
-      out.write("                    <td>\n");
-      out.write("                        <input  required type=\"password\" name=\"txtpsswd\" class=\"text-box\" placeholder=\"Enter Password\" pattern=\"(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}\" title=\"Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters\" >\n");
-      out.write("                    </td>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td colspan=\"2\" align=\"center\">\n");
-      out.write("                        <input type=\"submit\" name=\"btnlogin\"  value=\"Login\">\n");
-      out.write("                    </td>\n");
-      out.write("                </tr>\n");
-      out.write("            </table>\n");
-      out.write("        </form>  \n");
-      out.write("    </body>\n");
-      out.write("   \n");
-      out.write("</html>\n");
-      out.write("<br><br><br><br><br><br><br><br><br><br><br><br><br>\n");
+      out.write("                        <script>\n");
+      out.write("                            alert(\"Invalid Credentilas\")\n");
+      out.write("                            window.Location = \"Login.jsp\"\n");
+      out.write("                        </script>\n");
+      out.write("                        ");
+
+                                }
+                            }
+                        
+      out.write("\n");
+      out.write("                        <form method=\"POST\">\n");
+      out.write("                            <table border=\"0\" align=\"center\">\n");
+      out.write("                                <tr>\n");
+      out.write("                                    <td>Email</td>\n");
+      out.write("                                    <td>\n");
+      out.write("                                        <input  required type=\"email\" name=\"txtemail\" class=\"text-box\" placeholder=\"Enter Email-Id\">\n");
+      out.write("                                    </td>\n");
+      out.write("                                </tr>\n");
+      out.write("                                <tr>\n");
+      out.write("                                    <td>Password</td>\n");
+      out.write("                                    <td>\n");
+      out.write("                                        <input  required type=\"password\" name=\"txtpsswd\" class=\"text-box\" placeholder=\"Enter Password\" pattern=\"(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}\" title=\"Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters\" >\n");
+      out.write("                                    </td>\n");
+      out.write("                                </tr>\n");
+      out.write("                                <tr>\n");
+      out.write("                                <tr>\n");
+      out.write("                                    <td colspan=\"2\" align=\"center\">\n");
+      out.write("                                        <input type=\"submit\" name=\"btnlogin\"  value=\"Login\">\n");
+      out.write("                                    </td>\n");
+      out.write("                                </tr>\n");
+      out.write("                            </table>\n");
+      out.write("                        </form>  \n");
+      out.write("                        </body>\n");
+      out.write("\n");
+      out.write("                        </html>\n");
+      out.write("                        <br><br><br><br><br><br><br><br><br><br><br><br><br>\n");
+      out.write("                        ");
       out.write("<!-- footer -->\n");
       out.write("\t<div class=\"footer-area\">\n");
       out.write("\t\t<div class=\"container\">\n");
@@ -292,7 +285,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t<li><a href=\"index.html\">Home</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"about.html\">About</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
-      out.write("                                                        <li><a href=\"contact.html\">Contact</a></li>\n");
+      out.write("                                                        \n");
       out.write("\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t</div>\n");

@@ -81,8 +81,9 @@
                                                                               
                                                             </ul>
                                                             </li>
+                                                            <li><a href="AgencyMyBookings.jsp">MyBookings</a></li>  
                                                             <li><a href="MyProfile.jsp">My Profile</a></li>
-									
+                                                              
 								
                                                             
 							</ul>

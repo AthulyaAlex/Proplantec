@@ -16,6 +16,7 @@
         ResultSet rs = con.selectCommand(sel);
         if (rs.next()) {
             String sqlQry = "select count(*) as count from tbl_cart where booking_id='" + rs.getString("id") + "' and product_id='" + id + "'";
+            System.out.println(sqlQry);
             ResultSet rsc = con.selectCommand(sqlQry);
             rsc.next();
             if (Integer.parseInt(rsc.getString("count")) > 0) {

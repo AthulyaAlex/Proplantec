@@ -3,167 +3,80 @@
     Created on : 20 May, 2024, 10:27:30 PM
     Author     : HP
 --%>
+
+
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
-<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.ResultSet" %>
 <%@include file="Head.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Complaint</title>
-    
-            <style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+         <style>
 /*            .bg-img {
                 background-image: url("../Assets/Templates/Main/assets/img/hero-bg.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-image: center;
+                background-position:center;
             }*/
-             body {
+        body {
                 margin: 0;
                 padding: 0;
                 background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
                 min-height: 800px
             }
-            .text-box {
-                background-color: transparent;
-                width: 215px;
-                color:gray;
-            }
-            
-            input::reset {
-                    width: 40%;
-                    background-color: #096;
-                    color: white;
-                    padding: 15px;
-                    margin: 4px 0;
-                    border: none;
-                    border-radius: 4px !important;
-                    cursor: pointer;
-            }
             </style>
     </head>
     <body>
-        <%
-            if(request.getParameter("btn_submit")!=null)
-            {
-                    String uq = "insert into tbl_complaint set complaint_title = '"+request.getParameter("complaint_title")+"'"
-                            + ",complaint_content = '"+request.getParameter("complaint_content")+"',complaint_date =curdate(),"
-                            + "agent_id = '"+session.getAttribute("gid")+"',user_id = '"+request.getParameter("uid")+"'";
-                    if(con.executeCommand(uq)){
-            %>
-                <script>
-                alert('Inserted');
-                 window.location = "AgencyComplaint.jsp";
-                </script>
-            <%
-            } 
-            else {
-            %>
-                <script>
-                    alert('Failed');
-                window.location = "AgencyComplaint.jsp";
-            </script>
-            <%
-            }
-        }
-
-        if (request.getParameter("del") != null) {
-            String id = request.getParameter("del");
-            String delQry = "delete from tbl_complaint where complaint_id ='" + id + "'";
-            if (con.executeCommand(delQry)) {
-         %>
-       <script>
-        alert('Deleted');
-        window.location = "AgencyComplaint.jsp";
-    </script>
-    <%
-    } else {
-    %>
-    <script>
-        alert('Failed');
-        window.location = "AgencyComplaint.jsp";
-    </script>
-    <%
-            }
-        }
-    %>
-        
         <div class="bg-img">
-                <div style="background-color:#26404387;">
+                <div style="background-color: #26404387;">
         <form method="post">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
+     
+                <h3 style="color: white"; align="center">Agency Complaint </h3>
+        <table border="1" align="center">
+            <tr>
+                <td>Sl.No</td>
+                <td>User Name</td> 
+                <td>Date</td>
+                <td>Complaint content</td>
                 
-            <table border="1" align="center">
-                <tr>
-                    <td>User</td>
-                    <td><select name="nid" class="text-box">
-                            <option value="">----select----</option>
-                            <% 
-                String selQry = "select * from tbl_user";
+                <td>Status</td>
+            </tr>
+            <% int j = 0;
+                String selQry = "select * from tbl_complaint f inner join tbl_user u on f.user_id=u.user_id inner join tbl_agent n on n.agent_id=f.agent_id";
                 ResultSet rs = con.selectCommand(selQry);
                 while (rs.next()) {
-            %>
-            <option value="<%=rs.getString("user_id")%>"><%=rs.getString("user_name")%></option>
-            <%
-                }
-            %>
-                        </select>          
-                    </td>
-                </tr>
-                <tr>
-                    <td>Complaint Title</td>
-                    <td><input type="text" class="text-box" name="complaint_title"</td>
-                </tr>
-                <tr>
-                    <td>Complaint content</td>
-                    <td>
-                        <textarea name="complaint_content" class="text-box" rows="6" cols="20"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset" class="btn" ></td>
-                </tr>
-            </table>
-       
-                        <table border="1" align="center"><br><br><br>
-                 <br><tr>
-                <td>Sl.No</td>
-                <td>Date/time</td>
-                <td>Complaint title</td>
-                <td>User Name</td>
-                <td>complaint content </td>
-                <td>Complaint status</td>
-                <td>Complaint reply</td>
-                <td>Action </td>
-            </tr>
-            <% int i = 0;
-                String seleQry = "select * from tbl_complaint pc inner join tbl_agent dc on dc.agent_id=pc.agent_id";
-                ResultSet res = con.selectCommand(seleQry);
-                while (res.next()) {
-                    i++;
+                    j++;
             %>
             <tr>
-                <td><%=i%></td>
-                <td><%=res.getString("complaint_date")%></td>
-                <td><%=res.getString("complaint_title")%></td>
-                <td><%=res.getString("agent_name")%></td>
-                <td><%=res.getString("complaint_content")%></td>
-                <td><%=res.getString("complaint_status")%></td>
-                <td><%=res.getString("complaint_reply")%></td>
-                <td><a href="AgencyComplaint.jsp?del=<%=res.getString("complaint_id")%>">Delete</a></td>
+                <td align="center"><%=j%></td>
+                <td><%=rs.getString("user_name")%></td>
+                <td><%=rs.getString("complaint_date")%></td>
+                <td><%=rs.getString("complaint_content")%></td>
+               
+                <td>
+                    <%
+                    if(rs.getString("complaint_status").equals("0"))
+                    {
+                        out.print("Reply Pending");
+                    }
+                    if(rs.getString("complaint_status").equals("1"))
+                    {
+                        out.print("Replied");
+                    }
+                    
+                    %>
+                </td>
             </tr>
             <%
                 }
-            %>    
-            </table>
-        </form> 
-    </body><br><br><br><br>
+            %>
+        </table>
+    </body>
 </html>
 <%@include file="Foot.jsp" %>
-        </div>
-                </div>
-        </div>

@@ -129,6 +129,12 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
       out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li><a href=\"\">View Profile</a>\n");
+      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
+      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"../DeliveryAgency/MyProfile.jsp\">Agency</a></li>\n");
+      out.write("                                                                                <li><a href=\"../Nursery/MyProfile.jsp\">Nursery</a></li>\n");
+      out.write("                                                                        </ul>\n");
+      out.write("\t\t\t\t\t\t\t\t</li>\n");
       out.write("                                                            <li><a href=\"\">Verifications</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgentVerification.jsp\">Agent</a></li>\n");
@@ -140,7 +146,7 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"Location.jsp\">Location</a></li>\n");
       out.write("                                                                                <li><a href=\"LocalPlace.jsp\">Local Place</a></li>\n");
       out.write("                                                                                <li><a href=\"Category.jsp\">Category</a></li>\n");
-      out.write("                                                                                <li><a href=\"subcategory.jsp\">Sub Category</a></li>\n");
+      out.write("                                                                                <li><a href=\"Subcategory.jsp\">Sub Category</a></li>\n");
       out.write("                                                                                <li><a href=\"Assign.jsp\">Assigning Agency</a></li>\n");
       out.write("                                                                                <li><a href=\"ChangePassword.jsp\">Change Password</a></li>\n");
       out.write("                                                                        </ul>\n");
@@ -192,7 +198,7 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");
       out.write("                width: 215px;\n");
-      out.write("                color:gray;\n");
+      out.write("                color:white;\n");
       out.write("            }\n");
       out.write("            </style>\n");
       out.write("            ");
@@ -233,6 +239,15 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
 
                     String selbook="select * from tbl_booking b inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_nursery n on n.nursery_id=u.nursery_id  where n.nursery_id='" + session.getAttribute("nid") + "' and booking_status>0 and payment_status='1'";
                     ResultSet rs = con.selectCommand(selbook);
+                    if(rs.getString("cart_status").equals("6"))
+                    {
+                       
+      out.write("\n");
+      out.write("                       <a href=\"Payment.jsp\">Payment</a>\n");
+      out.write("                    \n");
+      out.write("                    ");
+
+                    }
                     int i = 0;
                     while (rs.next()) {
                          i++;
@@ -293,6 +308,7 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t<li><a href=\"../index.html\">Home</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"../about.html\">About</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
+      out.write("                                                        <li><a href=\"AgencyList.jsp\">Available Agency</a></li>\n");
       out.write("\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t</div>\n");

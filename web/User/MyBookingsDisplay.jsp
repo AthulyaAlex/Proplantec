@@ -23,7 +23,7 @@
             .text-box {
                 background-color: transparent;
                 width: 215px;
-                color:gray;
+                color:white;
             }
             </style>
     </head>
@@ -75,6 +75,13 @@
                     } else if (rs.getString("cart_status").equals("3") && rs.getString("booking_status").equals("1")) {
                      out.println("Product Shipped");
                     } else if (rs.getString("cart_status").equals("4") && rs.getString("booking_status").equals("1")) {
+                        out.println("Package Arrived");
+                    }
+                    else if (rs.getString("cart_status").equals("5") && rs.getString("booking_status").equals("1")) {
+                        out.println("Out for delivery");
+                    }
+                    else if (rs.getString("cart_status").equals("6") && rs.getString("booking_status").equals("1")) {
+                      
                         %>
                         Product Delivered <a href="Review.jsp?id=<%=rs.getString("product_id")%>">Review</a>
                         <%

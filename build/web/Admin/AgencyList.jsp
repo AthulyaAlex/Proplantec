@@ -63,21 +63,25 @@
                 {
                    
                     String insqry="insert into tbl_assignbooking(agent_id,booking_id)values('"+request.getParameter("aid")+"','"+request.getParameter("bid")+"')";
-                    
+                    out.println(insqry);
                     if(con.executeCommand(insqry))
                     {
                         %>
-                        <script>
+                       <script>
                             alert("Assigned..")
                             window.location = "Assign.jsp"
                         </script>
             <%
                          String upQ="update tbl_assignbooking set assign_status='1' where booking_id='"+request.getParameter("bid")+"'";
                         con.executeCommand(upQ);
+                        
+                          
+                        
                     }
                 }
-            String selnur="select * from tbl_agent a inner join tbl_location l on l.location_id=a.location_id where agent_status='1'";
+            String selnur="select * from tbl_agent  a inner join tbl_location l on l.location_id=a.location_id where agent_status='1'";
             ResultSet rs = con.selectCommand(selnur);
+            
             int i=0;
             while(rs.next())
             {
@@ -89,7 +93,7 @@
                     <div align="center"><img src="../Assets/Files/Agentphoto/<%=rs.getString("agent_photo")%>" height="70" width="70"></div>
                     <div class="cont"><div>Name</div><div><%=rs.getString("agent_name")%></div></div>
                     <div class="cont"><div>Contact</div><div><%=rs.getString("agent_contact")%></div></div>
-                    <div><a href="Assign.jsp?aid=<%=rs.getString("agent_id")%>&bid=<%=request.getParameter("bid")%>">ASSIGN</a></div>
+                    <div><a href="AgencyList.jsp?aid=<%=rs.getString("agent_id")%>&bid=<%=request.getParameter("bid")%>">ASSIGN</a></div>
                 </div>
                 </div>
                 <%

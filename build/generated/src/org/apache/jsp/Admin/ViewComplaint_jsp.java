@@ -205,62 +205,7 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("            <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");
       out.write("                 <table align=\"center\" cellpadding=\"10\">\n");
-      out.write("                     <h3 style=\"color: white\"; align=\"center\">User Complaint </h3>\n");
-      out.write("        <table border=\"1\" align=\"center\">\n");
-      out.write("            <tr>\n");
-      out.write("                <td>Sl.No</td>\n");
-      out.write("                <td>User Name</td> \n");
-      out.write("                <td>Date</td>\n");
-      out.write("                <td>Complaint content</td>\n");
-      out.write("                <td>Action</td>\n");
-      out.write("                <td>Status</td>\n");
-      out.write("            </tr>\n");
-      out.write("            ");
- int i = 0;
-                String seleQry = "select * from tbl_complaint f inner join tbl_user u on f.user_id=u.user_id";
-                ResultSet res = con.selectCommand(seleQry);
-                while (res.next()) {
-                    i++;
-            
       out.write("\n");
-      out.write("            <tr>\n");
-      out.write("                <td align=\"center\">");
-      out.print(i);
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print(res.getString("user_name"));
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print(res.getString("complaint_date"));
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print(res.getString("complaint_content"));
-      out.write("</td>\n");
-      out.write("                <td><a href=\"ComplaintReply.jsp?cid=");
-      out.print(res.getString("complaint_id"));
-      out.write("\">Reply</a><br></td>\n");
-      out.write("                <td>\n");
-      out.write("                    ");
-
-                    if(res.getString("complaint_status").equals("0"))
-                    {
-                        out.print("Reply Pending");
-                    }
-                    if(res.getString("complaint_status").equals("1"))
-                    {
-                        out.print("Replied");
-                    }
-                    
-                    
-      out.write("\n");
-      out.write("                </td>\n");
-      out.write("            </tr>\n");
-      out.write("            ");
-
-                }
-            
-      out.write("\n");
-      out.write("        </table>\n");
       out.write("                <h3 style=\"color: white\"; align=\"center\">Agency Complaint </h3>\n");
       out.write("        <table border=\"1\" align=\"center\">\n");
       out.write("            <tr>\n");
@@ -273,7 +218,7 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("            </tr>\n");
       out.write("            ");
  int j = 0;
-                String selQry = "select * from tbl_complaint f inner join tbl_user u on f.user_id=u.user_id";
+                String selQry = "select * from tbl_complaint f inner join tbl_agent u on f.agent_id=u.agent_id";
                 ResultSet rs = con.selectCommand(selQry);
                 while (rs.next()) {
                     j++;
