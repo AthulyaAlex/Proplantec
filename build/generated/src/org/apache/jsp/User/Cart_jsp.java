@@ -138,6 +138,7 @@ public final class Cart_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                                                <li><a href=\"ChangePassword.jsp\">Change Password</a></li>\n");
       out.write("                                                                                \n");
       out.write("\t\t\t\t\t\t\t\t\t</ul>\n");
+      out.write("                                                           \n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
       out.write("                                                            \n");
       out.write("                                                            \n");
@@ -194,7 +195,7 @@ public final class Cart_jsp extends org.apache.jasper.runtime.HttpJspBase
                     String rate=request.getParameter("txtrate");
                     String radio =request.getParameter("rdo");
                     String upQry="update tbl_booking set booking_total='"+rate+"',booking_status='1', planter_status='"+radio+"' where booking_id='"+id+"'";
-                    System.out.println("upQry");
+                    System.out.println(upQry);
                     String upQ="update tbl_cart set cart_status='1' where booking_id='"+id+"'";
                     con.executeCommand(upQ);
                     if(con.executeCommand(upQry))
@@ -202,7 +203,7 @@ public final class Cart_jsp extends org.apache.jasper.runtime.HttpJspBase
                         
       out.write("\n");
       out.write("                        <script>\n");
-      out.write("//                            alert('Updated');\n");
+      out.write("                            alert('Updated');\n");
       out.write("                            </script>\n");
       out.write("                            ");
 
@@ -216,7 +217,7 @@ public final class Cart_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            ");
    
                 }
-                   //response.sendRedirect("Payment.jsp?bid="+id+"");
+                   response.sendRedirect("Payment.jsp?bid="+id+"");
                 }
                 
         
@@ -225,13 +226,14 @@ public final class Cart_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        ");
 
         String bid =""; 
-        String selQry="select * from tbl_booking where user_id='" + session.getAttribute("uid") + "'& booking_status=0";
-       out.println(selQry);
+        String selQry="select * from tbl_booking where user_id='" + session.getAttribute("uid") + "' and booking_status=0";
+       System.out.println(selQry);
         ResultSet rs = con.selectCommand(selQry);
         if(rs.next())
         {
-           System.out.print(selQry);
+//           System.out.print(selQry);
            bid=rs.getString("booking_id"); 
+//           System.out.println(bid);
         }
         else
         {
@@ -241,7 +243,7 @@ public final class Cart_jsp extends org.apache.jasper.runtime.HttpJspBase
         
       out.write("\n");
       out.write("         <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #26404387;\">\n");
+      out.write("                <div style=\"background-color: #26404387;min-height: 700px\">\n");
       out.write("                      <form method=\"post\">\n");
       out.write("            <br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");

@@ -29,6 +29,7 @@
                 background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
                 min-height: 800px
             }
+            
         </style>
     </head>
     <body>
@@ -39,18 +40,18 @@
                        <form method="POST">
                     <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
-                 <table align="center" cellpadding="10">
+                 <table align="center" cellpadding="10" >
                 <tr>                                                            
                     <td>Category</td>
                     <td>
-                        <select name="ddlcat" onchange="getsubcategory(this.value)">
+                        <select name="ddlcat" onchange="getsubcategory(this.value)" class="text-box">
                             <option>--select Category--</option>
                             <%
                                 String seelqry = "select * from tbl_category";
                                 ResultSet rs2 = con.selectCommand(seelqry);
                                 while (rs2.next()) {
                             %>
-                            <option value="<%=rs2.getString("category_id")%>"><%=rs2.getString("category_name")%></option>
+                            <option value="<%=rs2.getString("category_id")%>" style="color: black"><%=rs2.getString("category_name")%></option>
                             <%
                                 }
                             %>
@@ -60,14 +61,14 @@
                 <tr>
                     <td>Subcategory</td>
                     <td>
-                        <select name="ddlsub"  id="ddlsub" >
+                        <select name="ddlsub"  id="ddlsub" class="text-box" >
                             <option>--select subcategory--</option>
                             <%
                                 String selqry = "select * from tbl_subcategory";
                                 ResultSet rs = con.selectCommand(selqry);
                                 while (rs.next()) {
                             %>
-                            <option value="<%=rs.getString("subcategory_id")%>"><%=rs.getString("subcategory_name")%></option>
+                            <option value="<%=rs.getString("subcategory_id")%>" style="color: black"><%=rs.getString("subcategory_name")%></option>
                             <%
                                 }
                             %>
@@ -79,7 +80,12 @@
                         <input type="submit" name="txtsave" value="Search">
                     </td>
             </table><br>
-            <table border="0" align="center">
+            <style>
+    th {
+        padding: 10px; /* Adjust the padding value to increase or decrease the space */
+    }
+</style>
+            <table border="1" align="center">
                 <tr>
                     <th>Sl.no</th>
                     <th>Product Image</th>
@@ -107,8 +113,8 @@
                          <td><%=r.getString("product_rate")%></td>
                          <td><%=r.getString("product_details")%></td>
                          <td><%=r.getString("product_stock")%></td>
-                         <td><a href="ViewGallery.jsp?sid=<%=r.getString("product_id")%> "> View Gallery</a>
-                         <td><a href="ViewReview.jsp?gid=<%=r.getString("product_id")%> ">View Rating</a>  
+                         <td><a href="ViewGallery.jsp?sid=<%=r.getString("product_id")%> " style="color: white"> View Gallery</a>
+                         <td><a href="ViewReview.jsp?gid=<%=r.getString("product_id")%> " style="color: white">View Rating</a>  
                          <td><button type="button" onclick="booking(<%=r.getString("product_id")%>)">Add to cart</button></td>
                 </tr>
                 <%

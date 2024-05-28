@@ -67,7 +67,7 @@
         %>   
         
        <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387; min-height: 700px">
             <form method="POST" enctype="multipart/form-data" action="../Assets/Actionpages/UserUploadAction.jsp">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
@@ -85,7 +85,7 @@
                 </tr>
             </table>
                 <br>
-            <table cellpadding="10" align="center" >
+            <table border="1" cellpadding="10" align="center" >
                 <tr>
                     <th>Sl.no</th>
                     <th>Category</th>
@@ -114,6 +114,8 @@
          
     </body>
 </html>
-<br><br><br><br><br><br>
+                </div>
+                </div>
+       </div>
 <%@include file="Foot.jsp" %>
 

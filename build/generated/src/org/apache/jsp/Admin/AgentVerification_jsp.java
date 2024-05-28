@@ -130,13 +130,8 @@ public final class AgentVerification_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
-      out.write("                                                            <li><a href=\"\">View Profile</a>\n");
-      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"../DeliveryAgency/MyProfile.jsp\">Agency</a></li>\n");
-      out.write("                                                                                <li><a href=\"../Nursery/MyProfile.jsp\">Nursery</a></li>\n");
-      out.write("                                                                        </ul>\n");
-      out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"HomePage.jsp\">Home</a></li>\n");
+      out.write("                                                           \n");
       out.write("                                                            <li><a href=\"\">Verifications</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgentVerification.jsp\">Agent</a></li>\n");
@@ -165,6 +160,7 @@ public final class AgentVerification_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"ComplaintReply.jsp\">Complaint Reply</a></li>\n");
       out.write("                                                                        </ul>\n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                                <li><a href=\"../index.html\">Logout</a></li>\n");
       out.write("                                                           \n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t</nav>\n");
@@ -218,7 +214,7 @@ public final class AgentVerification_jsp extends org.apache.jasper.runtime.HttpJ
         
       out.write("\n");
       out.write("            <div align=\"center\" class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #26404387;\">\n");
+      out.write("                <div style=\"background-color: #26404387;min-height: 700px\">\n");
       out.write("                    <br><br><br><br><br><h3 style=\"color: white;\">New Agent</h3>\n");
       out.write("            <table border=\"2\" align=\"center\" cellpadding=\"10\" style=\"color: white\">\n");
       out.write("           \n");
@@ -227,6 +223,7 @@ public final class AgentVerification_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                    <th>Name</th>\n");
       out.write("                    <th>Contact</th>\n");
       out.write("                    <th>Proof</th>\n");
+      out.write("                    <th>Proof Download</th>\n");
       out.write("                    <th>Photo</th>\n");
       out.write("                    <th>Location</th>\n");
       out.write("                    <th>Action</th>\n");
@@ -253,6 +250,9 @@ public final class AgentVerification_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                    <td>");
       out.print(rs.getString("agent_proof"));
       out.write("</td>\n");
+      out.write("                    <td><a href=\"../Assets/Files/Agentproof/");
+      out.print(rs.getString("agent_proof"));
+      out.write("\"download>Download</a></td>\n");
       out.write("                    <td><");
       out.print(rs.getString("agent_photo"));
       out.write("</td>\n");
@@ -281,6 +281,7 @@ public final class AgentVerification_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                    <th>Name</th>\n");
       out.write("                    <th>Contact</th>\n");
       out.write("                    <th>Proof</th>\n");
+      out.write("                    <th>Proof Download</th>\n");
       out.write("                    <th>Photo</th>\n");
       out.write("                    <th>Location</th>\n");
       out.write("                    <th>Action</th>\n");
@@ -306,6 +307,9 @@ public final class AgentVerification_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                    <td>");
       out.print(rs1.getString("agent_proof"));
       out.write("</td>\n");
+      out.write("                    <td><a href=\"../Assets/Files/Agentproof/");
+      out.print(rs1.getString("agent_proof"));
+      out.write("\"download>Download</a></td>\n");
       out.write("                    <td>");
       out.print(rs1.getString("agent_photo"));
       out.write("</td>\n");
@@ -331,6 +335,7 @@ public final class AgentVerification_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                    <th>Name</th>\n");
       out.write("                    <th>Contact</th>\n");
       out.write("                    <th>Proof</th>\n");
+      out.write("                    <th>Proof Download</th>\n");
       out.write("                    <th>Photo</th>\n");
       out.write("                    <th>Location</th>\n");
       out.write("                    <th>Action</th>\n");
@@ -356,6 +361,9 @@ public final class AgentVerification_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                    <td>");
       out.print(rs2.getString("agent_proof"));
       out.write("</td>\n");
+      out.write("                    <td><a href=\"../Assets/Files/Agentproof/");
+      out.print(rs2.getString("agent_proof"));
+      out.write("\"download>Download</a></td>\n");
       out.write("                    <td>");
       out.print(rs2.getString("agent_photo"));
       out.write("</td>\n");

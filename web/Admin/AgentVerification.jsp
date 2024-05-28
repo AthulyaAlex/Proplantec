@@ -45,7 +45,7 @@
 
         %>
             <div align="center" class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387;min-height: 700px">
                     <br><br><br><br><br><h3 style="color: white;">New Agent</h3>
             <table border="2" align="center" cellpadding="10" style="color: white">
            
@@ -54,6 +54,7 @@
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Proof</th>
+                    <th>Proof Download</th>
                     <th>Photo</th>
                     <th>Location</th>
                     <th>Action</th>
@@ -70,6 +71,7 @@
                     <td><%=rs.getString("agent_name")%></td>
                     <td><%=rs.getString("agent_contact")%></td>   
                     <td><%=rs.getString("agent_proof")%></td>
+                    <td><a href="../Assets/Files/Agentproof/<%=rs.getString("agent_proof")%>"download>Download</a></td>
                     <td><<%=rs.getString("agent_photo")%></td>
                     <td><%=rs.getString("location_name")%></td>
                     <td><a href="AgentVerification.jsp?aid=<%=rs.getString("agent_id")%>">Accept</a>|
@@ -88,6 +90,7 @@
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Proof</th>
+                    <th>Proof Download</th>
                     <th>Photo</th>
                     <th>Location</th>
                     <th>Action</th>
@@ -103,6 +106,7 @@
                     <td><%=rs1.getString("agent_name")%></td>
                     <td><%=rs1.getString("agent_contact")%></td>   
                     <td><%=rs1.getString("agent_proof")%></td>
+                    <td><a href="../Assets/Files/Agentproof/<%=rs1.getString("agent_proof")%>"download>Download</a></td>
                     <td><%=rs1.getString("agent_photo")%></td>
                     <td><%=rs1.getString("location_name")%></td>
                     <td><a href="AgentVerification.jsp?rid=<%=rs1.getString("agent_id")%>">Reject</a></td>
@@ -120,6 +124,7 @@
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Proof</th>
+                    <th>Proof Download</th>
                     <th>Photo</th>
                     <th>Location</th>
                     <th>Action</th>
@@ -135,6 +140,7 @@
                     <td><%=rs2.getString("agent_name")%></td>
                     <td><%=rs2.getString("agent_contact")%></td>   
                     <td><%=rs2.getString("agent_proof")%></td>
+                    <td><a href="../Assets/Files/Agentproof/<%=rs2.getString("agent_proof")%>"download>Download</a></td>
                     <td><%=rs2.getString("agent_photo")%></td>
                     <td><%=rs2.getString("location_name")%></td>
                     <td><a href="AgentVerification.jsp?aid=<%=rs2.getString("agent_id")%>">Accept</a>|

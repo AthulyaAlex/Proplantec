@@ -17,7 +17,7 @@
             body {
                 margin: 0;
                 padding: 0;
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') fixed center center/cover;
                 min-height: 800px
             }
             .text-box {
@@ -29,7 +29,7 @@
     </head>
     <body>
         <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387;min-height: 700px">
          <form method="post" enctype="multipart/form-data" action="../Assets/Actionpages/ProductUploadAction.jsp">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">

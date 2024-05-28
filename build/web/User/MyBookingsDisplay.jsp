@@ -29,7 +29,7 @@
     </head>
     <body>
        <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387;min-height: 700px">
                  <form method="post">
                      <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
@@ -83,8 +83,17 @@
                     else if (rs.getString("cart_status").equals("6") && rs.getString("booking_status").equals("1")) {
                       
                         %>
-                        Product Delivered <a href="Review.jsp?id=<%=rs.getString("product_id")%>">Review</a>
+                        Product Delivered <a href="Review.jsp?id=<%=rs.getString("product_id")%>">Product Review</a><br>
+                        
+                        
                         <%
+                         String selQry= "select * from tbl_assignbooking where booking_id='"+rs.getString("booking_id")+"' ";
+                                 ResultSet rs1 = con.selectCommand(selQry);
+                                 while(rs1.next()){
+                                     %>
+                                 <a href="AgencyReview.jsp?id=<%=rs1.getString("agent_id")%>">Agency Review</a>
+                                 <%
+                                 }
                         }
 
                     %></td>

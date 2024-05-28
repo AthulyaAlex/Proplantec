@@ -71,7 +71,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-                                                            <li class="current-list-item"><a href="../index.html">Home</a></li>
+                                                            <li class="current-list-item"><a href="HomePage.jsp">Home</a></li>
                                                             <li><a href="../about.html">About</a></li> 
                                                             
                                                             <li><a href="">Settings</a>
@@ -83,7 +83,8 @@
                                                             </li>
                                                             <li><a href="AgencyMyBookings.jsp">MyBookings</a></li>  
                                                             <li><a href="MyProfile.jsp">My Profile</a></li>
-                                                              
+                                                            <li><a href="AgencyComplaint.jsp">Complaints</a></li>
+                                                            <li><a href="../index.html">Logout</a></li>  
 								
                                                             
 							</ul>

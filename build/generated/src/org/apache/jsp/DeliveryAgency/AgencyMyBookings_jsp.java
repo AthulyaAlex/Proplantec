@@ -128,7 +128,7 @@ public final class AgencyMyBookings_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"HomePage.jsp\">Home</a></li>\n");
       out.write("                                                            <li><a href=\"../about.html\">About</a></li> \n");
       out.write("                                                            \n");
       out.write("                                                            <li><a href=\"\">Settings</a>\n");
@@ -140,7 +140,8 @@ public final class AgencyMyBookings_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                                            </li>\n");
       out.write("                                                            <li><a href=\"AgencyMyBookings.jsp\">MyBookings</a></li>  \n");
       out.write("                                                            <li><a href=\"MyProfile.jsp\">My Profile</a></li>\n");
-      out.write("                                                              \n");
+      out.write("                                                            <li><a href=\"AgencyComplaint.jsp\">Complaints</a></li>\n");
+      out.write("                                                            <li><a href=\"../index.html\">Logout</a></li>  \n");
       out.write("\t\t\t\t\t\t\t\t\n");
       out.write("                                                            \n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
@@ -196,11 +197,11 @@ public final class AgencyMyBookings_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("       <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #26404387;\">\n");
+      out.write("                <div style=\"background-color: #26404387; min-height: 700px\">\n");
       out.write("                 <form method=\"post\">\n");
       out.write("                     <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");
-      out.write("                 <table align=\"center\" cellpadding=\"10\">       \n");
+      out.write("                 <table border=\"1\"align=\"center\" cellpadding=\"10\">       \n");
       out.write("        <div align=\"center\">\n");
       out.write("            <h2 style=\"color: white\">Bookings</h2><br>\n");
       out.write("         \n");
@@ -208,17 +209,18 @@ public final class AgencyMyBookings_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("               \n");
       out.write("                <tr>\n");
       out.write("                    <th>Sl.no</th>\n");
+      out.write("                    <th>User Name</th>\n");
       out.write("                    <th>Product Name</th>\n");
-      out.write("                    \n");
       out.write("                    <th>Quantity</th>\n");
-      out.write("                    \n");
+      out.write("                    <th>Location</th>\n");
       out.write("                    <th>Action</th>\n");
       out.write("                    \n");
       out.write("                </tr>\n");
       out.write("               ");
 
-                    String selbook="select * from tbl_booking b inner join tbl_assignbooking a on a.booking_id=b.booking_id inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_agent n on n.agent_id=a.agent_id  where a.agent_id='" + session.getAttribute("gid") + "' and booking_status>0 and payment_status='1'";
+                    String selbook="select * from tbl_booking b inner join tbl_user us on b.user_id=us.user_id inner join tbl_localplace lp on lp.localplace_id=us.localplace_id  inner join  tbl_assignbooking a on a.booking_id=b.booking_id inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_agent n on n.agent_id=a.agent_id  where a.agent_id='" + session.getAttribute("gid") + "' and booking_status>0 and payment_status='1'";
                     ResultSet rs = con.selectCommand(selbook);
+                   
                     int i = 0;
                     while (rs.next()) {
                          i++;
@@ -230,49 +232,61 @@ public final class AgencyMyBookings_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                        <td>");
       out.print(i);
       out.write("</td>\n");
+      out.write("                       <td>");
+      out.print(rs.getString("user_name"));
+      out.write("</td>\n");
       out.write("                         <td>");
       out.print(rs.getString("product_name"));
       out.write("</td>\n");
-      out.write("                         \n");
       out.write("                         <td>");
       out.print(rs.getString("cart_quantity"));
       out.write("</td>\n");
+      out.write("                        <td>");
+      out.print(rs.getString("localplace_name"));
+      out.write("</td>\n");
       out.write("                         \n");
-      out.write("                         <td>");
+      out.write("                        <td>");
 
-                     if (rs.getString("cart_status").equals("5") && rs.getString("booking_status").equals("1")) {
+                     if (rs.getString("cart_status").equals("4") && rs.getString("booking_status").equals("1")) {
                     
       out.write("\n");
       out.write("                    Package Arriving<a href=\"AgencyMyBookings.jsp?id=");
       out.print(rs.getString("cart_id"));
-      out.write("&status=2\">Package Arrived</a>\n");
+      out.write("&status=5\">Package Arrived</a>\n");
       out.write("                    ");
 
-                    } else if (rs.getString("cart_status").equals("6") && rs.getString("booking_status").equals("1")) {
+                    } else if (rs.getString("cart_status").equals("5") && rs.getString("booking_status").equals("1")) {
                     
       out.write("\n");
       out.write("                    Preparing for delivery<a href=\"AgencyMyBookings.jsp?id=");
       out.print(rs.getString("cart_id"));
-      out.write("&status=3\">Out For Delivery</a>\n");
+      out.write("&status=6\">Out For Delivery</a>\n");
       out.write("                    ");
 
                     }  else if (rs.getString("cart_status").equals("6") && rs.getString("booking_status").equals("1")) {
                     
       out.write("\n");
       out.write("                    Product Delivered \n");
+      out.write("                    <br>\n");
       out.write("                    ");
 
-                        }
-
-                    
+                        if(rs.getInt("assign_amount")!=0){
+                            out.println("Paid "+rs.getInt("assign_amount"));
+                    }
+                                            }
+                                        
       out.write("\n");
-      out.write("                     </tr>\n");
-      out.write("                    \n");
-      out.write("                     ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                                        ");
 
-                 }
-                     
-      out.write("          \n");
+                                            }
+
+                                        
+      out.write("\n");
+      out.write("                                </tr>\n");
+      out.write("        \n");
       out.write("                 </table><br>\n");
       out.write("    </body><br><br><br><br><br><br><br><br>\n");
       out.write("</html>\n");

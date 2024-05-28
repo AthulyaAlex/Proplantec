@@ -71,7 +71,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-                                                            <li class="current-list-item"><a href="../index.html">Home</a></li>
+                                                            <li class="current-list-item"><a href="HomePage.jsp">Home</a></li>
                                                             <li><a href="../about.html">About</a></li> 
                                                             <li><a href="">Products</a>
                                                             <ul class="sub-menu">
@@ -89,6 +89,8 @@
                                                             </li>
                                                             <li><a href="BookingsDisplay.jsp">Bookings</a></li>
                                                            <li><a href="MyProfile.jsp">Profile</a></li>
+                                                           <li><a href="ComplaintView.jsp">Complaints</a></li>
+                                                           <li><a href="../index.html">Logout</a></li>
 							</ul>
 						</nav>
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>

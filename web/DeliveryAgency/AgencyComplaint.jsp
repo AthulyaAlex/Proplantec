@@ -31,7 +31,7 @@
     </head>
     <body>
         <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387; min-height: 700px">
         <form method="post">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
@@ -79,4 +79,7 @@
         </table>
     </body>
 </html>
+            </div>
+                </div>
+        </div>
 <%@include file="Foot.jsp" %>

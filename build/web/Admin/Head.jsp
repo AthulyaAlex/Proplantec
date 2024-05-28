@@ -71,13 +71,8 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-                                                            <li class="current-list-item"><a href="../index.html">Home</a></li>
-                                                            <li><a href="">View Profile</a>
-									<ul class="sub-menu">
-										<li><a href="../DeliveryAgency/MyProfile.jsp">Agency</a></li>
-                                                                                <li><a href="../Nursery/MyProfile.jsp">Nursery</a></li>
-                                                                        </ul>
-								</li>
+                                                            <li class="current-list-item"><a href="HomePage.jsp">Home</a></li>
+                                                           
                                                             <li><a href="">Verifications</a>
 									<ul class="sub-menu">
 										<li><a href="AgentVerification.jsp">Agent</a></li>
@@ -106,6 +101,7 @@
 										<li><a href="ComplaintReply.jsp">Complaint Reply</a></li>
                                                                         </ul>
 								</li>
+                                                                <li><a href="../index.html">Logout</a></li>
                                                            
 							</ul>
 						</nav>

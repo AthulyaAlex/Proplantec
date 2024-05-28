@@ -128,13 +128,8 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
-      out.write("                                                            <li><a href=\"\">View Profile</a>\n");
-      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"../DeliveryAgency/MyProfile.jsp\">Agency</a></li>\n");
-      out.write("                                                                                <li><a href=\"../Nursery/MyProfile.jsp\">Nursery</a></li>\n");
-      out.write("                                                                        </ul>\n");
-      out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"HomePage.jsp\">Home</a></li>\n");
+      out.write("                                                           \n");
       out.write("                                                            <li><a href=\"\">Verifications</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgentVerification.jsp\">Agent</a></li>\n");
@@ -163,6 +158,7 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"ComplaintReply.jsp\">Complaint Reply</a></li>\n");
       out.write("                                                                        </ul>\n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                                <li><a href=\"../index.html\">Logout</a></li>\n");
       out.write("                                                           \n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t</nav>\n");
@@ -217,7 +213,7 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("       <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color:  #26404387;\">\n");
+      out.write("                <div style=\"background-color:  #26404387;min-height: 700px\">\n");
       out.write("                 <form method=\"post\">\n");
       out.write("                     <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");
@@ -233,21 +229,14 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <th>Quantity</th>\n");
       out.write("                    \n");
       out.write("                    <th>Action</th>\n");
+      out.write("                    <th>Review</th>\n");
       out.write("                    \n");
       out.write("                </tr>\n");
       out.write("                    ");
 
-                    String selbook="select * from tbl_booking b inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_nursery n on n.nursery_id=u.nursery_id  where n.nursery_id='" + session.getAttribute("nid") + "' and booking_status>0 and payment_status='1'";
+                    String selbook="select * from tbl_booking b inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_nursery n on n.nursery_id=u.nursery_id  where n.nursery_id='" + session.getAttribute("nid") + "' and b.booking_status>0 and b.payment_status='1'";
+                    //out.println(selbook);
                     ResultSet rs = con.selectCommand(selbook);
-                    if(rs.getString("cart_status").equals("6"))
-                    {
-                       
-      out.write("\n");
-      out.write("                       <a href=\"Payment.jsp\">Payment</a>\n");
-      out.write("                    \n");
-      out.write("                    ");
-
-                    }
                     int i = 0;
                     while (rs.next()) {
                          i++;
@@ -267,18 +256,54 @@ public final class Assign_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                         <td>");
       out.print(rs.getString("cart_quantity"));
       out.write("</td>\n");
-      out.write("                         <td><a href=\"AgencyList.jsp?bid=");
-      out.print(rs.getString("booking_id"));
-      out.write("\">ASSIGN</a></td>\n");
-      out.write("                         \n");
-      out.write("                     </tr>\n");
-      out.write("                    \n");
-      out.write("                     ");
+      out.write("                         <td>\n");
+      out.write("                             ");
 
+                             if(rs.getInt("cart_status")== 6)
+                                {
+                                   
+      out.write("\n");
+      out.write("                                   <a href=\"PaymentAgent.jsp?bid=");
+      out.print(rs.getString("booking_id"));
+      out.write("\">Payment</a>\n");
+      out.write("\n");
+      out.write("                                ");
+
+                                }
+                             //else if(rs.getInt("assign_status")== 1){
+                                // out.println("Assigned");
+                             //}
+                             else
+                             {
+                                 String selQry= "select * from tbl_assignbooking where booking_id='"+rs.getString("booking_id")+"' ";
+                                 ResultSet rs1 = con.selectCommand(selQry);
+                                if(rs1.next())
+                                {
+                                out.println("Assigned");
+                                }
+                                else
+                                {
+                                
+      out.write("\n");
+      out.write("                                        <a href=\"AgencyList.jsp?bid=");
+      out.print(rs.getString("booking_id"));
+      out.write("\">ASSIGN</a>\n");
+      out.write("                                       ");
+
+                                      
+                                }
+                                                         
+                             }
+                             
+      out.write("\n");
+      out.write("                            \n");
+      out.write("                     \n");
+      out.write("                  ");
+   
                  }
                      
       out.write("      \n");
-      out.write("                 </table><br><br><br>\n");
+      out.write("                     </tr>  </table><br><br><br>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
       out.write("<!-- footer -->\n");

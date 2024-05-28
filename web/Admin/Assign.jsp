@@ -45,7 +45,7 @@
     </head>
     <body>
        <div class="bg-img">
-                <div style="background-color:  #26404387;">
+                <div style="background-color:  #26404387;min-height: 700px">
                  <form method="post">
                      <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
@@ -61,10 +61,12 @@
                     <th>Quantity</th>
                     
                     <th>Action</th>
+                    <th>Review</th>
                     
                 </tr>
                     <%
-                    String selbook="select * from tbl_booking b inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_nursery n on n.nursery_id=u.nursery_id  where n.nursery_id='" + session.getAttribute("nid") + "' and booking_status>0 and payment_status='1'";
+                    String selbook="select * from tbl_booking b inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_nursery n on n.nursery_id=u.nursery_id  where n.nursery_id='" + session.getAttribute("nid") + "' and b.booking_status>0 and b.payment_status='1'";
+                    //out.println(selbook);
                     ResultSet rs = con.selectCommand(selbook);
                     int i = 0;
                     while (rs.next()) {
@@ -83,21 +85,41 @@
                              if(rs.getInt("cart_status")== 6)
                                 {
                                    %>
-                                   <a href="Payment.jsp">Payment</a>
+                                   <a href="PaymentAgent.jsp?bid=<%=rs.getString("booking_id")%>">Payment</a>
 
                                 <%
                                 }
+                             //else if(rs.getInt("assign_status")== 1){
+                                // out.println("Assigned");
+                             //}
                              else
                              {
-                             %>
-                             <a href="AgencyList.jsp?bid=<%=rs.getString("booking_id")%>">ASSIGN</a></td>
-                         <%
+                                 String selQry= "select * from tbl_assignbooking where booking_id='"+rs.getString("booking_id")+"' ";
+                                 ResultSet rs1 = con.selectCommand(selQry);
+                                if(rs1.next())
+                                {
+                                out.println("Assigned");
+                                }
+                                else
+                                {
+                                %>
+                                        <a href="AgencyList.jsp?bid=<%=rs.getString("booking_id")%>">ASSIGN</a>
+                                       <%
+                                      
+                                }
+                                                         
                              }
-                         %>
-                     <%
+                             %>
+                            
+                     
+                  <%   
                  }
                      %>      
-                 </table><br><br><br>
+                     </tr>  </table>
     </body>
 </html>
+                  </div>
+            </div>
+                </div>
+                     
 <%@include file="Foot.jsp" %>

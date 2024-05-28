@@ -48,7 +48,9 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write('\n');
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       DB.ConnectionClass con = null;
       synchronized (_jspx_page_context) {
         con = (DB.ConnectionClass) _jspx_page_context.getAttribute("con", PageContext.PAGE_SCOPE);
@@ -128,15 +130,9 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"HomePage.jsp\">Home</a></li>\n");
       out.write("                                                            <li><a href=\"../about.html\">About</a></li> \n");
-      out.write("                                                            <li><a href=\"\">Complaint</a>\n");
-      out.write("                                                            <ul class=\"sub-menu\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgencyComplaint.jsp\">Register Complaint</a></li>\n");
-      out.write("                                                                                <li><a href=\"AgencyComplaintStatus.jsp\">Complaint Status</a></li>\n");
-      out.write("                                                                              \n");
-      out.write("                                                            </ul>\n");
-      out.write("                                                        </li>\n");
+      out.write("                                                            \n");
       out.write("                                                            <li><a href=\"\">Settings</a>\n");
       out.write("                                                            <ul class=\"sub-menu\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"ChangePassword.jsp\">Change Password</a></li>\n");
@@ -144,8 +140,10 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                                                                              \n");
       out.write("                                                            </ul>\n");
       out.write("                                                            </li>\n");
+      out.write("                                                            <li><a href=\"AgencyMyBookings.jsp\">MyBookings</a></li>  \n");
       out.write("                                                            <li><a href=\"MyProfile.jsp\">My Profile</a></li>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\n");
+      out.write("                                                            <li><a href=\"AgencyComplaint.jsp\">Complaints</a></li>\n");
+      out.write("                                                            <li><a href=\"../index.html\">Logout</a></li>  \n");
       out.write("\t\t\t\t\t\t\t\t\n");
       out.write("                                                            \n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
@@ -164,198 +162,90 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Complaint</title>\n");
-      out.write("    \n");
-      out.write("            <style>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>JSP Page</title>\n");
+      out.write("         <style>\n");
       out.write("/*            .bg-img {\n");
       out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/hero-bg.jpg\");\n");
       out.write("                background-repeat: no-repeat;\n");
       out.write("                background-size: cover;\n");
-      out.write("                background-image: center;\n");
+      out.write("                background-position:center;\n");
       out.write("            }*/\n");
-      out.write("             body {\n");
+      out.write("        body {\n");
       out.write("                margin: 0;\n");
       out.write("                padding: 0;\n");
       out.write("                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;\n");
       out.write("                min-height: 800px\n");
       out.write("            }\n");
-      out.write("            .text-box {\n");
-      out.write("                background-color: transparent;\n");
-      out.write("                width: 215px;\n");
-      out.write("                color:gray;\n");
-      out.write("            }\n");
-      out.write("            \n");
-      out.write("            input::reset {\n");
-      out.write("                    width: 40%;\n");
-      out.write("                    background-color: #096;\n");
-      out.write("                    color: white;\n");
-      out.write("                    padding: 15px;\n");
-      out.write("                    margin: 4px 0;\n");
-      out.write("                    border: none;\n");
-      out.write("                    border-radius: 4px !important;\n");
-      out.write("                    cursor: pointer;\n");
-      out.write("            }\n");
       out.write("            </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        ");
-
-            if(request.getParameter("btn_submit")!=null)
-            {
-                    String uq = "insert into tbl_complaint set complaint_title = '"+request.getParameter("complaint_title")+"'"
-                            + ",complaint_content = '"+request.getParameter("complaint_content")+"',complaint_date =curdate(),"
-                            + "agent_id = '"+session.getAttribute("gid")+"',user_id = '"+request.getParameter("uid")+"'";
-                    if(con.executeCommand(uq)){
-            
-      out.write("\n");
-      out.write("                <script>\n");
-      out.write("                alert('Inserted');\n");
-      out.write("                 window.location = \"AgencyComplaint.jsp\";\n");
-      out.write("                </script>\n");
-      out.write("            ");
-
-            } 
-            else {
-            
-      out.write("\n");
-      out.write("                <script>\n");
-      out.write("                    alert('Failed');\n");
-      out.write("                window.location = \"AgencyComplaint.jsp\";\n");
-      out.write("            </script>\n");
-      out.write("            ");
-
-            }
-        }
-
-        if (request.getParameter("del") != null) {
-            String id = request.getParameter("del");
-            String delQry = "delete from tbl_complaint where complaint_id ='" + id + "'";
-            if (con.executeCommand(delQry)) {
-         
-      out.write("\n");
-      out.write("       <script>\n");
-      out.write("        alert('Deleted');\n");
-      out.write("        window.location = \"AgencyComplaint.jsp\";\n");
-      out.write("    </script>\n");
-      out.write("    ");
-
-    } else {
-    
-      out.write("\n");
-      out.write("    <script>\n");
-      out.write("        alert('Failed');\n");
-      out.write("        window.location = \"AgencyComplaint.jsp\";\n");
-      out.write("    </script>\n");
-      out.write("    ");
-
-            }
-        }
-    
-      out.write("\n");
-      out.write("        \n");
       out.write("        <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color:#26404387;\">\n");
+      out.write("                <div style=\"background-color: #26404387; min-height: 700px\">\n");
       out.write("        <form method=\"post\">\n");
       out.write("            <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");
       out.write("                 <table align=\"center\" cellpadding=\"10\">\n");
-      out.write("                \n");
-      out.write("            <table border=\"1\" align=\"center\">\n");
-      out.write("                <tr>\n");
-      out.write("                    <td>User</td>\n");
-      out.write("                    <td><select name=\"nid\" class=\"text-box\">\n");
-      out.write("                            <option value=\"\">----select----</option>\n");
-      out.write("                            ");
- 
-                String selQry = "select * from tbl_user";
-                ResultSet rs = con.selectCommand(selQry);
-                while (rs.next()) {
-            
-      out.write("\n");
-      out.write("            <option value=\"");
-      out.print(rs.getString("user_id"));
-      out.write('"');
-      out.write('>');
-      out.print(rs.getString("user_name"));
-      out.write("</option>\n");
-      out.write("            ");
-
-                }
-            
-      out.write("\n");
-      out.write("                        </select>          \n");
-      out.write("                    </td>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td>Complaint Title</td>\n");
-      out.write("                    <td><input type=\"text\" class=\"text-box\" name=\"complaint_title\"</td>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td>Complaint content</td>\n");
-      out.write("                    <td>\n");
-      out.write("                        <textarea name=\"complaint_content\" class=\"text-box\" rows=\"6\" cols=\"20\"></textarea>\n");
-      out.write("                    </td>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                    <td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"btn_submit\" value=\"Register\">&nbsp&nbsp<input type=\"reset\" name=\"btn_reset\" value=\"Reset\" class=\"btn\" ></td>\n");
-      out.write("                </tr>\n");
-      out.write("            </table>\n");
-      out.write("       \n");
-      out.write("                        <table border=\"1\" align=\"center\"><br><br><br>\n");
-      out.write("                 <br><tr>\n");
+      out.write("     \n");
+      out.write("                <h3 style=\"color: white\"; align=\"center\">Agency Complaint </h3>\n");
+      out.write("        <table border=\"1\" align=\"center\">\n");
+      out.write("            <tr>\n");
       out.write("                <td>Sl.No</td>\n");
-      out.write("                <td>Date/time</td>\n");
-      out.write("                <td>Complaint title</td>\n");
-      out.write("                <td>User Name</td>\n");
-      out.write("                <td>complaint content </td>\n");
-      out.write("                <td>Complaint status</td>\n");
-      out.write("                <td>Complaint reply</td>\n");
-      out.write("                <td>Action </td>\n");
+      out.write("                <td>User Name</td> \n");
+      out.write("                <td>Date</td>\n");
+      out.write("                <td>Complaint content</td>\n");
+      out.write("                \n");
+      out.write("                <td>Status</td>\n");
       out.write("            </tr>\n");
       out.write("            ");
- int i = 0;
-                String seleQry = "select * from tbl_complaint pc inner join tbl_agent dc on dc.agent_id=pc.agent_id";
-                ResultSet res = con.selectCommand(seleQry);
-                while (res.next()) {
-                    i++;
+ int j = 0;
+                String selQry = "select * from tbl_complaint f inner join tbl_user u on f.user_id=u.user_id inner join tbl_agent n on n.agent_id=f.agent_id";
+                ResultSet rs = con.selectCommand(selQry);
+                while (rs.next()) {
+                    j++;
             
       out.write("\n");
       out.write("            <tr>\n");
-      out.write("                <td>");
-      out.print(i);
+      out.write("                <td align=\"center\">");
+      out.print(j);
       out.write("</td>\n");
       out.write("                <td>");
-      out.print(res.getString("complaint_date"));
+      out.print(rs.getString("user_name"));
       out.write("</td>\n");
       out.write("                <td>");
-      out.print(res.getString("complaint_title"));
+      out.print(rs.getString("complaint_date"));
       out.write("</td>\n");
       out.write("                <td>");
-      out.print(res.getString("agent_name"));
+      out.print(rs.getString("complaint_content"));
       out.write("</td>\n");
-      out.write("                <td>");
-      out.print(res.getString("complaint_content"));
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print(res.getString("complaint_status"));
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print(res.getString("complaint_reply"));
-      out.write("</td>\n");
-      out.write("                <td><a href=\"AgencyComplaint.jsp?del=");
-      out.print(res.getString("complaint_id"));
-      out.write("\">Delete</a></td>\n");
+      out.write("               \n");
+      out.write("                <td>\n");
+      out.write("                    ");
+
+                    if(rs.getString("complaint_status").equals("0"))
+                    {
+                        out.print("Reply Pending");
+                    }
+                    if(rs.getString("complaint_status").equals("1"))
+                    {
+                        out.print("Replied");
+                    }
+                    
+                    
+      out.write("\n");
+      out.write("                </td>\n");
       out.write("            </tr>\n");
       out.write("            ");
 
                 }
             
-      out.write("    \n");
-      out.write("            </table>\n");
-      out.write("        </form> \n");
-      out.write("    </body><br><br><br><br>\n");
+      out.write("\n");
+      out.write("        </table>\n");
+      out.write("    </body>\n");
       out.write("</html>\n");
+      out.write("            </div>\n");
+      out.write("                </div>\n");
+      out.write("        </div>\n");
       out.write("<!-- footer -->\n");
       out.write("\t<div class=\"footer-area\">\n");
       out.write("\t\t<div class=\"container\">\n");
@@ -447,10 +337,6 @@ public final class AgencyComplaint_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\n");
       out.write("</body>\n");
       out.write("</html>");
-      out.write("\n");
-      out.write("        </div>\n");
-      out.write("                </div>\n");
-      out.write("        </div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

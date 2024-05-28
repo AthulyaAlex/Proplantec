@@ -34,7 +34,7 @@
     </head>
     <body>
         <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387; min-height: 700px">
                     <form method="post"  enctype="multipart/form-data" action="../Assets/Actionpages/ProductgalleryUploadAction.jsp">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
@@ -62,7 +62,7 @@
                                 ResultSet rs = con.selectCommand(selqry);
                                 while (rs.next()) {
                             %>
-                            <option value="<%=rs.getString("product_id")%>"><%=rs.getString("product_name")%></option>
+                            <option value="<%=rs.getString("product_id")%>"style="color: black"><%=rs.getString("product_name")%></option>
                             <%
                                 }
                             %>

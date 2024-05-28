@@ -43,7 +43,7 @@
 
         %>
         <div align="center" class="bg-img">
-            <div style="background-color:#26404387;"><br><br>
+            <div style="background-color:#26404387;min-height: 700px"><br><br>
                 <br><br>   <h3 style="color: white;">New Nursery</h3>
             <table border="2" align="center" cellpadding="10" style="color: white">
                 <tr>
@@ -52,6 +52,7 @@
                     <th>Contact</th>
                     <th>Logo</th>
                     <th>Proof</th>
+                    <th>Proof Download</th>
                     <th>Location</th>
                     <th>Action</th>
                 </tr>  
@@ -67,6 +68,7 @@
                     <td><%=rs.getString("nursery_contact")%></td>   
                     <td><%=rs.getString("nursery_logo")%></td>
                     <td><%=rs.getString("nursery_proof")%></td>
+                    <td><a href="../Assets/Files/Nurseryproof/<%=rs.getString("nursery_proof")%>"download>Download</a></td>
                     <td><%=rs.getString("location_name")%></td>
                     <td><a href="NurseryVerification.jsp?aid=<%=rs.getString("nursery_id")%>">Accept</a>|
                         <a href="NurseryVerification.jsp?rid=<%=rs.getString("nursery_id")%>">Reject</a></td>
@@ -85,6 +87,7 @@
                     <th>Contact</th>
                     <th>Logo</th>
                     <th>Proof</th>
+                    <th>Proof Download</th>
                     <th>Location</th>
                     <th>Action</th>
                 </tr>  
@@ -100,6 +103,7 @@
                     <td><%=rs1.getString("nursery_contact")%></td>   
                     <td><%=rs1.getString("nursery_logo")%></td>
                     <td><%=rs1.getString("nursery_proof")%></td>
+                    <td><a href="../Assets/Files/Nurseryproof/<%=rs1.getString("nursery_proof")%>"download>Download</a></td>
                     <td><%=rs1.getString("location_name")%></td>
                     <td><a href="NurseryVerification.jsp?rid=<%=rs1.getString("nursery_id")%>">Reject</a></td>
                 </tr>
@@ -117,6 +121,7 @@
                     <th>Contact</th>
                     <th>Logo</th>
                     <th>Proof</th>
+                    <th>Proof Download</th>
                     <th>Location</th>
                     <th>Action</th>
                 </tr>  
@@ -132,6 +137,7 @@
                     <td><%=rs2.getString("nursery_contact")%></td>   
                     <td><%=rs2.getString("nursery_logo")%></td>
                     <td><%=rs2.getString("nursery_proof")%></td>
+                    <td><a href="../Assets/Files/Nurseryproof/<%=rs2.getString("nursery_proof")%>"download>Download</a></td>
                     <td><%=rs2.getString("location_name")%></td>
                     <td><a href="NurseryVerification.jsp?aid=<%=rs2.getString("nursery_id")%>">Accept</a>|
                     </td>                </tr>

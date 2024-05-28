@@ -129,13 +129,8 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
-      out.write("                                                            <li><a href=\"\">View Profile</a>\n");
-      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"../DeliveryAgency/MyProfile.jsp\">Agency</a></li>\n");
-      out.write("                                                                                <li><a href=\"../Nursery/MyProfile.jsp\">Nursery</a></li>\n");
-      out.write("                                                                        </ul>\n");
-      out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"HomePage.jsp\">Home</a></li>\n");
+      out.write("                                                           \n");
       out.write("                                                            <li><a href=\"\">Verifications</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgentVerification.jsp\">Agent</a></li>\n");
@@ -164,6 +159,7 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"ComplaintReply.jsp\">Complaint Reply</a></li>\n");
       out.write("                                                                        </ul>\n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                                <li><a href=\"../index.html\">Logout</a></li>\n");
       out.write("                                                           \n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t</nav>\n");
@@ -200,12 +196,12 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #26404387;\">\n");
+      out.write("                <div style=\"background-color: #26404387; min-height: 700px\">\n");
       out.write("        <form method=\"post\">\n");
       out.write("            <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");
       out.write("                 <table align=\"center\" cellpadding=\"10\">\n");
-      out.write("\n");
+      out.write("     \n");
       out.write("                <h3 style=\"color: white\"; align=\"center\">Agency Complaint </h3>\n");
       out.write("        <table border=\"1\" align=\"center\">\n");
       out.write("            <tr>\n");
@@ -264,6 +260,9 @@ public final class ViewComplaint_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("        </table>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
+      out.write("            </div>\n");
+      out.write("                </div>\n");
+      out.write("        </div>\n");
       out.write("<!-- footer -->\n");
       out.write("\t<div class=\"footer-area\">\n");
       out.write("\t\t<div class=\"container\">\n");

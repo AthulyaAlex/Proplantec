@@ -32,13 +32,13 @@
     </head>
         <body>
          <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387; min-height: 700px">
                  <br><br><br><br><br><br><br>
           <div>  
               <h1 style="color: white;">Hello<%=session.getAttribute("gname")%></h1>
           </div>
-          <a href="AgencyComplaint.jsp">COMPLAINTS</a><br>
-    </body><br><br><br><br><br><br><br><br><br><br>
+          
+    </body>
 </html>
                 
                 </div></div>

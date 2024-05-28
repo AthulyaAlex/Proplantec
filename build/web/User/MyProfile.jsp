@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My Profile</title>
         <title>Login</title>
             <style>
@@ -42,9 +42,9 @@
         %>
         <form method="post">
         <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387;min-height: 700px">
         
-           
+                    <br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
                 <tr>
@@ -73,7 +73,7 @@
         	       
             </table>
         </form>
-                </body><br><br><br><br><br><br>
+                </body>
 </html></div>
                 </div>
           </div>

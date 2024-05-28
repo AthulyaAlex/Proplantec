@@ -45,11 +45,11 @@
     </head>
     <body>
        <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387; min-height: 700px">
                  <form method="post">
                      <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
-                 <table align="center" cellpadding="10">       
+                 <table border="1"align="center" cellpadding="10">       
         <div align="center">
             <h2 style="color: white">Bookings</h2><br>
          
@@ -67,6 +67,7 @@
                <%
                     String selbook="select * from tbl_booking b inner join tbl_user us on b.user_id=us.user_id inner join tbl_localplace lp on lp.localplace_id=us.localplace_id  inner join  tbl_assignbooking a on a.booking_id=b.booking_id inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_agent n on n.agent_id=a.agent_id  where a.agent_id='" + session.getAttribute("gid") + "' and booking_status>0 and payment_status='1'";
                     ResultSet rs = con.selectCommand(selbook);
+                   
                     int i = 0;
                     while (rs.next()) {
                          i++;
@@ -92,7 +93,11 @@
                     }  else if (rs.getString("cart_status").equals("6") && rs.getString("booking_status").equals("1")) {
                     %>
                     Product Delivered 
+                    <br>
                     <%
+                        if(rs.getInt("assign_amount")!=0){
+                            out.println("Paid "+rs.getInt("assign_amount"));
+                    }
                                             }
                                         %>
 

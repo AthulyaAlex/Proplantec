@@ -33,13 +33,13 @@
     </head>
     <body>
         <div class="bg-img">
-                <div style="background-color: #26404387;"><br><br><br><br><br><br><br>
+                <div style="background-color: #26404387;min-height: 700px"><br><br><br><br><br><br><br>
                     <div>
                         <h1 style="color: white;">Hello<%=session.getAttribute("nname")%></h1>
                 </div>
-                <a href="ComplaintView.jsp">COMPLAINTS</a>
+              
                 
-    </body><br><br><br><br><br><br><br><br><br><br>
+    </body>
 </html>         
 </div></div>
 <%@include file="Foot.jsp" %>

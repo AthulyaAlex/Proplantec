@@ -128,7 +128,7 @@ public final class MyProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"HomePage.jsp\">Home</a></li>\n");
       out.write("                                                            <li><a href=\"../about.html\">About</a></li> \n");
       out.write("                                                            \n");
       out.write("                                                            <li><a href=\"\">Settings</a>\n");
@@ -138,8 +138,10 @@ public final class MyProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                                              \n");
       out.write("                                                            </ul>\n");
       out.write("                                                            </li>\n");
+      out.write("                                                            <li><a href=\"AgencyMyBookings.jsp\">MyBookings</a></li>  \n");
       out.write("                                                            <li><a href=\"MyProfile.jsp\">My Profile</a></li>\n");
-      out.write("\t\t\t\t\t\t\t\t\t\n");
+      out.write("                                                            <li><a href=\"AgencyComplaint.jsp\">Complaints</a></li>\n");
+      out.write("                                                            <li><a href=\"../index.html\">Logout</a></li>  \n");
       out.write("\t\t\t\t\t\t\t\t\n");
       out.write("                                                            \n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
@@ -158,7 +160,7 @@ public final class MyProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>MyProfile</title>\n");
       out.write("        <style>\n");
       out.write("/*            .bg-img {\n");
@@ -186,7 +188,7 @@ public final class MyProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
         
       out.write("\n");
       out.write("        <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #26404387;\">\n");
+      out.write("                <div style=\"background-color: #26404387; min-height: 700px\">\n");
       out.write("         \n");
       out.write("            <br><br><br><br><br><br><br>\n");
       out.write("        <form method=\"post\" >\n");

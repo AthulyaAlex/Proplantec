@@ -129,13 +129,8 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
-      out.write("                                                            <li><a href=\"\">View Profile</a>\n");
-      out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
-      out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"../DeliveryAgency/MyProfile.jsp\">Agency</a></li>\n");
-      out.write("                                                                                <li><a href=\"../Nursery/MyProfile.jsp\">Nursery</a></li>\n");
-      out.write("                                                                        </ul>\n");
-      out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"HomePage.jsp\">Home</a></li>\n");
+      out.write("                                                           \n");
       out.write("                                                            <li><a href=\"\">Verifications</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgentVerification.jsp\">Agent</a></li>\n");
@@ -164,6 +159,7 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"ComplaintReply.jsp\">Complaint Reply</a></li>\n");
       out.write("                                                                        </ul>\n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                                <li><a href=\"../index.html\">Logout</a></li>\n");
       out.write("                                                           \n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t</nav>\n");
@@ -194,7 +190,7 @@ public final class AdminRegistration_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");
       out.write("                width: 215px;\n");
-      out.write("                color:gray;\n");
+      out.write("                color:white;\n");
       out.write("            } body {\n");
       out.write("                margin: 0;\n");
       out.write("                padding: 0;\n");

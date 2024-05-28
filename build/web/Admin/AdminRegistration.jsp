@@ -35,7 +35,7 @@
     </head>
     <body>
         <div class="bg-img">
-            <div style="background-color: #26404387;">
+            <div style="background-color: #26404387;min-height: 700px">
         
                 
                 <div style="color:white;font-size: 15px;">

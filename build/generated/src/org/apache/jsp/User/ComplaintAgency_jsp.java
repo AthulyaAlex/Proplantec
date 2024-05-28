@@ -137,6 +137,7 @@ public final class ComplaintAgency_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                                                                                <li><a href=\"ChangePassword.jsp\">Change Password</a></li>\n");
       out.write("                                                                                \n");
       out.write("\t\t\t\t\t\t\t\t\t</ul>\n");
+      out.write("                                                           \n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
       out.write("                                                            \n");
       out.write("                                                            \n");
@@ -252,7 +253,7 @@ public final class ComplaintAgency_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\n");
       out.write("        \n");
       out.write("        <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color:#26404387;\">\n");
+      out.write("                <div style=\"background-color:#26404387;min-height: 700px\">\n");
       out.write("        <form method=\"post\">\n");
       out.write("            <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");

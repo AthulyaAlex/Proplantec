@@ -68,7 +68,7 @@
                 }
         %>
         <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387;min-height: 700px">
         <form method="post">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
@@ -86,7 +86,7 @@
                                 while(rs.next())
                                 {
                                   %>
-                                  <option value="<%=rs.getString("category_id")%>" <% if(rs.getString("category_id").equals(editcid)){ out.print("Selected") ; } %>><%=rs.getString("category_name")%></option>
+                                  <option value="<%=rs.getString("category_id")%>"style="color: black" <% if(rs.getString("category_id").equals(editcid)){ out.print("Selected") ; } %>><%=rs.getString("category_name")%></option>
                                   
                                   
                                   <%
@@ -110,7 +110,7 @@
                     </td>
                 </tr>
             </table>
-            <table border="0" align="center">
+            <table border="1" align="center">
                 <tr>
                     <th>Sl.no</th>
                     <th>Subcategory</th>

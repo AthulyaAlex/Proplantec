@@ -43,7 +43,7 @@
           }
         %>
          <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387;min-height: 700px">
                     <form method="post">
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
@@ -69,7 +69,7 @@
                      <tr>
                          <td><%=i%></td>
                          <td><img src="../Assets/Files/Productgalleryphoto/<%=rs.getString("productgallery_image")%>" height="90" width="90"</td>
-                         <td><a href="Productgallerydisplay.jsp?did=<%=rs.getString("productgallery_id")%>&gid=<%=request.getParameter("gid")%>">Delete</a></td>
+                         <td><a href="Productgallerydisplay.jsp?did=<%=rs.getString("productgallery_id")%>&gid=<%=request.getParameter("gid")%>" style="color: white">Delete</a></td>
                      </tr>
                      <%
                  }
@@ -79,4 +79,7 @@
              </div> 
     </body>
 </html>
+            </div>
+                </div>
+         
 <%@include file="Foot.jsp" %>

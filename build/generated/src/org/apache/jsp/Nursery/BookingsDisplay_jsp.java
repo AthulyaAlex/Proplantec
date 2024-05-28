@@ -129,7 +129,7 @@ public final class BookingsDisplay_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"HomePage.jsp\">Home</a></li>\n");
       out.write("                                                            <li><a href=\"../about.html\">About</a></li> \n");
       out.write("                                                            <li><a href=\"\">Products</a>\n");
       out.write("                                                            <ul class=\"sub-menu\">\n");
@@ -147,6 +147,8 @@ public final class BookingsDisplay_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                                                            </li>\n");
       out.write("                                                            <li><a href=\"BookingsDisplay.jsp\">Bookings</a></li>\n");
       out.write("                                                           <li><a href=\"MyProfile.jsp\">Profile</a></li>\n");
+      out.write("                                                           <li><a href=\"ComplaintView.jsp\">Complaints</a></li>\n");
+      out.write("                                                           <li><a href=\"../index.html\">Logout</a></li>\n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t</nav>\n");
       out.write("\t\t\t\t\t\t<a class=\"mobile-show search-bar-icon\" href=\"#\"><i class=\"fas fa-search\"></i></a>\n");
@@ -165,7 +167,7 @@ public final class BookingsDisplay_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Bookings Display</title>\n");
-      out.write("           <style>\n");
+      out.write("        <style>\n");
       out.write("            .bg-img {\n");
       out.write("                background-image: url(\"../Assets/Templates/Main/assets/img/hero-bg.jpg\");\n");
       out.write("                background-repeat: no-repeat;\n");
@@ -177,111 +179,130 @@ public final class BookingsDisplay_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                width: 215px;\n");
       out.write("                color:white;\n");
       out.write("            }\n");
-      out.write("            </style>\n");
-      out.write("            ");
+      out.write("        </style>\n");
+      out.write("        ");
 
-        if (request.getParameter("id") != null) {
-            String up = "update tbl_cart set cart_status='"+request.getParameter("status")+"' where cart_id='" + request.getParameter("id") + "'";
+            if (request.getParameter("id") != null) {
+                String up = "update tbl_cart set cart_status='" + request.getParameter("status") + "' where cart_id='" + request.getParameter("id") + "'";
 
-            if (con.executeCommand(up)) {
-                response.sendRedirect("BookingsDisplay.jsp");
+                if (con.executeCommand(up)) {
+                    response.sendRedirect("BookingsDisplay.jsp");
+                }
             }
-        }
 
 
-    
+        
       out.write("\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("       <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #26404387;\">\n");
-      out.write("                 <form method=\"post\">\n");
-      out.write("                     <br><br><br><br><br><br><br>\n");
-      out.write("            <div style=\"color:white;font-size: 15px;\">\n");
-      out.write("                 <table align=\"center\" cellpadding=\"10\">       \n");
-      out.write("        <div align=\"center\">\n");
-      out.write("            <h2 style=\"color: white\">Bookings</h2><br>\n");
-      out.write("         \n");
-      out.write("        \n");
-      out.write("                <tr>\n");
-      out.write("                    <th>Sl.no</th>\n");
-      out.write("                    <th>Product Name</th>\n");
-      out.write("                    \n");
-      out.write("                    <th>Quantity</th>\n");
-      out.write("                    \n");
-      out.write("                    <th>Action</th>\n");
-      out.write("                    \n");
-      out.write("                </tr>\n");
-      out.write("                    ");
-
-                    String selbook="select * from tbl_booking b inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_nursery n on n.nursery_id=u.nursery_id  where n.nursery_id='" + session.getAttribute("nid") + "' and booking_status>0 and payment_status='1'";
-                    ResultSet rs = con.selectCommand(selbook);
-                    int i = 0;
-                    while (rs.next()) {
-                         i++;
-                           
-                
+      out.write("        <div class=\"bg-img\">\n");
+      out.write("            <div style=\"background-color: #26404387;min-height: 700px\">\n");
+      out.write("                <form method=\"post\">\n");
+      out.write("                    <br><br><br><br><br><br><br>\n");
+      out.write("                    <div style=\"color:white;font-size: 15px;\">\n");
+      out.write("                        <table align=\"center\" cellpadding=\"10\">       \n");
+      out.write("                            <div align=\"center\">\n");
+      out.write("                                <h2 style=\"color: white\">Bookings</h2><br>\n");
       out.write("\n");
-      out.write("                \n");
-      out.write("                     <tr>\n");
-      out.write("                       \n");
-      out.write("                        <td>");
+      out.write("\n");
+      out.write("                                <tr>\n");
+      out.write("                                    <th>Sl.no</th>\n");
+      out.write("                                    <th>Product Name</th>\n");
+      out.write("\n");
+      out.write("                                    <th>Quantity</th>\n");
+      out.write("\n");
+      out.write("                                    <th>Action</th>\n");
+      out.write("\n");
+      out.write("                                </tr>\n");
+      out.write("                                ");
+                        String selbook = "select * from tbl_booking b inner join tbl_cart c on c.booking_id=b.booking_id inner join tbl_product u on u.product_id=c.product_id inner join tbl_nursery n on n.nursery_id=u.nursery_id  where n.nursery_id='" + session.getAttribute("nid") + "' and booking_status>0 and payment_status='1'";
+                                    ResultSet rs = con.selectCommand(selbook);
+                                    int i = 0;
+                                    while (rs.next()) {
+                                        i++;
+
+                                
+      out.write("\n");
+      out.write("\n");
+      out.write("                                <tr>\n");
+      out.write("\n");
+      out.write("                                    <td>");
       out.print(i);
       out.write("</td>\n");
-      out.write("                         <td>");
+      out.write("                                    <td>");
       out.print(rs.getString("product_name"));
       out.write("</td>\n");
-      out.write("                        \n");
-      out.write("                         <td>");
+      out.write("\n");
+      out.write("                                    <td>");
       out.print(rs.getString("cart_quantity"));
       out.write("</td>\n");
-      out.write("                         \n");
-      out.write("                         <td>");
-
-                     if (rs.getString("cart_status").equals("1") && rs.getString("booking_status").equals("1")) {
-                    
       out.write("\n");
-      out.write("                    Payment Completed <a href=\"BookingsDisplay.jsp?id=");
+      out.write("                                    <td>");
+
+                                        if (rs.getString("cart_status").equals("1") && rs.getString("booking_status").equals("1")) {
+                                        
+      out.write("\n");
+      out.write("                                        Payment Completed <a href=\"BookingsDisplay.jsp?id=");
       out.print(rs.getString("cart_id"));
       out.write("&status=2\">Pack Product</a>\n");
-      out.write("                    ");
+      out.write("                                        ");
 
-                    } else if (rs.getString("cart_status").equals("2") && rs.getString("booking_status").equals("1")) {
-                    
+                                        } else if (rs.getString("cart_status").equals("2") && rs.getString("booking_status").equals("1")) {
+                                        
       out.write("\n");
-      out.write("                    Product Packed <a href=\"BookingsDisplay.jsp?id=");
+      out.write("                                        Product Packed <a href=\"BookingsDisplay.jsp?id=");
       out.print(rs.getString("cart_id"));
       out.write("&status=3\">Ship Product</a>\n");
-      out.write("                    ");
+      out.write("                                        ");
 
-                    } else if (rs.getString("cart_status").equals("3") && rs.getString("booking_status").equals("1")) {
-                    
+                                        } else if (rs.getString("cart_status").equals("3") && rs.getString("booking_status").equals("1")) {
+                                        
       out.write("\n");
-      out.write("                    Product Shipped <a href=\"BookingsDisplay.jsp?id=");
+      out.write("                                        Preparing for dispatch <a href=\"BookingsDisplay.jsp?id=");
       out.print(rs.getString("cart_id"));
-      out.write("&status=4\">Deliver Product</a>\n");
-      out.write("                    ");
+      out.write("&status=4\">Dispatch Product</a>\n");
+      out.write("                                        ");
 
-                    } else if (rs.getString("cart_status").equals("4") && rs.getString("booking_status").equals("1")) {
-                    
+                                        } else if (rs.getString("cart_status").equals("4") && rs.getString("booking_status").equals("1")) {
+                                       
+                                        out.println("Package Arrived");
+                                        } else if (rs.getString("cart_status").equals("5") && rs.getString("booking_status").equals("1")) {
+                                        
+                                         out.println("Preparing for delivery");
+                                        
+                                        
+                                        } else if (rs.getString("cart_status").equals("6") && rs.getString("booking_status").equals("1")) {
+
+                                        
       out.write("\n");
-      out.write("                    Product Delivered \n");
-      out.write("                    ");
+      out.write("                                        Product Delivered \n");
+      out.write("                                        ");
 
-                        }
-
-                    
+                                            }
+                                        
       out.write("\n");
-      out.write("                     </tr>\n");
-      out.write("                    \n");
-      out.write("                     ");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                                        ");
 
-                 }
-                     
+                                            }
+
+                                        
+      out.write("\n");
+      out.write("                                </tr>\n");
+      out.write("\n");
+      out.write("                                ");
+                         
+                                
       out.write("      \n");
-      out.write("                 </table><br>\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("                        </table><br>\n");
+      out.write("                        </body>\n");
+      out.write("                        </html>\n");
+      out.write("                                </div>\n");
+      out.write("                    </div>\n");
+      out.write("            </div>\n");
+      out.write("                        ");
       out.write("<!-- footer -->\n");
       out.write("\t<div class=\"footer-area\">\n");
       out.write("\t\t<div class=\"container\">\n");

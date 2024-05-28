@@ -33,8 +33,9 @@
     
     <body>
          <div class="bg-img">
-                <div style="background-color: #26404387;">
-                 <br><br><br><br><br><br><br>
+                <div style="background-color: #26404387;min-height: 700px">
+                    <br><br><br><br><br><br>
+                
           <div>  
         <h1  class="font" >Hello<%=session.getAttribute("aname")%></h1>
           </div>
@@ -46,13 +47,19 @@
           rs.next();
           int admin_amt=Integer.parseInt(rs.getString("amount"));
            double perc=admin_amt*0.20;
+           String sel="select sum(assign_amount) as am from tbl_assignbooking";
+           ResultSet rs1=con.selectCommand(sel);
+          rs1.next();
+          double booking_amt=Integer.parseInt(rs1.getString("am"));
+          double balance= perc-booking_amt;
          %>
+         
          <br>
-         <h3 style="color:white;">COMMISSION : <%out.println(perc);%></h3>
+         <h3 style="color:white;">COMMISSION : <%out.println(balance);%></h3>
          
          
     </body>
 </html>
-<br><br><br><br><br><br><br><br>
+
                 </div>
 <%@include file="Foot.jsp"%>

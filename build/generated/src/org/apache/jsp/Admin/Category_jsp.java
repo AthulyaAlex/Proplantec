@@ -129,7 +129,8 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"HomePage.jsp\">Home</a></li>\n");
+      out.write("                                                           \n");
       out.write("                                                            <li><a href=\"\">Verifications</a>\n");
       out.write("\t\t\t\t\t\t\t\t\t<ul class=\"sub-menu\">\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"AgentVerification.jsp\">Agent</a></li>\n");
@@ -141,7 +142,7 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"Location.jsp\">Location</a></li>\n");
       out.write("                                                                                <li><a href=\"LocalPlace.jsp\">Local Place</a></li>\n");
       out.write("                                                                                <li><a href=\"Category.jsp\">Category</a></li>\n");
-      out.write("                                                                                <li><a href=\"subcategory.jsp\">Sub Category</a></li>\n");
+      out.write("                                                                                <li><a href=\"Subcategory.jsp\">Sub Category</a></li>\n");
       out.write("                                                                                <li><a href=\"Assign.jsp\">Assigning Agency</a></li>\n");
       out.write("                                                                                <li><a href=\"ChangePassword.jsp\">Change Password</a></li>\n");
       out.write("                                                                        </ul>\n");
@@ -158,6 +159,7 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t\t\t<li><a href=\"ComplaintReply.jsp\">Complaint Reply</a></li>\n");
       out.write("                                                                        </ul>\n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
+      out.write("                                                                <li><a href=\"../index.html\">Logout</a></li>\n");
       out.write("                                                           \n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t</nav>\n");
@@ -175,7 +177,7 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><br><br><br>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Category</title>\n");
       out.write("        <style>\n");
       out.write("/*            .bg-img {\n");
@@ -186,7 +188,7 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            body {\n");
       out.write("                margin: 0;\n");
       out.write("                padding: 0;\n");
-      out.write("                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/agency.jpg') no-repeat center center/cover;\n");
+      out.write("                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;\n");
       out.write("                min-height: 800px\n");
       out.write("            }\n");
       out.write("            .text-box {\n");
@@ -234,7 +236,7 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("   \n");
       out.write("        \n");
       out.write("       <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #26404387;\">\n");
+      out.write("                <div style=\"background-color: #26404387; min-height: 700px\">\n");
       out.write("            <form method=\"POST\" enctype=\"multipart/form-data\" action=\"../Assets/Actionpages/UserUploadAction.jsp\">\n");
       out.write("            <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");
@@ -256,7 +258,7 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </tr>\n");
       out.write("            </table>\n");
       out.write("                <br>\n");
-      out.write("            <table border=\"0\" align=\"center\">\n");
+      out.write("            <table cellpadding=\"10\" align=\"center\" >\n");
       out.write("                <tr>\n");
       out.write("                    <th>Sl.no</th>\n");
       out.write("                    <th>Category</th>\n");
@@ -297,7 +299,9 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("         \n");
       out.write("    </body>\n");
       out.write("</html>\n");
-      out.write("<br><br><br><br><br><br>\n");
+      out.write("                </div>\n");
+      out.write("                </div>\n");
+      out.write("       </div>\n");
       out.write("<!-- footer -->\n");
       out.write("\t<div class=\"footer-area\">\n");
       out.write("\t\t<div class=\"container\">\n");
@@ -325,6 +329,7 @@ public final class Category_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t<li><a href=\"../index.html\">Home</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"../about.html\">About</a></li>\n");
       out.write("\t\t\t\t\t\t\t<li><a href=\"NurseryList.jsp\">Available Nursery</a></li>\n");
+      out.write("                                                        <li><a href=\"AgencyList.jsp\">Available Agency</a></li>\n");
       out.write("\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t</div>\n");

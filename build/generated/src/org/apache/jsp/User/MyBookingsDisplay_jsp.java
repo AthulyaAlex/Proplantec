@@ -136,6 +136,7 @@ public final class MyBookingsDisplay_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                                                                                <li><a href=\"ChangePassword.jsp\">Change Password</a></li>\n");
       out.write("                                                                                \n");
       out.write("\t\t\t\t\t\t\t\t\t</ul>\n");
+      out.write("                                                           \n");
       out.write("\t\t\t\t\t\t\t\t</li>\n");
       out.write("                                                            \n");
       out.write("                                                            \n");
@@ -178,13 +179,13 @@ public final class MyBookingsDisplay_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            .text-box {\n");
       out.write("                background-color: transparent;\n");
       out.write("                width: 215px;\n");
-      out.write("                color:gray;\n");
+      out.write("                color:white;\n");
       out.write("            }\n");
       out.write("            </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("       <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color: #26404387;\">\n");
+      out.write("                <div style=\"background-color: #26404387;min-height: 700px\">\n");
       out.write("                 <form method=\"post\">\n");
       out.write("                     <br><br><br><br><br><br><br>\n");
       out.write("            <div style=\"color:white;font-size: 15px;\">\n");
@@ -243,13 +244,33 @@ public final class MyBookingsDisplay_jsp extends org.apache.jasper.runtime.HttpJ
                     } else if (rs.getString("cart_status").equals("3") && rs.getString("booking_status").equals("1")) {
                      out.println("Product Shipped");
                     } else if (rs.getString("cart_status").equals("4") && rs.getString("booking_status").equals("1")) {
+                        out.println("Package Arrived");
+                    }
+                    else if (rs.getString("cart_status").equals("5") && rs.getString("booking_status").equals("1")) {
+                        out.println("Out for delivery");
+                    }
+                    else if (rs.getString("cart_status").equals("6") && rs.getString("booking_status").equals("1")) {
+                      
                         
       out.write("\n");
       out.write("                        Product Delivered <a href=\"Review.jsp?id=");
       out.print(rs.getString("product_id"));
-      out.write("\">Review</a>\n");
+      out.write("\">Product Review</a><br>\n");
+      out.write("                        \n");
+      out.write("                        \n");
       out.write("                        ");
 
+                         String selQry= "select * from tbl_assignbooking where booking_id='"+rs.getString("booking_id")+"' ";
+                                 ResultSet rs1 = con.selectCommand(selQry);
+                                 while(rs1.next()){
+                                     
+      out.write("\n");
+      out.write("                                 <a href=\"AgencyReview.jsp?id=");
+      out.print(rs1.getString("agent_id"));
+      out.write("\">Agency Review</a>\n");
+      out.write("                                 ");
+
+                                 }
                         }
 
                     

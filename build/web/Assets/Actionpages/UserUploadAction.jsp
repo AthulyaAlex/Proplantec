@@ -104,7 +104,7 @@
                 {
                 
                 String str1 = "insert into tbl_user(user_name,user_contact,user_dob,user_email,user_gender,user_photo,user_address,user_password,localplace_id,user_doj)"
-                        + "values('" + value[0] + "','" + value[1] + "','" + value[2] + "','" + value[3] + "','" + value[4] + "','" + ph + "','" + value[5] + "','" + value[6] + "','" + value[8] + "',curdate())";
+                        + "values('" + value[0] + "','" + value[1] + "','" + value[2] + "','" + value[3] + "','" + value[4] + "','" + ph + "','" + value[5] + "','" + value[6] + "','" + value[9] + "',curdate())";
 
                 System.out.println(str1);       
 

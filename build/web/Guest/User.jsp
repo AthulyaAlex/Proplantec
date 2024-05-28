@@ -21,8 +21,8 @@
             body {
                 margin: 0;
                 padding: 0;
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') repeat center center/cover;
-                min-height: 800px
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') fixed center center/cover;
+                min-height: 800px;
             }
             .text-box {
                 background-color: transparent;
@@ -105,7 +105,7 @@
                                 ResultSet rs = con.selectCommand(selqry);
                                 while (rs.next()) {
                             %>
-                            <option value="<%=rs.getString("location_id")%>"><%=rs.getString("location_name")%></option>
+                            <option value="<%=rs.getString("location_id")%>"style="color: black"><%=rs.getString("location_name")%></option>
                             <%
                                 }
                             %>

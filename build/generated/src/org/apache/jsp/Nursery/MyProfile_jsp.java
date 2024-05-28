@@ -129,7 +129,7 @@ public final class MyProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t<!-- menu start -->\n");
       out.write("\t\t\t\t\t\t<nav class=\"main-menu\">\n");
       out.write("\t\t\t\t\t\t\t<ul>\n");
-      out.write("                                                            <li class=\"current-list-item\"><a href=\"../index.html\">Home</a></li>\n");
+      out.write("                                                            <li class=\"current-list-item\"><a href=\"HomePage.jsp\">Home</a></li>\n");
       out.write("                                                            <li><a href=\"../about.html\">About</a></li> \n");
       out.write("                                                            <li><a href=\"\">Products</a>\n");
       out.write("                                                            <ul class=\"sub-menu\">\n");
@@ -147,6 +147,8 @@ public final class MyProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                            </li>\n");
       out.write("                                                            <li><a href=\"BookingsDisplay.jsp\">Bookings</a></li>\n");
       out.write("                                                           <li><a href=\"MyProfile.jsp\">Profile</a></li>\n");
+      out.write("                                                           <li><a href=\"ComplaintView.jsp\">Complaints</a></li>\n");
+      out.write("                                                           <li><a href=\"../index.html\">Logout</a></li>\n");
       out.write("\t\t\t\t\t\t\t</ul>\n");
       out.write("\t\t\t\t\t\t</nav>\n");
       out.write("\t\t\t\t\t\t<a class=\"mobile-show search-bar-icon\" href=\"#\"><i class=\"fas fa-search\"></i></a>\n");
@@ -190,7 +192,7 @@ public final class MyProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
         
       out.write("\n");
       out.write("    <div class=\"bg-img\">\n");
-      out.write("                <div style=\"background-color:#26404387;\">\n");
+      out.write("                <div style=\"background-color:#26404387;min-height: 700px\">\n");
       out.write("         \n");
       out.write("            <br><br><br><br><br><br><br>\n");
       out.write("        <form method=\"post\" >\n");
@@ -249,6 +251,10 @@ public final class MyProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </form>  \n");
       out.write("    </body>\n");
       out.write("</html>\n");
+      out.write("            </div>\n");
+      out.write("                </div>\n");
+      out.write("    </div>\n");
+      out.write("            \n");
       out.write("<!-- footer -->\n");
       out.write("\t<div class=\"footer-area\">\n");
       out.write("\t\t<div class=\"container\">\n");

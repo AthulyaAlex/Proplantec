@@ -43,12 +43,12 @@
         %>
         
          <div class="bg-img">
-                <div style="background-color: #26404387;">
+                <div style="background-color: #26404387;min-height: 700px">
         <form method="post">
             <div style="color:white;font-size: 15px;">
-                 <table align="center" cellpadding="10">
+                 <table border="1" align="center" cellpadding="10">
                      <div align="center">
-                         <br><br><br><br>        <h2 style="color: white";>Uploaded Products</h2><br>
+                         <br><br><br><br>        <h2 style="color: white">Uploaded Products</h2><br>
                
                 <tr>
                     <th>Sl.no</th>
@@ -76,9 +76,9 @@
                          <td><%=rs.getString("product_rate")%></td>
                          <td><%=rs.getString("product_details")%></td>
                          <td><%=rs.getString("product_stock")%></td>
-                         <td><a href="Productdisplay.jsp?did=<%=rs.getString("product_id")%>">Delete</a></td>
-                         <td><a href="Productgallery.jsp?pid=<%=rs.getString("product_id")%>">AddMoreImages</a></td>
-                         <td><a href="Productgallerydisplay.jsp?gid=<%=rs.getString("product_id")%>">ViewGallery</a></td>
+                         <td><a href="Productdisplay.jsp?did=<%=rs.getString("product_id")%>"style="color: white">Delete</a></td>
+                         <td><a href="Productgallery.jsp?pid=<%=rs.getString("product_id")%>"style="color: white">AddMoreImages</a></td>
+                         <td><a href="Productgallerydisplay.jsp?gid=<%=rs.getString("product_id")%>"style="color: white">ViewGallery</a></td>
                      </tr>
                      <%
                  }
@@ -89,4 +89,7 @@
          
     </body>
 </html>
+            </div>
+                </div>
+         
 <%@include file="Foot.jsp" %>

@@ -14,7 +14,7 @@
     ResultSet rs = con.selectCommand(selQ);
     while (rs.next()) {
 %>
-<option value="<%=rs.getString("subcategory_id")%>"><%=rs.getString("subcategory_name")%></option>
+<option value="<%=rs.getString("subcategory_id")%>" style="color: black"><%=rs.getString("subcategory_name")%></option>
 <%
     }
 %>      

@@ -44,7 +44,7 @@
             body {
                 margin: 0;
                 padding: 0;
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') fixed center center/cover;
                 min-height: 800px
             }
             .font{
@@ -76,6 +76,6 @@
        
         </div><br>
         
-    </body><br><br><br><br><br><br><br>
+    </body>
 </html>
 <%@include file="Foot.jsp" %>
