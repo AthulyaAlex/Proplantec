@@ -13,7 +13,7 @@
     ResultSet rs = con.selectCommand(selQ);
     while (rs.next()) {
 %>
-<option value="<%=rs.getString("localplace_id")%>"style="color: black"><%=rs.getString("localplace_name")%></option>
+<option value="<%=rs.getString("localplace_id")%>" style="color: black"><%=rs.getString("localplace_name")%></option>
 <%
     }
 %>      

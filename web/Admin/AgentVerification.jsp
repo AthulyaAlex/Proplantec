@@ -54,7 +54,7 @@
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Proof</th>
-                    <th>Proof Download</th>
+                   
                     <th>Photo</th>
                     <th>Location</th>
                     <th>Action</th>
@@ -70,12 +70,12 @@
                     <td><%=i%></td>
                     <td><%=rs.getString("agent_name")%></td>
                     <td><%=rs.getString("agent_contact")%></td>   
-                    <td><%=rs.getString("agent_proof")%></td>
-                    <td><a href="../Assets/Files/Agentproof/<%=rs.getString("agent_proof")%>"download>Download</a></td>
+                   
+                    <td><a href="../Assets/Files/Agentproof/<%=rs.getString("agent_proof")%>"style="color: white;"download>Download</a></td>
                     <td><<%=rs.getString("agent_photo")%></td>
                     <td><%=rs.getString("location_name")%></td>
-                    <td><a href="AgentVerification.jsp?aid=<%=rs.getString("agent_id")%>">Accept</a>|
-                        <a href="AgentVerification.jsp?rid=<%=rs.getString("agent_id")%>">Reject</a></td>              
+                    <td><a href="AgentVerification.jsp?aid=<%=rs.getString("agent_id")%>"style="color: white;">Accept</a>|
+                        <a href="AgentVerification.jsp?rid=<%=rs.getString("agent_id")%>"style="color: white;">Reject</a></td>              
                 </tr>
                 <%
                     }
@@ -90,7 +90,7 @@
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Proof</th>
-                    <th>Proof Download</th>
+                    
                     <th>Photo</th>
                     <th>Location</th>
                     <th>Action</th>
@@ -105,11 +105,11 @@
                     <td><%=i1%></td>
                     <td><%=rs1.getString("agent_name")%></td>
                     <td><%=rs1.getString("agent_contact")%></td>   
-                    <td><%=rs1.getString("agent_proof")%></td>
-                    <td><a href="../Assets/Files/Agentproof/<%=rs1.getString("agent_proof")%>"download>Download</a></td>
+                    
+                    <td><a href="../Assets/Files/Agentproof/<%=rs1.getString("agent_proof")%>"style="color: white;"download>Download</a></td>
                     <td><%=rs1.getString("agent_photo")%></td>
                     <td><%=rs1.getString("location_name")%></td>
-                    <td><a href="AgentVerification.jsp?rid=<%=rs1.getString("agent_id")%>">Reject</a></td>
+                    <td><a href="AgentVerification.jsp?rid=<%=rs1.getString("agent_id")%>"style="color: white;">Reject</a></td>
                 </tr>
                 <%
                     }
@@ -124,7 +124,7 @@
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Proof</th>
-                    <th>Proof Download</th>
+                    
                     <th>Photo</th>
                     <th>Location</th>
                     <th>Action</th>
@@ -139,11 +139,11 @@
                     <td><%=i2%></td>
                     <td><%=rs2.getString("agent_name")%></td>
                     <td><%=rs2.getString("agent_contact")%></td>   
-                    <td><%=rs2.getString("agent_proof")%></td>
-                    <td><a href="../Assets/Files/Agentproof/<%=rs2.getString("agent_proof")%>"download>Download</a></td>
+                   
+                    <td><a href="../Assets/Files/Agentproof/<%=rs2.getString("agent_proof")%>"style="color: white;"download>Download</a></td>
                     <td><%=rs2.getString("agent_photo")%></td>
                     <td><%=rs2.getString("location_name")%></td>
-                    <td><a href="AgentVerification.jsp?aid=<%=rs2.getString("agent_id")%>">Accept</a>|
+                    <td><a href="AgentVerification.jsp?aid=<%=rs2.getString("agent_id")%>"style="color: white;">Accept</a>|
                     </td>                
                 </tr>
                     <%

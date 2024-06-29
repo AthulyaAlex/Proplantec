@@ -35,7 +35,7 @@
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
         
-           
+                     <h2 align="center" style="color:white">Product Entry</h2>
                 <tr>
                     <td>Product Name</td>
                     <td>
@@ -70,7 +70,7 @@
                                 ResultSet rs2 = con.selectCommand(seelqry);
                                 while (rs2.next()) {
                             %>
-                            <option value="<%=rs2.getString("category_id")%>"><%=rs2.getString("category_name")%></option>
+                            <option value="<%=rs2.getString("category_id")%>" style="color:black"><%=rs2.getString("category_name")%></option>
                             <%
                                 }
                             %>
@@ -87,7 +87,7 @@
                                 ResultSet rs = con.selectCommand(selqry);
                                 while (rs.next()) {
                             %>
-                            <option value="<%=rs.getString("subcategory_id")%>"><%=rs.getString("subcategory_name")%></option>
+                            <option value="<%=rs.getString("subcategory_id")%>"style="color:black"><%=rs.getString("subcategory_name")%></option>
                             <%
                                 }
                             %>

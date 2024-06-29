@@ -49,9 +49,14 @@
                  <form method="post">
                      <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
-                 <table align="center" cellpadding="10">       
+                 <style>
+    th {
+        padding: 10px; /* Adjust the padding value to increase or decrease the space */
+    }
+</style>
+                 <table border="1" align="center" cellpadding="10">       
         <div align="center">
-            <h2 style="color: white">Bookings</h2><br>
+            <h2 style="color: white">Agency Assignments</h2><br>
          
         
                 <tr>
@@ -85,7 +90,7 @@
                              if(rs.getInt("cart_status")== 6)
                                 {
                                    %>
-                                   <a href="PaymentAgent.jsp?bid=<%=rs.getString("booking_id")%>">Payment</a>
+                                   <a href="PaymentAgent.jsp?bid=<%=rs.getString("booking_id")%>" style="color: white">Payment</a>
 
                                 <%
                                 }

@@ -56,7 +56,7 @@
          
          <br>
          <h3 style="color:white;">COMMISSION : <%out.println(balance);%></h3>
-         
+         <h4><a href="Commission.jsp" style="color: white">Know more details</a></h4>
          
     </body>
 </html>

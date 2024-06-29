@@ -21,7 +21,7 @@
             body {
                 margin: 0;
                 padding: 0;
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') fixed center center/cover;
                 min-height: 800px
             }
             .text-box {
@@ -48,7 +48,7 @@
                                 ResultSet rs2 = con.selectCommand(seelqry);
                                 while (rs2.next()) {
                             %>
-                            <option value="<%=rs2.getString("category_id")%>"><%=rs2.getString("category_name")%></option>
+                            <option value="<%=rs2.getString("category_id")%>"style="color:black"><%=rs2.getString("category_name")%></option>
                             <%
                                 }
                             %>
@@ -65,7 +65,7 @@
                                 ResultSet rs = con.selectCommand(selqry);
                                 while (rs.next()) {
                             %>
-                            <option value="<%=rs.getString("subcategory_id")%>"><%=rs.getString("subcategory_name")%></option>
+                            <option value="<%=rs.getString("subcategory_id")%>"style="color:black"><%=rs.getString("subcategory_name")%></option>
                             <%
                                 }
                             %>
@@ -77,6 +77,11 @@
                         <input type="submit" name="txtsave" value="Search">
                     </td>
             </table><br>
+            <style>
+    th {
+        padding: 10px; /* Adjust the padding value to increase or decrease the space */
+    }
+</style>
             <table border="0" align="center">
                 <tr>
                     <th>Sl.no</th>
@@ -104,7 +109,7 @@
                          <td><%=r.getString("product_rate")%></td>
                          <td><%=r.getString("product_details")%></td>
                          <td><%=r.getString("product_stock")%></td>
-                         <td><a href="ViewGallery.jsp?sid=<%=r.getString("product_id")%> "> View Gallery</a>
+                         <td><a href="ViewGallery.jsp?sid=<%=r.getString("product_id")%> "style="color: white"> View Gallery</a>
                          <td><button type="button" name="btn" onclick="booking(<%=r.getString("product_id")%>)">Add to cart</button></td>
                          <%
                          if(request.getParameter("btn")!=null){

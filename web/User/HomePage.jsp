@@ -40,11 +40,11 @@
                      <div>
                      <h1 style="color: white";>Hello<%=session.getAttribute("uname")%></h1>
                      </div>
-        <a href="MyProfile.jsp">PROFILE</a><br>
-        <a href="Complaint.jsp">COMPLAINT NURSERY</a><br>
-        <a href="ComplaintStatus.jsp">NURSERY COMPLAINT STATUS</a><br>
-        <a href="ComplaintAgency.jsp">COMPLAINT AGENT</a><br>
-        <a href="ComplaintAgencyStatus.jsp">AGENT COMPLAINT STATUS</a><br>
+                     <a href="MyProfile.jsp" style="color: white">PROFILE</a><br>
+        <a href="Complaint.jsp" style="color: white">COMPLAINT NURSERY</a><br>
+        <a href="ComplaintStatus.jsp" style="color: white">NURSERY COMPLAINT STATUS</a><br>
+        <a href="ComplaintAgency.jsp" style="color: white">COMPLAINT AGENT</a><br>
+        <a href="ComplaintAgencyStatus.jsp" style="color: white">AGENT COMPLAINT STATUS</a><br>
         </body> <br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br>
 </html>
 </div>

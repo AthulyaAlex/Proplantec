@@ -86,7 +86,7 @@
                       <form method="post">
             <br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
-                 <table align="center" cellpadding="10">
+                 <table boder="1" align="center" cellpadding="10">
               
     
                 <tr>

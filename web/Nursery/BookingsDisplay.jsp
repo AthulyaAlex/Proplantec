@@ -44,7 +44,7 @@
                 <form method="post">
                     <br><br><br><br><br><br><br>
                     <div style="color:white;font-size: 15px;">
-                        <table align="center" cellpadding="10">       
+                        <table border="1" align="center" cellpadding="10">       
                             <div align="center">
                                 <h2 style="color: white">Bookings</h2><br>
 

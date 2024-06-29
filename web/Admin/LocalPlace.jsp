@@ -22,7 +22,7 @@
             body {
                 margin: 0;
                 padding: 0;
-                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') no-repeat center center/cover;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/Templates/Main/assets/img/hero-bg.jpg') fixed center center/cover;
                 min-height: 800px
             }
             .text-box {
@@ -73,13 +73,13 @@
              <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
-            
+                     <h2 style="color:white" align="center">Localplace Entry</h2>
                 <tr>
                     <td>Location</td>
                         </select>
                     </td>
                     <td>
-                        <select name="ddlloc" class="text-box">
+                        <select name="ddlloc"  class="text-box" >
                             <option>--select location--</option>
                             
                             <%
@@ -88,7 +88,7 @@
                                 while(rs.next())
                                 {
                                   %>
-                                  <option value="<%=rs.getString("location_id")%>" <% if(rs.getString("location_id").equals(editlid)){ out.print("Selected") ; } %>><%=rs.getString("location_name")%></option>
+                                  <option value="<%=rs.getString("location_id")%>" style="color: black"  <% if(rs.getString("location_id").equals(editlid)){ out.print("Selected") ; } %>><%=rs.getString("location_name")%></option>
                                   
                                   
                                   <%
@@ -132,8 +132,8 @@
                     <td><%=i%></td>
                     <td><%=rs1.getString("location_name")%></td>
                     <td><%=rs1.getString("localplace_name")%></td>
-                     <td><a href="LocalPlace.jsp?did=<%=rs1.getString("localplace_id")%>">Delete</a>
-                         | <a href="LocalPlace.jsp?eid=<%=rs1.getString("localplace_id")%>">Edit</a></td>
+                     <td><a href="LocalPlace.jsp?did=<%=rs1.getString("localplace_id")%>" style="color: white">Delete</a>
+                         | <a href="LocalPlace.jsp?eid=<%=rs1.getString("localplace_id")%>"style="color: white">Edit</a></td>
                 </tr>
                
                 <%

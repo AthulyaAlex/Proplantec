@@ -73,7 +73,7 @@
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
-                
+                <h2 style="color:white" align="center">Subcategory Entry</h2>
                 <tr>
                     <td>Category</td>
                     <td>
@@ -130,8 +130,8 @@
                     <td><%=i%></td>
                     <td><%=rs1.getString("category_name")%></td>
                      <td><%=rs1.getString("subcategory_name")%></td>
-                     <td><a href="Subcategory.jsp?did=<%=rs1.getString("subcategory_id")%>">Delete</a>
-                         | <a href="Subcategory.jsp?eid=<%=rs1.getString("subcategory_id")%>">Edit</a></td>
+                     <td><a href="Subcategory.jsp?did=<%=rs1.getString("subcategory_id")%>" style="color: white">Delete</a>
+                         | <a href="Subcategory.jsp?eid=<%=rs1.getString("subcategory_id")%>" style="color: white">Edit</a></td>
                 </tr>
                
                 <%

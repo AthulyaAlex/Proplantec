@@ -27,7 +27,7 @@
             .text-box {
                 background-color: transparent;
                 width: 215px;
-                color:gray;
+                color:white;
             }
         </style>
     </head>
@@ -68,13 +68,14 @@
         
        <div class="bg-img">
                 <div style="background-color: #26404387; min-height: 700px">
-            <form method="POST" enctype="multipart/form-data" action="../Assets/Actionpages/UserUploadAction.jsp">
+            <form method="POST" >
             <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
                  <table align="center" cellpadding="10">
+                     <h2 style="color:white" align="center">Category Entry</h2>
                 <tr>
                     <td>Name</td>
-                    <td><input type="text" class="text-box" value="<%=editname%>" required pattern="[A-Z]||[a-z]{a,}" name="txtentercat">
+                    <td><input type="text" class="text-box" value="<%=editname%>" required pattern="[A-Z]||[a-z]{a,}" name="txtentercat" placeholder="Enter Category">
                         <input type="hidden" class="text-box" value="<%=editid%>" name="txt_id"></td>
                 </tr>
                 <tr>
@@ -102,8 +103,8 @@
                 <tr>
                     <td><%=i%></td>
                     <td><%=rs.getString("category_name")%></td>
-                    <td><a href="Category.jsp?did=<%=rs.getString("category_id")%>">Delete</a>
-                        |<a href="Category.jsp?eid=<%=rs.getString("category_id")%>">Edit</a></td>
+                    <td><a href="Category.jsp?did=<%=rs.getString("category_id")%>" style="color: white">Delete</a>
+                        |<a href="Category.jsp?eid=<%=rs.getString("category_id")%>" style="color: white">Edit</a></td>
                 </tr>
                 <%
             }    

@@ -63,7 +63,7 @@
                 {
                    
                     String insqry="insert into tbl_assignbooking(agent_id,booking_id)values('"+request.getParameter("aid")+"','"+request.getParameter("bid")+"')";
-                    out.println(insqry);
+               
                     if(con.executeCommand(insqry))
                     {
                         %>
@@ -93,8 +93,8 @@
                     <div align="center"><img src="../Assets/Files/Agentphoto/<%=rs.getString("agent_photo")%>" height="70" width="70"></div>
                     <div class="cont"><div>Name</div><div><%=rs.getString("agent_name")%></div></div>
                     <div class="cont"><div>Contact</div><div><%=rs.getString("agent_contact")%></div></div>
-                    <div><a href="AgencyList.jsp?aid=<%=rs.getString("agent_id")%>&bid=<%=request.getParameter("bid")%>">ASSIGN</a>
-                     <a href="View.jsp?vid=<%=rs.getString("agent_id")%>">VIEW REVIEW</a>
+                    <div><a href="AgencyList.jsp?aid=<%=rs.getString("agent_id")%>&bid=<%=request.getParameter("bid")%>" style="color: red">ASSIGN</a><br>
+                     <a href="View.jsp?vid=<%=rs.getString("agent_id")%>"style="color: red">VIEW REVIEW</a>
                     </div>
                     
                 </div>

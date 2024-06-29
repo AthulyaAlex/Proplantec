@@ -230,7 +230,7 @@ if(rs.next())
       out.write("        <body>\n");
       out.write("            <div class=\"wrapper\">\n");
       out.write("                <h2>Payment Gateway</h2>\n");
-      out.write("                <form method=\"POST\">\n");
+      out.write("                <form method=\"POST\", id=\"paymentForm\">\n");
       out.write("                   \n");
       out.write("                    <div class=\"input-group\">\n");
       out.write("                        <div class=\"input-box\">\n");
@@ -311,6 +311,28 @@ if(rs.next())
       out.write("    </body>\n");
       out.write("    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>\n");
       out.write("    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js'></script>\n");
+      out.write("    <script>\n");
+      out.write("    document.getElementById('paymentForm').addEventListener('submit', function(event) {\n");
+      out.write("        const dateInput = document.getElementById('txtdate').value;\n");
+      out.write("        \n");
+      out.write("        // Regular expression to check MM / YY format\n");
+      out.write("        const regex = /^(0[1-9]|1[0-2]) \\/ (\\d{2})$/;\n");
+      out.write("        if (!regex.test(dateInput)) {\n");
+      out.write("            alert('Invalid expiration date. Please enter a valid date in MM / YY format.');\n");
+      out.write("            event.preventDefault();\n");
+      out.write("            return;\n");
+      out.write("        }\n");
+      out.write("\n");
+      out.write("        const [month, year] = dateInput.split(' / ');\n");
+      out.write("        const currentYear = new Date().getFullYear() % 100; // Get last two digits of the current year\n");
+      out.write("        const currentMonth = new Date().getMonth() + 1;\n");
+      out.write("\n");
+      out.write("        if (parseInt(year) < currentYear || (parseInt(year) === currentYear && parseInt(month) < currentMonth)) {\n");
+      out.write("            alert('Invalid expiration date. The date must be in the future.');\n");
+      out.write("            event.preventDefault();\n");
+      out.write("        }\n");
+      out.write("    });\n");
+      out.write("</script>\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

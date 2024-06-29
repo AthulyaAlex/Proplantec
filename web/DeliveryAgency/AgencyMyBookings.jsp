@@ -51,7 +51,7 @@
             <div style="color:white;font-size: 15px;">
                  <table border="1"align="center" cellpadding="10">       
         <div align="center">
-            <h2 style="color: white">Bookings</h2><br>
+            <h2 style="color: white">Delivery Status</h2><br>
          
         
                

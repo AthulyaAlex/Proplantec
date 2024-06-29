@@ -33,7 +33,7 @@
                  <form method="post">
                      <br><br><br><br><br><br><br>
             <div style="color:white;font-size: 15px;">
-                 <table align="center" cellpadding="10">       
+                 <table border="1" align="center" cellpadding="10">       
         <div align="center">
             <h2 style="color: white">Bookings</h2><br>
          
@@ -83,7 +83,7 @@
                     else if (rs.getString("cart_status").equals("6") && rs.getString("booking_status").equals("1")) {
                       
                         %>
-                        Product Delivered <a href="Review.jsp?id=<%=rs.getString("product_id")%>">Product Review</a><br>
+                        Product Delivered<br> <a href="Review.jsp?id=<%=rs.getString("product_id")%>"style="color: #34ce57">Product Review</a><br>
                         
                         
                         <%
@@ -91,7 +91,7 @@
                                  ResultSet rs1 = con.selectCommand(selQry);
                                  while(rs1.next()){
                                      %>
-                                 <a href="AgencyReview.jsp?id=<%=rs1.getString("agent_id")%>">Agency Review</a>
+                                 <a href="AgencyReview.jsp?id=<%=rs1.getString("agent_id")%>"style="color: #34ce57">Agency Review</a>
                                  <%
                                  }
                         }

@@ -107,7 +107,7 @@
                 ResultSet rs = con.selectCommand(selQry);
                 while (rs.next()) {
             %>
-            <option value="<%=rs.getString("agent_id")%>"><%=rs.getString("agent_name")%></option>
+            <option value="<%=rs.getString("agent_id")%>"style="color:black"><%=rs.getString("agent_name")%></option>
             <%
                 }
             %>

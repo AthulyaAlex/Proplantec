@@ -44,7 +44,7 @@
                 <td>User Name</td> 
                 <td>Date</td>
                 <td>Complaint content</td>
-                
+                <td>Complaint Reply</td>
                 <td>Status</td>
             </tr>
             <% int j = 0;
@@ -58,7 +58,7 @@
                 <td><%=rs.getString("user_name")%></td>
                 <td><%=rs.getString("complaint_date")%></td>
                 <td><%=rs.getString("complaint_content")%></td>
-               
+                <td><%=rs.getString("complaint_reply")%></td>
                 <td>
                     <%
                     if(rs.getString("complaint_status").equals("0"))
