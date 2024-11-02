@@ -72,7 +72,7 @@
                     <td><%=rs.getString("agent_contact")%></td>   
                    
                     <td><a href="../Assets/Files/Agentproof/<%=rs.getString("agent_proof")%>"style="color: white;"download>Download</a></td>
-                    <td><<%=rs.getString("agent_photo")%></td>
+                    <td><%=rs.getString("agent_photo")%></td>
                     <td><%=rs.getString("location_name")%></td>
                     <td><a href="AgentVerification.jsp?aid=<%=rs.getString("agent_id")%>"style="color: white;">Accept</a>|
                         <a href="AgentVerification.jsp?rid=<%=rs.getString("agent_id")%>"style="color: white;">Reject</a></td>              
@@ -90,7 +90,6 @@
                     <th>Name</th>
                     <th>Contact</th>
                     <th>Proof</th>
-                    
                     <th>Photo</th>
                     <th>Location</th>
                     <th>Action</th>

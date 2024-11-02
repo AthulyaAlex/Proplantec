@@ -71,8 +71,8 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-                                                            <li class="current-list-item"><a href="#">Home</a></li>
-                                                            <li><a href="about.html">About</a></li> 
+                                                            <li class="current-list-item"><a href="../index.html">Home</a></li>
+                                                            <li><a href="../about.html">About</a></li> 
                                                             <li><a href="">Sign Up</a>
 									<ul class="sub-menu">
 										<li><a href="User.jsp">Customer</a></li>

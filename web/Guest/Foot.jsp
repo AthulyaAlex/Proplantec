@@ -22,8 +22,8 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../about.html">About</a></li>
 							<li><a href="NurseryList.jsp">Available Nursery</a></li>
                                                         
 						</ul>
